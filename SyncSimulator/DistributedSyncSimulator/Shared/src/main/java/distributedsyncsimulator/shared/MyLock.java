@@ -10,8 +10,13 @@ public class MyLock{
     };
 
     public String m_target;
-    public LockType m_type;
+    public LockType m_type = LockType.UNKNOWN;
     public long m_tansId;
+
+    public MyLock(long tid, String target){
+        this.m_target = target;
+        this.m_tansId = tid;
+    }
 
     public MyLock(LockType t, long tid, String target){
         this.m_type = t;
@@ -19,7 +24,11 @@ public class MyLock{
         this.m_tansId = tid;
     }
 
-    public void setLock(LockType newType){
+    public void setLock(LockType type){
+        m_type = type;
+    }
+
+    public void updateLock(LockType newType){
         if (m_type == LockType.READ_WRITE || m_type == newType) {
 		    return;
 	    }

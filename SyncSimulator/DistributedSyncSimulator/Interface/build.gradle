@@ -6,3 +6,6 @@ plugins {
     id 'DistributedSyncSimulator.java-library-conventions'
 }
 
+dependencies {
+    api project(':Shared')
+}

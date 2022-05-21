@@ -1,7 +1,7 @@
 package distributedsyncsimulator.ifc;
 
-import shared.MyAction;
-import shared.MyTransaction;
+import distributedsyncsimulator.shared.MyAction;
+import distributedsyncsimulator.shared.MyTransaction;
 
 import java.rmi.*;
 
