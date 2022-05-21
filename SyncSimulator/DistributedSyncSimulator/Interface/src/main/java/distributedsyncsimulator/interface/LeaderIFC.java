@@ -5,7 +5,7 @@ import distributedsyncsimulator.shared.MyTransaction;
 
 import java.rmi.*;
 
-public interface LeadIFC extends Remote{
+public interface LeaderIFC extends Remote{
 
     public void getLock(MyAction act) throws RemoteException;
 
