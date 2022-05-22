@@ -10,6 +10,7 @@ dependencies {
     implementation 'org.apache.commons:commons-text'
     implementation project(':Utilities')
     implementation project(':Interface')
+    implementation project(':Shared')
 }
 
 application {
