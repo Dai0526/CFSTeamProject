@@ -4,6 +4,7 @@ import java.rmi.*;
 
 public interface WorkerIFC extends Remote {
 
-    public void unlock() throws RemoteException;
-    public void write() throws RemoteException;
+    public void unblock() throws RemoteException;
+    public void abortTransaction() throws RemoteException;
+    public void HelloWorker(String name) throws RemoteException;
 }
