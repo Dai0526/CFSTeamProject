@@ -1,1 +1,1 @@
-java -classpath bin distributedsyncsimulator.worknode.WorkNode
+java -classpath bin distributedsyncsimulator.worknode.WorkNode 001 Transactions\test.txt
