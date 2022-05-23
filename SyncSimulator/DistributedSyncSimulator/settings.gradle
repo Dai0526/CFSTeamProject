@@ -8,5 +8,5 @@
  */
 
 rootProject.name = 'DistributedSyncSimulator'
-include('LeadNode', 'WorkNode', 'Utilities', 'Shared', 'Interface')
+include('LeadNode', 'WorkNode', 'Utilities', 'Shared', 'Interface', 'SyncManager')
 
