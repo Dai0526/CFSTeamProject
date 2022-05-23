@@ -1,4 +1,5 @@
 package distributedsyncsimulator.shared;
+import java.util.*;
 
 public class MyLock{
 
@@ -11,14 +12,14 @@ public class MyLock{
 
     public String m_target;
     public LockType m_type = LockType.UNKNOWN;
-    public long m_tansId;
+    public UUID m_tansId;
 
-    public MyLock(long tid, String target){
+    public MyLock(UUID tid, String target){
         this.m_target = target;
         this.m_tansId = tid;
     }
 
-    public MyLock(LockType t, long tid, String target){
+    public MyLock(LockType t, UUID tid, String target){
         this.m_type = t;
         this.m_target = target;
         this.m_tansId = tid;
@@ -43,7 +44,7 @@ public class MyLock{
     }
 
     public String toString(){
-        String lkStr = String.format("MyLock [%s, %s, %d]", getTypeStr(m_type), m_target, m_tansId);
+        String lkStr = String.format("MyLock [%s, %s, %s]", getTypeStr(m_type), m_target, m_tansId);
         return lkStr;
     }
 

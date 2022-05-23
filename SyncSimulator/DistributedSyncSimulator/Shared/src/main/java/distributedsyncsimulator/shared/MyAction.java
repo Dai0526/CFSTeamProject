@@ -1,6 +1,6 @@
 package distributedsyncsimulator.shared;
 
-
+import java.util.*;
 import java.io.Serializable;
 
 public class MyAction implements Serializable {
@@ -14,21 +14,37 @@ public class MyAction implements Serializable {
     };
 
     private String m_target;
-    private long m_tanscationId;
+    private UUID m_tanscationId;
     private ActionType m_actType = ActionType.UNKNOWN;
     private int m_value;
 
-    public MyAction(long id, String target, ActionType type){
+    public MyAction(UUID id){
+        m_tanscationId = id;
+    }
+
+    public MyAction(UUID id, String target, ActionType type){
         m_actType = type;
         m_tanscationId = id;
         m_target = target;
     }
 
-    public MyAction(long id, String target, ActionType type, int value){
+    public MyAction(UUID id, String target, ActionType type, int value){
         m_actType = type;
         m_tanscationId = id;
         m_target = target;
         m_value = value;
+    }
+
+    public void setTarget(String t){
+        m_target = t;
+    }
+
+    public void setType(ActionType t){
+        m_actType = t;
+    }
+
+    public void setValue(int v){
+        m_value = v;
     }
 
     /*
@@ -55,7 +71,7 @@ public class MyAction implements Serializable {
     }
 
     public String toString(){
-        String actStr = String.format("MyAction [%s, %s, %d, %d]", getTypeStr(m_actType), m_target, m_tanscationId, m_value);
+        String actStr = String.format("MyAction [%s, %s, %s, %d]", getTypeStr(m_actType), m_target, m_tanscationId.toString(), m_value);
         return actStr;
     }
 
