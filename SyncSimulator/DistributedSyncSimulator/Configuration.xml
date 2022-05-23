@@ -1,0 +1,27 @@
+<?xml version="1.0"?>  
+<class>  
+    <Node>  
+        <type>lead</type>
+        <id>0</id> 
+        <name>leader0</name> 
+        <ip>127.0.0.1</ip>
+        <port>2345</port>
+        <file></file>    
+    </Node> 
+    <Node>  
+        <type>work</type>
+        <id>1</id> 
+        <name>worker1</name> 
+        <ip>127.0.0.1</ip>
+        <port>2345</port>
+        <file></file>       
+    </Node>
+    <Node>  
+        <type>work</type>
+        <id>2</id> 
+        <name>worker2</name> 
+        <ip>127.0.0.1</ip>
+        <port>2345</port>
+        <file></file>       
+    </Node>     
+</class>  
