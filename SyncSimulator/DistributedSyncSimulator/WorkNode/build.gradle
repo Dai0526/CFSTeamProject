@@ -17,3 +17,14 @@ application {
     // Define the main class for the application.
     mainClass = 'DistributedSyncSimulator.WorkNode.WorkNode'
 }
+
+task postbuild {
+    doLast {        
+        copy {
+            from 'build/classes/java/main/distributedsyncsimulator/worknode/'
+            into "..\\bin\\distributedsyncsimulator\\worknode\\"
+        }
+    }
+}
+
+build.finalizedBy(postbuild)

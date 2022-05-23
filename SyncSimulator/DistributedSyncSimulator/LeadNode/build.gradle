@@ -17,3 +17,14 @@ application {
     // Define the main class for the application.
     mainClass = 'DistributedSyncSimulator.LeadNode.LeadNode'
 }
+
+task postbuild {
+    doLast {        
+        copy {
+            from 'build/classes/java/main/distributedsyncsimulator/leadnode/'
+            into "..\\bin\\distributedsyncsimulator\\leadnode\\"
+        }
+    }
+}
+
+build.finalizedBy(postbuild)

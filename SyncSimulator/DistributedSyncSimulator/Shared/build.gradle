@@ -9,3 +9,15 @@ plugins {
 dependencies {
     implementation project(':Utilities')
 }
+
+
+task postbuild {
+    doLast {        
+        copy {
+            from 'build/classes/java/main/distributedsyncsimulator/shared/'
+            into "..\\bin\\distributedsyncsimulator\\shared\\"
+        }
+    }
+}
+
+build.finalizedBy(postbuild)

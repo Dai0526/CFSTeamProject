@@ -9,3 +9,14 @@ plugins {
 dependencies {
     api project(':Shared')
 }
+
+task postbuild {
+    doLast {        
+        copy {
+            from 'build/classes/java/main/distributedsyncsimulator/interface/'
+            into "..\\bin\\distributedsyncsimulator\\interface\\"
+        }
+    }
+}
+
+build.finalizedBy(postbuild)
