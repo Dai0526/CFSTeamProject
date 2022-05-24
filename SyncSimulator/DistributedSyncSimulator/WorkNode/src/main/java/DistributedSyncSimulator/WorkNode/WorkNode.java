@@ -14,15 +14,14 @@ import java.lang.Thread;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
-
+import java.util.HashMap;
 
 
 public class WorkNode implements WorkerIFC, Runnable {
 
     public static void main(String[] args){
-        //assume
         String id = args[0]; 
-        String transFilePath =  args[1];
+        String transFilePath = args[1];
 
         WorkNode wn = new WorkNode(HOST_IP, DEFAULT_LEAD_PORT, id, transFilePath);
         wn.run();
@@ -38,6 +37,7 @@ public class WorkNode implements WorkerIFC, Runnable {
     private String m_host;
     private int m_nPort;
     private ArrayList<MyTransaction> m_transList;
+    private MyDatabase m_dbm;
 
     public WorkNode(String ip, int port, String id, String trasFiles){
         try{
@@ -65,25 +65,86 @@ public class WorkNode implements WorkerIFC, Runnable {
 
     @Override
     public void run(){
+
         try{
-            int n = 0;
-            while(n < 5){
-                m_leadInterface.HelloLead(m_name);
-                Thread.sleep(1000);
-                m_leadInterface.acquireLock(new MyAction(UUID.randomUUID(), "Tian", ActionType.READ));
-                Thread.sleep(1000);
-                m_leadInterface.releaseLock(new MyTransaction(MyUtils.getTimestamp(), m_name));
-                Thread.sleep(1000);
-                ++n;
+            int nTrans = m_transList.size();
+            int idx = 0;
+            while(true){
+                synchronized(this){
+                    if(idx >= nTrans){
+                        System.out.println(m_name + ": No new transactions. Blocked and wait... ");
+                        blockAndWait();
+                    }
+
+                    MyTransaction curr = m_transList.get(idx);
+                    System.out.println(m_name + ": Start processing Transaction from " + curr);
+
+                    for(MyAction act : curr.m_actions){
+                        if(m_requestAbort){
+                            break;
+                        }
+
+                        if(checkActionStatus(act) == true){
+                            curr.execSingleAct(act);
+                        }
+                    }
+                    
+                    checkTransactionStatus(curr);
+                }
+
+                ++idx;
             }
-        }catch(Exception e){
-            System.out.println("Exception: " + e.getMessage());
+        }catch(RemoteException re){
+            System.out.println(m_name + ": RemoteException: " + re.getMessage());
+        }
+        catch(Exception e){
+            System.out.println(m_name + ": Exception: " + e.getMessage());
+            e.printStackTrace();
         }
 
     }
 
+    private boolean checkActionStatus(MyAction act) throws Exception {
+        boolean canProcess = false;
+        switch(act.m_actType){
+            case READ:
+            case WRITE:
+                boolean status = m_leadInterface.acquireLock(act);
+                if(status == false){
+                    blockAndWait();
+                }
 
-    private void getTransactionSequence(String path){
+                if(m_requestAbort){
+                    break;
+                }
+
+                canProcess = true;
+                break;
+            case UPDATE:
+                canProcess = true;
+            default:
+                break;
+        }
+
+        return canProcess;
+    }
+
+    private boolean checkTransactionStatus(MyTransaction tras) throws RemoteException {
+        // commit if transaction done without aborting
+        if(m_requestAbort){
+            m_requestAbort = false;
+            System.out.println(m_name + ": Transaction " + tras.m_id + " boarted. ");
+            return false;
+        }
+
+        tras.commit();
+        m_leadInterface.releaseLock(tras);
+        System.out.println(m_name + ": Transaction " + tras.m_id + " commited. ");
+        
+        return true;
+    }
+
+    private void getTransactionSequence(String path) throws Exception {
         m_transList = new ArrayList<MyTransaction>();
 
         try(BufferedReader br = new BufferedReader(new FileReader(path))) {
@@ -129,7 +190,7 @@ public class WorkNode implements WorkerIFC, Runnable {
 
             }
         }catch(Exception ex){
-            System.out.println(m_name + " read transaction failed: " + ex.getMessage());
+            System.out.println(m_name + ": read transaction failed: " + ex.getMessage());
         }
     }
 
@@ -137,30 +198,36 @@ public class WorkNode implements WorkerIFC, Runnable {
         try{
             m_isBlocked = true;
             while(m_isBlocked){
-                System.out.println(m_name + " is blocked. Waiting ..");
                 Thread.sleep(DETECTION_INTERVAL_MS);
             }
         }catch(Exception e){
-            System.out.println(m_name + " throw exception: " + e.getMessage());
+            System.out.println(m_name + ": throw exception: " + e.getMessage());
 			e.printStackTrace();
         }
     }
 
+
+    /*
+        rmi function calls overrided
+    */
+
     @Override
 	public void abortTransaction() throws RemoteException {
 		m_requestAbort = true;
-		System.out.println(m_name + " transaction aborted");
+		System.out.println(m_name + ": transaction aborted");
         unblock();
 	}
 
     @Override
     public void unblock(){
         m_isBlocked = false;
-        System.out.println(m_name + " unblocked");
+        System.out.println(m_name + ": unblocked");
     }
 
     @Override
     public void HelloWorker(String name) throws RemoteException{
         System.out.println("Work Node Says Hello " + name);
     }
+
+
 }

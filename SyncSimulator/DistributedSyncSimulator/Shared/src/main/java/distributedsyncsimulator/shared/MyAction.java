@@ -15,7 +15,7 @@ public class MyAction implements Serializable {
 
     private String m_target;
     private UUID m_tanscationId;
-    private ActionType m_actType = ActionType.UNKNOWN;
+    public ActionType m_actType = ActionType.UNKNOWN;
     private int m_value;
 
     public MyAction(UUID id){

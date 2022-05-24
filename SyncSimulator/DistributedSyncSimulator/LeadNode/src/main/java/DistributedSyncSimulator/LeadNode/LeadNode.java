@@ -16,16 +16,12 @@ public class LeadNode implements LeaderIFC{
 
     // main method
     public static void main(String[] args){
-        
         try {
-			 
 			LeadNode leader = new LeadNode(m_nPort);
-		
 		}
 		catch (Exception e) {
 			System.out.println("Exception: " + e.getMessage());
 		}
-        
     }
 
 
@@ -66,11 +62,10 @@ public class LeadNode implements LeaderIFC{
 		try {
 			
 			Registry registry = LocateRegistry.getRegistry(m_nPort);
-			String workerName = WORK_NODE_NAME + id; // worker1, worker2
+			String workerName = WORK_NODE_NAME + id; // worker1, worker2, etc
 			WorkerIFC dataSiteStub = (WorkerIFC) registry.lookup(workerName);
 			
 			return dataSiteStub;
-			
 		}
 		catch(RemoteException e) {
 			System.out.println("Remote Exception: " + e.getMessage());
@@ -85,10 +80,11 @@ public class LeadNode implements LeaderIFC{
 
 
     // rmi stub function calls
-    public synchronized void acquireLock(MyAction act) throws RemoteException{
+    public synchronized boolean acquireLock(MyAction act) throws RemoteException{
         System.out.println("Lead Node Process acquireLock");
         WorkerIFC wifc = getRequestorFuncs("001");
         wifc.HelloWorker("LeadNode");
+        return true;
     }
 
     public synchronized void releaseLock(MyTransaction tran) throws RemoteException{

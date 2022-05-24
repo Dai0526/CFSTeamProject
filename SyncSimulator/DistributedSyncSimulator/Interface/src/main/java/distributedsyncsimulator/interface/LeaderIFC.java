@@ -7,7 +7,7 @@ import java.rmi.*;
 
 public interface LeaderIFC extends Remote{
 
-    public void acquireLock(MyAction act) throws RemoteException;
+    public boolean acquireLock(MyAction act) throws RemoteException;
 
     public void releaseLock(MyTransaction tran) throws RemoteException;
 

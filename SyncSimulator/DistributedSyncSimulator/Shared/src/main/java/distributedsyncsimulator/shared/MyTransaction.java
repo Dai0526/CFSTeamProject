@@ -5,6 +5,7 @@ package distributedsyncsimulator.shared;
 import java.util.*;
 import java.io.Serializable;
 
+
 public class MyTransaction implements Serializable {
 
     public UUID m_id;
@@ -12,7 +13,7 @@ public class MyTransaction implements Serializable {
     public String m_workName;
 
     public ArrayList<MyAction> m_actions;
-    public HashMap<String, Integer> m_commits;
+    public HashMap<String, Integer> m_commits; // saves intermediate values for a transaction
     public HashMap<String, Integer> m_changes;
 
 
@@ -43,6 +44,15 @@ public class MyTransaction implements Serializable {
 
     public void setWorkerName(String id){
         m_workName = id;
+    }
+
+    // put all intermediate values to the database
+    public void commit(){
+        Iterator cmtItr = m_commits.entrySet().iterator();
+        while(cmtItr.hasNext()){
+            Map.Entry element = (Map.Entry)cmtItr.next();
+            MyDatabase.instance().write((String)element.getKey(), (Integer)element.getValue());
+        }
     }
 
     private String getActsStr(){
