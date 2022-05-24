@@ -11,6 +11,7 @@ public class MyDatabase
 
     private MyDatabase(){
         m_db = new HashMap<String, Integer>();
+         System.out.println("DB Created");
     }
 
     public static synchronized MyDatabase instance(){
@@ -33,13 +34,18 @@ public class MyDatabase
     }
 
     public static int write(String key, int val){
+        
         m_db.put(key, val);
+        System.out.println("DB write [" + key + ", " + val + "]");
         return val;
     }
 
     public static int readAll(String nodeName){
-        Iterator dbItr = m_db.entrySet().iterator();
+
         System.out.println(nodeName + "'s DB info are as follow: ");
+        System.out.println("\t DB size = " + m_db.size());
+        Iterator dbItr = m_db.entrySet().iterator();
+        
         while(dbItr.hasNext()){
             Map.Entry element = (Map.Entry)dbItr.next();
             System.out.println("\t Key = " + element.getKey() + ", val = " + element.getValue());

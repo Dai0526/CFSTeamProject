@@ -140,7 +140,7 @@ public class WorkNode implements WorkerIFC, Runnable {
         tras.commit();
         m_leadInterface.releaseLock(tras);
         System.out.println(m_name + ": Transaction " + tras.m_id + " commited. ");
-        
+        MyDatabase.instance().readAll(m_name);
         return true;
     }
 
