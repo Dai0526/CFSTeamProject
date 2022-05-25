@@ -39,6 +39,10 @@ public class WorkNode implements WorkerIFC, Runnable {
     private ArrayList<MyTransaction> m_transList;
     private MyDatabase m_dbm;
 
+    private int m_nProcessed = 0;
+    private int m_nCommited = 0;
+    private int m_nAborted = 0;
+
     public WorkNode(String ip, int port, String id, String trasFiles){
         try{
             m_host = ip;
@@ -65,7 +69,7 @@ public class WorkNode implements WorkerIFC, Runnable {
 
     @Override
     public void run(){
-
+        
         try{
             int nTrans = m_transList.size();
             int idx = 0;
@@ -91,7 +95,7 @@ public class WorkNode implements WorkerIFC, Runnable {
                     
                     checkTransactionStatus(curr);
                 }
-
+                ++m_nProcessed;
                 ++idx;
             }
         }catch(RemoteException re){
@@ -101,7 +105,9 @@ public class WorkNode implements WorkerIFC, Runnable {
             System.out.println(m_name + ": Exception: " + e.getMessage());
             e.printStackTrace();
         }
-
+        
+        System.out.println(m_name + ": Processed " + m_nProcessed + " transactions");
+        System.out.println(m_name + ": Commited " + m_nProcessed + " transactions");
     }
 
     private boolean checkActionStatus(MyAction act) throws Exception {
@@ -139,6 +145,7 @@ public class WorkNode implements WorkerIFC, Runnable {
         }
 
         tras.commit();
+        ++m_nCommited;
         m_leadInterface.releaseLock(tras);
         System.out.println(m_name + ": Transaction " + tras.m_id + " commited. ");
         MyDatabase.instance().readAll(m_name);
@@ -156,14 +163,16 @@ public class WorkNode implements WorkerIFC, Runnable {
                 String[] segs = line.split(",");
 
                 /*
-                    r-Banana, x-Banana-2, w-Banana
+                    r-Banana, p-Banana-2, w-Banana
+                    r-Banana, w-Banana-2, w-Banana
                     read   -> r - <target name> 
-                    update -> x - <target name> - <value> 
                     write  -> w - <target name>
+                    add    -> p 
+                    minus  -> m
                 */
 
                 for(String s : segs){
-                    MyAction act = new MyAction(mt.m_id);
+                    MyAction act = new MyAction(mt.m_id, mt.m_workName);
                     char type = s.charAt(0);
                     String[] items = s.split("-");
                     switch(type){
@@ -184,7 +193,6 @@ public class WorkNode implements WorkerIFC, Runnable {
                         case 'w':
                             act.setType(ActionType.WRITE);
                             act.setTarget(items[1]);
-                            act.setValue(Integer.parseInt(items[2]));
                             break;
                         default:
                             break;

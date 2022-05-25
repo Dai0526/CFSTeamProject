@@ -1,4 +1,4 @@
-r-Apple,x-Apple-1,w-Apple,r-Orange,x-Orange-2,w-Orange
-r-Melo,x-Melo-1,w-Melo,r-Grape,x-Grape-4,w-Grape
-r-Apple,x-Apple-3,w-Apple,r-Orange,x-Orange-5,w-Orange
-r-Melo,x-Melo-11,w-Melo,r-Grape,x-Grape-14,w-Grape
+r-Apple,p-Apple-1,w-Apple,r-Orange,p-Orange-2,w-Orange
+r-Melo,p-Melo-1,w-Melo,r-Grape,p-Grape-4,w-Grape
+r-Apple,m-Apple-3,w-Apple,r-Orange,p-Orange-5,w-Orange
+r-Melo,m-Melo-11,w-Melo,r-Grape,p-Grape-14,w-Grape

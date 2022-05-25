@@ -32,14 +32,12 @@ public class LeadNode implements LeaderIFC{
     private static int m_nDeteInterval = DETECTION_INTERVAL_MS;
     public static String m_name = LEAD_NODE_NAME;
 
-    private int m_nWorker = 0;
+    private int m_transactionCount = 0;
     private int m_nDeadLock = 0;
-    private Hashtable<Integer, String> m_workerMap;
     private TwoPhaseLockManager m_2plMgr;
 
     public LeadNode(int port){
         m_nPort = port;
-        m_workerMap = new Hashtable<Integer, String>();
 
         try{
             Registry reg = LocateRegistry.createRegistry(m_nPort);
@@ -58,11 +56,11 @@ public class LeadNode implements LeaderIFC{
 
 
     // get requestor's function call interface
-    private WorkerIFC getRequestorFuncs(String id) {
+    private WorkerIFC getRequestorFuncs(String workerName) {
 		try {
 			
 			Registry registry = LocateRegistry.getRegistry(m_nPort);
-			String workerName = WORK_NODE_NAME + id; // worker1, worker2, etc
+			//String workerName = WORK_NODE_NAME + id; // worker1, worker2, etc
 			WorkerIFC dataSiteStub = (WorkerIFC) registry.lookup(workerName);
 			
 			return dataSiteStub;
@@ -81,22 +79,37 @@ public class LeadNode implements LeaderIFC{
 
     // rmi stub function calls
     public synchronized boolean acquireLock(MyAction act) throws RemoteException{
-        System.out.println("Lead Node Process acquireLock");
-        WorkerIFC wifc = getRequestorFuncs("001");
-        wifc.HelloWorker("LeadNode");
-        return true;
+        boolean status = false;
+        
+        try{
+            status = m_2plMgr.acquireLocks(act);
+            System.out.println(m_name + ": acquire lock for act " + act);
+        }catch(Exception ex){
+            System.out.println(m_name + ": release lock exception " + ex.getMessage());
+        }
+
+        return status;
     }
 
     public synchronized void releaseLock(MyTransaction tran) throws RemoteException{
         System.out.println("Lead Node Process releaseLock");
-        WorkerIFC wifc = getRequestorFuncs("001");
-        wifc.HelloWorker("LeadNode");
+        
+        try{
+            List<String> workers = m_2plMgr.releaseLocks(tran);
+            for(String name : workers){
+                WorkerIFC wifc = getRequestorFuncs(name);
+                wifc.unblock();
+                System.out.println(m_name + ": release lock at " + name);
+            }
+        }catch(Exception ex){
+            System.out.println(m_name + ": release lock exception " + ex.getMessage());
+        }
     }
 
     // test
     public synchronized void HelloLead(String workerName) throws RemoteException{
         System.out.println("Lead Node Says Hello " + workerName);
-        WorkerIFC wifc = getRequestorFuncs("001");
+        WorkerIFC wifc = getRequestorFuncs(workerName);
         wifc.HelloWorker("LeadNode");
     }
 }

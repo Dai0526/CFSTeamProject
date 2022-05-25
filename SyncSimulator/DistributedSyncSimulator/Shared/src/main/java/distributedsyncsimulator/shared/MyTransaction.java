@@ -81,6 +81,9 @@ public class MyTransaction implements Serializable {
             Map.Entry element = (Map.Entry)cmtItr.next();
             MyDatabase.instance().write((String)element.getKey(), (Integer)element.getValue());
         }
+
+        // print database info
+        MyDatabase.instance().readAll(m_workName);
     }
 
     public ArrayList<MyAction> getWrites(){
