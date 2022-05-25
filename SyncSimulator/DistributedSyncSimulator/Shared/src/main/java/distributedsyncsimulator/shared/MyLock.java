@@ -1,4 +1,5 @@
 package distributedsyncsimulator.shared;
+
 import java.util.*;
 
 public class MyLock{
