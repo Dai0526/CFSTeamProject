@@ -16,6 +16,14 @@ public class MyTransaction implements Serializable {
     public HashMap<String, Integer> m_candidates; // saves intermediate values for a transaction
     public HashMap<String, Integer> m_cache; // cache the miuns and addition changes
 
+    public MyTransaction(UUID id){
+        m_id = id;
+    }
+
+    public MyTransaction(UUID id, String worker){
+        m_id = id;
+        m_workName = worker;
+    }
 
     public MyTransaction(long time, String worker){
         m_id = UUID.randomUUID();
@@ -63,7 +71,7 @@ public class MyTransaction implements Serializable {
             default:
                 break;
         }
-
+        System.out.println("Done Exec " + act.toString());
     }
 
     public void addAction(MyAction act){

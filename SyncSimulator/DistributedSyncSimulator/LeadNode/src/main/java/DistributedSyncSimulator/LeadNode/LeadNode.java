@@ -82,12 +82,13 @@ public class LeadNode implements LeaderIFC{
         boolean status = false;
         
         try{
-            status = m_2plMgr.acquireLocks(act);
             System.out.println(m_name + ": acquire lock for act " + act);
+            status = m_2plMgr.acquireLocks(act);
         }catch(Exception ex){
-            System.out.println(m_name + ": release lock exception " + ex.getMessage());
+            System.out.println(m_name + ": acquire lock exception " + ex.getMessage());
+            ex.printStackTrace();
         }
-
+        System.out.println(m_name + ": acquire lock status " + status);
         return status;
     }
 
@@ -96,6 +97,7 @@ public class LeadNode implements LeaderIFC{
         
         try{
             List<String> workers = m_2plMgr.releaseLocks(tran);
+            System.out.println("DEBUG - release all locks" );
             for(String name : workers){
                 WorkerIFC wifc = getRequestorFuncs(name);
                 wifc.unblock();
@@ -103,6 +105,7 @@ public class LeadNode implements LeaderIFC{
             }
         }catch(Exception ex){
             System.out.println(m_name + ": release lock exception " + ex.getMessage());
+            ex.printStackTrace();
         }
     }
 

@@ -52,7 +52,7 @@ public class MyAction implements Serializable {
     /*
         return a lock with corresponding lock type
      */
-    public MyLock getLock() throws Exception {
+    public MyLock getLock(){
         MyLock lk = new MyLock(m_tanscationId, m_target);
 
         switch(m_actType){
@@ -61,8 +61,10 @@ public class MyAction implements Serializable {
                 break;
             case WRITE:
                 lk.setLock(MyLock.LockType.WRITE);
+                break;
             default:
-                throw new Exception("Only READ and WRITE Action can acquire lock, but current act type is " + getTypeStr(m_actType));
+                System.out.println("Only READ and WRITE Action can acquire lock, but current act type is " + getTypeStr(m_actType));
+                return null;
         }
 
        return lk; 
