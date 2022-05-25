@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 
 public class MyUtils{
     
-	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.S");
+	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyyMMdd_HHmmssS");
 
     public static String getTimestampStr()
 	{
@@ -28,6 +28,10 @@ public class MyUtils{
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		return timestamp.getTime();
 	}
+
+	public static String getCurrentDir() {
+    	return System.getProperty("user.dir");
+  	}
 
 	public static HashMap<String, Integer> getNodeInfo(String configPath){
 		return new HashMap<String, Integer>();
