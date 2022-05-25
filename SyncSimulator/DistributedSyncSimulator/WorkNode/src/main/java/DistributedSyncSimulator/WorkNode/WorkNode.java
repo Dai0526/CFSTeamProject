@@ -69,14 +69,18 @@ public class WorkNode implements WorkerIFC, Runnable {
 
     @Override
     public void run(){
-        
+        long startTime = System.currentTimeMillis();
         try{
             int nTrans = m_transList.size();
             int idx = 0;
             while(true){
                 synchronized(this){
                     if(idx >= nTrans){
+                        long endTime = System.currentTimeMillis();
                         System.out.println(m_name + ": No new transactions. Blocked and wait... ");
+                        System.out.println(m_name + ": Processed " + m_nProcessed + " transactions");
+                        System.out.println(m_name + ": Commited " + m_nProcessed + " transactions");
+                        System.out.println(m_name + ": spent " + (endTime - startTime) + " mSecs");
                         blockAndWait();
                     }
 
@@ -105,9 +109,10 @@ public class WorkNode implements WorkerIFC, Runnable {
             System.out.println(m_name + ": Exception: " + e.getMessage());
             e.printStackTrace();
         }
-        
+        long endTime = System.currentTimeMillis();
         System.out.println(m_name + ": Processed " + m_nProcessed + " transactions");
         System.out.println(m_name + ": Commited " + m_nProcessed + " transactions");
+        System.out.println(m_name + ": spent " + (endTime - startTime) + " mSecs");
     }
 
     private boolean checkActionStatus(MyAction act) throws Exception {
