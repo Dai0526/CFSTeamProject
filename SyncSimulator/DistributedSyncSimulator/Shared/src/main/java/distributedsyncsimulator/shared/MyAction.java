@@ -9,14 +9,14 @@ public class MyAction implements Serializable {
         UNKNOWN,
         READ,
         WRITE,
-        UPDATE,
-        DELETE
+        ADD,
+        MINUS
     };
 
-    private String m_target;
-    private UUID m_tanscationId;
+    public String m_target;
+    public UUID m_tanscationId;
     public ActionType m_actType = ActionType.UNKNOWN;
-    private int m_value;
+    public int m_value;
 
     public MyAction(UUID id){
         m_tanscationId = id;

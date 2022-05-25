@@ -13,8 +13,8 @@ public class MyTransaction implements Serializable {
     public String m_workName;
 
     public ArrayList<MyAction> m_actions;
-    public HashMap<String, Integer> m_commits; // saves intermediate values for a transaction
-    public HashMap<String, Integer> m_changes;
+    public HashMap<String, Integer> m_candidates; // saves intermediate values for a transaction
+    public HashMap<String, Integer> m_cache; // cache the miuns and addition changes
 
 
     public MyTransaction(long time, String worker){
@@ -23,8 +23,8 @@ public class MyTransaction implements Serializable {
         m_workName = worker;
 
         m_actions = new ArrayList<>();
-        m_commits = new HashMap<String, Integer>();
-        m_changes = new HashMap<String, Integer>();
+        m_candidates = new HashMap<String, Integer>();
+        m_cache = new HashMap<String, Integer>();
     }
 
     public void exec() throws Exception {
@@ -34,8 +34,36 @@ public class MyTransaction implements Serializable {
     }
 
     public void execSingleAct(MyAction act) throws Exception {
-        // TODO
         System.out.println("Exec Act " + act.toString());
+        String key = act.m_target;
+        MyAction.ActionType type = act.m_actType;
+        
+        switch(type){
+            case READ:
+                int val = MyDatabase.instance().read(key);
+                m_candidates.put(key, val);
+                break;
+            case WRITE:
+                if(!m_cache.containsKey(key)){
+                    m_cache.put(key, 0);
+                }
+                m_candidates.put(key, m_cache.get(key));
+                //MyDatabase.instance().write(key, act.m_value);
+                break;
+            case ADD:
+                int valAdded = MyDatabase.instance().read(key) + act.m_value;
+                m_cache.put(key, valAdded);
+                //MyDatabase.instance().add(key, act.m_value);
+                break;
+            case MINUS:
+                int valMinused = MyDatabase.instance().read(key) - act.m_value;
+                m_cache.put(key, valMinused);
+                //MyDatabase.instance().minus(key, act.m_value);
+                break;
+            default:
+                break;
+        }
+
     }
 
     public void addAction(MyAction act){
@@ -48,11 +76,27 @@ public class MyTransaction implements Serializable {
 
     // put all intermediate values to the database
     public void commit(){
-        Iterator cmtItr = m_commits.entrySet().iterator();
+        Iterator cmtItr = m_candidates.entrySet().iterator();
         while(cmtItr.hasNext()){
             Map.Entry element = (Map.Entry)cmtItr.next();
             MyDatabase.instance().write((String)element.getKey(), (Integer)element.getValue());
         }
+    }
+
+    public ArrayList<MyAction> getWrites(){
+        ArrayList<MyAction> writes = new ArrayList<MyAction>();
+
+        if(m_actions.size() <= 0){
+            return writes;
+        }
+
+        for(MyAction act : m_actions){
+            if(act.m_actType == MyAction.ActionType.WRITE){
+                writes.add(act);
+            }
+        }
+
+        return writes;
     }
 
     private String getActsStr(){

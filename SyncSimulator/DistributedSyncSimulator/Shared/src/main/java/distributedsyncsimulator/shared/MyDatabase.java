@@ -22,6 +22,23 @@ public class MyDatabase
         return m_instance;
     }
 
+    public static void add(String key, int value){
+        if(m_db.get(key) == null){
+            m_db.put(key, value);
+            return;
+        }
+
+        m_db.put(key, m_db.get(key) + value);
+    }
+
+    public static void minus(String key, int value){
+        if(m_db.get(key) == null){
+            m_db.put(key, -value);
+            return;
+        }
+
+        m_db.put(key, m_db.get(key) - value);
+    }
 
     // if not exist, add item and init value 0
     public static int read(String key){
@@ -33,11 +50,9 @@ public class MyDatabase
         return m_db.get(key);
     }
 
-    public static int write(String key, int val){
-        
+    public static void write(String key, int val){
         m_db.put(key, val);
         System.out.println("DB write [" + key + ", " + val + "]");
-        return val;
     }
 
     public static int readAll(String nodeName){

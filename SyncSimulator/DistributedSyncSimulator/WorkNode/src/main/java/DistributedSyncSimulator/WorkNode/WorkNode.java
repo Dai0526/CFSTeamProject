@@ -117,11 +117,12 @@ public class WorkNode implements WorkerIFC, Runnable {
                 if(m_requestAbort){
                     break;
                 }
-
                 canProcess = true;
                 break;
-            case UPDATE:
+            case MINUS:
+            case ADD:
                 canProcess = true;
+                break;
             default:
                 break;
         }
@@ -170,14 +171,20 @@ public class WorkNode implements WorkerIFC, Runnable {
                             act.setType(ActionType.READ);
                             act.setTarget(items[1]);
                             break;
-                        case 'x':
-                            act.setType(ActionType.UPDATE);
+                        case 'm':
+                            act.setType(ActionType.MINUS);
+                            act.setTarget(items[1]);
+                            act.setValue(Integer.parseInt(items[2]));
+                            break;
+                        case 'p':
+                            act.setType(ActionType.ADD);
                             act.setTarget(items[1]);
                             act.setValue(Integer.parseInt(items[2]));
                             break;
                         case 'w':
-                            act.setType(ActionType.READ);
+                            act.setType(ActionType.WRITE);
                             act.setTarget(items[1]);
+                            act.setValue(Integer.parseInt(items[2]));
                             break;
                         default:
                             break;
