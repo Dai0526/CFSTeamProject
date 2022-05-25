@@ -22,7 +22,6 @@ public class WorkNode implements WorkerIFC, Runnable {
     public static void main(String[] args){
         String id = args[0]; 
         String transFilePath = args[1];
-
         WorkNode wn = new WorkNode(HOST_IP, DEFAULT_LEAD_PORT, id, transFilePath);
         wn.run();
     }
@@ -42,6 +41,7 @@ public class WorkNode implements WorkerIFC, Runnable {
     private int m_nProcessed = 0;
     private int m_nCommited = 0;
     private int m_nAborted = 0;
+    private static MyLog m_log;
 
     public WorkNode(String ip, int port, String id, String trasFiles){
         try{
@@ -49,6 +49,8 @@ public class WorkNode implements WorkerIFC, Runnable {
             m_nPort = port;
             m_id = id;
             m_name = String.format("%s%s", WORK_NODE_NAME, id);
+            
+            m_log = new MyLog(m_name);
 
             getTransactionSequence(trasFiles);
 
@@ -58,7 +60,8 @@ public class WorkNode implements WorkerIFC, Runnable {
             WorkerIFC workerInterface = (WorkerIFC) UnicastRemoteObject.exportObject(this, 0);
             reg.bind(m_name, workerInterface);
 
-            System.out.println("WorkNode " + m_name + " is running");
+            //System.out.println("WorkNode " + m_name + " is running");
+            m_log.log("WorkNode " + m_name + " is running");
 
 
         }catch(Exception e){
@@ -86,7 +89,7 @@ public class WorkNode implements WorkerIFC, Runnable {
 
                     MyTransaction curr = m_transList.get(idx);
                     System.out.println(m_name + ": Start processing Transaction from " + curr);
-
+                    m_log.log(m_name + ": Start processing Transaction from " + curr);
                     for(MyAction act : curr.m_actions){
                         if(m_requestAbort){
                             break;
