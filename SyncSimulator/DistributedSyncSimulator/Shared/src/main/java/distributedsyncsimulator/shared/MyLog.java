@@ -34,7 +34,7 @@ public class MyLog{
             m_syncQueue = new SynchronousQueue<String>();
             
 
-            m_filepath = m_logDir + "//" + name + "_" + MyUtils.getTimestampStr() + ".txt";
+            m_filepath = m_logDir + "//" + name + "_" + MyUtils.getTimestampStr() + ".log";
 
             m_outs = new FileOutputStream(m_filepath);
             
