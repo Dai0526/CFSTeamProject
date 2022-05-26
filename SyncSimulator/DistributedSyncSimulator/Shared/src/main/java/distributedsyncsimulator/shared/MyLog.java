@@ -7,20 +7,34 @@ import java.io.IOException;
 import java.io.*;
 import java.nio.file.*;
 import static java.nio.file.StandardOpenOption.*;
+
 public class MyLog{
 
     private static MyLog m_instance;
     private static SynchronousQueue<String> m_syncQueue;
-    private static String m_filepath;
     protected static boolean m_isExit = false;
-    private static LogHandler m_handler; 
 
+    private String m_filepath;
+    private String m_logDir;
+
+    private static LogHandler m_handler; 
     private static FileOutputStream m_outs = null;
 
-    public MyLog(String name){
-        try{
+    public MyLog(){
+        m_logDir = MyUtils.getCurrentDir() + "\\log";
+
+        File directory = new File(m_logDir);
+        if (! directory.exists()){
+            directory.mkdir();   
+        }
+    }
+
+    public void init(String name){
+         try{
             m_syncQueue = new SynchronousQueue<String>();
-            m_filepath = MyUtils.getCurrentDir() + "//" + name + "_" + MyUtils.getTimestampStr() + ".txt";
+            
+
+            m_filepath = m_logDir + "//" + name + "_" + MyUtils.getTimestampStr() + ".txt";
 
             m_outs = new FileOutputStream(m_filepath);
             
@@ -39,7 +53,17 @@ public class MyLog{
 
 
         System.out.println("Log Instance Created");
+
     }
+
+    public static MyLog instance()
+    {
+        if (m_instance == null)
+            m_instance = new MyLog();
+  
+        return m_instance;
+    }
+
 
     public static void log(String msg){
         try {
@@ -50,19 +74,19 @@ public class MyLog{
         }
     }
 
+
+
     static class LogHandler extends Thread {
 
         public LogHandler() { }
         
         public void run(){
-            System.out.println("Start Handle msg in log");
             try {
                 while (!m_isExit || !m_syncQueue.isEmpty()) {
                     String msg = m_syncQueue.take();
                     handleLog(msg);
                 }
                 m_outs.close();
-                System.out.println("Log file closed");
             }
             catch(IOException ioe){
                 System.out.println("Exception: " + ioe.getMessage());

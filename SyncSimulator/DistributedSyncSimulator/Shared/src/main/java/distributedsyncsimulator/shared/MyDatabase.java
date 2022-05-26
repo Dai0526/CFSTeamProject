@@ -1,7 +1,9 @@
 package distributedsyncsimulator.shared;
 
-import java.util.*;
+import static distributedsyncsimulator.utilities.Constants.*;
 
+import java.util.*;
+import java.lang.*;
 // singletone class for database manager
 public class MyDatabase
 {
@@ -11,7 +13,7 @@ public class MyDatabase
 
     private MyDatabase(){
         m_db = new HashMap<String, Integer>();
-         System.out.println("DB Created");
+        MyLog.instance().log("DB instance Created" + NEWLINE);
     }
 
     public static synchronized MyDatabase instance(){
@@ -52,20 +54,22 @@ public class MyDatabase
 
     public static void write(String key, int val){
         m_db.put(key, val);
-        System.out.println("DB write [" + key + ", " + val + "]");
+        MyLog.instance().log("DB write [" + key + ", " + val + "]"+ NEWLINE);
     }
 
     public static int readAll(String nodeName){
 
-        System.out.println(nodeName + "'s DB info are as follow: ");
-        System.out.println("\t DB size = " + m_db.size());
+        StringBuilder sb = new StringBuilder();
+        sb.append(nodeName + "'s DB info are as follow: " + NEWLINE);
+        sb.append("\t DB size = " + m_db.size() + NEWLINE);
         Iterator dbItr = m_db.entrySet().iterator();
         
         while(dbItr.hasNext()){
             Map.Entry element = (Map.Entry)dbItr.next();
-            System.out.println("\t Key = " + element.getKey() + ", val = " + element.getValue());
+            sb.append("\t Key = " + element.getKey() + ", val = " + element.getValue() + NEWLINE);
         }
 
+        MyLog.instance().log(sb.toString() + NEWLINE);
         return m_db.size();
     }
 }

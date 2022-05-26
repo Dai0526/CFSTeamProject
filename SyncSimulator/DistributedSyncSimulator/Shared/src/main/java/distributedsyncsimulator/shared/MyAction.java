@@ -1,5 +1,7 @@
 package distributedsyncsimulator.shared;
 
+import static distributedsyncsimulator.utilities.Constants.*;
+
 import java.util.*;
 import java.io.Serializable;
 
@@ -63,7 +65,7 @@ public class MyAction implements Serializable {
                 lk.setLock(MyLock.LockType.WRITE);
                 break;
             default:
-                System.out.println("Only READ and WRITE Action can acquire lock, but current act type is " + getTypeStr(m_actType));
+                MyLog.instance().log("Only READ and WRITE Action can acquire lock, but current = " + getTypeStr(m_actType) + NEWLINE);
                 return null;
         }
 

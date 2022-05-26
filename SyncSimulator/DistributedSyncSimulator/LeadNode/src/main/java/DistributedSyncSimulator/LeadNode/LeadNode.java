@@ -17,6 +17,8 @@ public class LeadNode implements LeaderIFC{
     // main method
     public static void main(String[] args){
         try {
+            m_log = new MyLog();
+            m_log.init(LEAD_NODE_NAME);
 			LeadNode leader = new LeadNode(m_nPort);
 		}
 		catch (Exception e) {
@@ -35,6 +37,7 @@ public class LeadNode implements LeaderIFC{
     private int m_transactionCount = 0;
     private int m_nDeadLock = 0;
     private TwoPhaseLockManager m_2plMgr;
+    private static MyLog m_log;
 
     public LeadNode(int port){
         m_nPort = port;
@@ -43,10 +46,9 @@ public class LeadNode implements LeaderIFC{
             Registry reg = LocateRegistry.createRegistry(m_nPort);
             LeaderIFC leadIfc = (LeaderIFC)UnicastRemoteObject.exportObject(this, 0);
             reg.bind(LEAD_NODE_NAME, leadIfc);
-
             m_2plMgr = new TwoPhaseLockManager();
+            m_log.log("LeadNode Ready!" + NEWLINE);
 
-            System.out.println("LeadNode Ready!");
         }catch(RemoteException re){
             System.out.println("Remote Exception: " + re.getMessage());
         }catch(Exception e){
@@ -62,7 +64,6 @@ public class LeadNode implements LeaderIFC{
 			Registry registry = LocateRegistry.getRegistry(m_nPort);
 			//String workerName = WORK_NODE_NAME + id; // worker1, worker2, etc
 			WorkerIFC dataSiteStub = (WorkerIFC) registry.lookup(workerName);
-			
 			return dataSiteStub;
 		}
 		catch(RemoteException e) {
@@ -82,26 +83,26 @@ public class LeadNode implements LeaderIFC{
         boolean status = false;
         
         try{
-            System.out.println(m_name + ": acquire lock for act " + act);
+            //System.out.println(m_name + ": acquire lock for act " + act);
             status = m_2plMgr.acquireLocks(act);
         }catch(Exception ex){
             System.out.println(m_name + ": acquire lock exception " + ex.getMessage());
             ex.printStackTrace();
         }
-        System.out.println(m_name + ": acquire lock status " + status);
+        //System.out.println(m_name + ": acquire lock status " + status);
+        m_log.log("Acquire lock for act " + act + ", Satus = " + status + NEWLINE);
         return status;
     }
 
     public synchronized void releaseLock(MyTransaction tran) throws RemoteException{
-        System.out.println("Lead Node Process releaseLock");
+        m_log.log("ReleaseLock for " + tran + NEWLINE);
         
         try{
             List<String> workers = m_2plMgr.releaseLocks(tran);
-            System.out.println("DEBUG - release all locks" );
             for(String name : workers){
                 WorkerIFC wifc = getRequestorFuncs(name);
                 wifc.unblock();
-                System.out.println(m_name + ": release lock at " + name);
+                m_log.log(name + " 's log released" + NEWLINE);
             }
         }catch(Exception ex){
             System.out.println(m_name + ": release lock exception " + ex.getMessage());

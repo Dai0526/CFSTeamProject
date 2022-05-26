@@ -50,7 +50,8 @@ public class WorkNode implements WorkerIFC, Runnable {
             m_id = id;
             m_name = String.format("%s%s", WORK_NODE_NAME, id);
             
-            m_log = new MyLog(m_name);
+            m_log = new MyLog();
+            m_log.init(m_name);
 
             getTransactionSequence(trasFiles);
 
@@ -61,7 +62,7 @@ public class WorkNode implements WorkerIFC, Runnable {
             reg.bind(m_name, workerInterface);
 
             //System.out.println("WorkNode " + m_name + " is running");
-            m_log.log("WorkNode " + m_name + " is running");
+            m_log.log("WorkNode " + m_name + " is running" + NEWLINE);
 
 
         }catch(Exception e){
@@ -88,7 +89,7 @@ public class WorkNode implements WorkerIFC, Runnable {
                     }
 
                     MyTransaction curr = m_transList.get(idx);
-                    System.out.println(m_name + ": Start processing Transaction from " + curr);
+                    //System.out.println(m_name + ": Start processing Transaction from " + curr);
                     m_log.log(m_name + ": Start processing Transaction from " + curr);
                     for(MyAction act : curr.m_actions){
                         if(m_requestAbort){
@@ -148,15 +149,16 @@ public class WorkNode implements WorkerIFC, Runnable {
         // commit if transaction done without aborting
         if(m_requestAbort){
             m_requestAbort = false;
-            System.out.println(m_name + ": Transaction " + tras.m_id + " boarted. ");
+            m_log.log("Transaction " + tras.m_id + " boarted." + NEWLINE);
             return false;
         }
 
         tras.commit();
         ++m_nCommited;
         m_leadInterface.releaseLock(tras);
-        System.out.println(m_name + ": Transaction " + tras.m_id + " commited. ");
+        m_log.log("Release Lock for Transaction " + tras.m_id + NEWLINE);
         MyDatabase.instance().readAll(m_name);
+
         return true;
     }
 
@@ -208,18 +210,21 @@ public class WorkNode implements WorkerIFC, Runnable {
                     mt.addAction(act);
                     
                 }
-                System.out.println(mt.toString());
-                m_transList.add(mt);
 
+                m_transList.add(mt);
             }
         }catch(Exception ex){
-            System.out.println(m_name + ": read transaction failed: " + ex.getMessage());
+            m_log.log(m_name + " read transaction failed: " + ex.getMessage() + NEWLINE);
+            return;
         }
+
+        m_log.log("# of Transaction Read = "  + m_transList.size() + NEWLINE);
     }
 
     public synchronized void blockAndWait(){
         try{
             m_isBlocked = true;
+            m_log.log(m_name + " block and wait... " + NEWLINE);
             while(m_isBlocked){
                 Thread.sleep(DETECTION_INTERVAL_MS);
             }
@@ -237,14 +242,14 @@ public class WorkNode implements WorkerIFC, Runnable {
     @Override
 	public void abortTransaction() throws RemoteException {
 		m_requestAbort = true;
-		System.out.println(m_name + ": transaction aborted");
+        m_log.log(m_name + " transaction aborted " + NEWLINE);
         unblock();
 	}
 
     @Override
     public void unblock(){
         m_isBlocked = false;
-        System.out.println(m_name + ": unblocked");
+        m_log.log(m_name + " unblocked" + NEWLINE);
     }
 
     @Override

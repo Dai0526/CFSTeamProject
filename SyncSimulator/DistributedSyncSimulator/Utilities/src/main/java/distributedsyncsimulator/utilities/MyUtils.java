@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 
 public class MyUtils{
     
-	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyyMMdd_HHmmssS");
+	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyyMMdd_HH-mm-ssS");
 
     public static String getTimestampStr()
 	{

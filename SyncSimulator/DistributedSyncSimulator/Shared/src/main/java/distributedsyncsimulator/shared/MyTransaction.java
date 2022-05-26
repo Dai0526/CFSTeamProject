@@ -1,7 +1,8 @@
 
 package distributedsyncsimulator.shared;
 
-//import java.sql.*;
+import static distributedsyncsimulator.utilities.Constants.*;
+
 import java.util.*;
 import java.io.Serializable;
 
@@ -14,7 +15,7 @@ public class MyTransaction implements Serializable {
 
     public ArrayList<MyAction> m_actions;
     public HashMap<String, Integer> m_candidates; // saves intermediate values for a transaction
-    public HashMap<String, Integer> m_cache; // cache the miuns and addition changes
+    public HashMap<String, Integer> m_cache;      // cache the miuns and addition changes
 
     public MyTransaction(UUID id){
         m_id = id;
@@ -42,7 +43,7 @@ public class MyTransaction implements Serializable {
     }
 
     public void execSingleAct(MyAction act) throws Exception {
-        System.out.println("Exec Act " + act.toString());
+        MyLog.instance().log("Execute Act " + act.toString() + NEWLINE);
         String key = act.m_target;
         MyAction.ActionType type = act.m_actType;
         
@@ -71,7 +72,8 @@ public class MyTransaction implements Serializable {
             default:
                 break;
         }
-        System.out.println("Done Exec " + act.toString());
+
+        MyLog.instance().log("Done Exec " + act.toString() + NEWLINE);
     }
 
     public void addAction(MyAction act){
@@ -91,6 +93,7 @@ public class MyTransaction implements Serializable {
         }
 
         // print database info
+        MyLog.instance().log("Commit Transaction " + m_id + NEWLINE);
         MyDatabase.instance().readAll(m_workName);
     }
 
