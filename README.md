@@ -1,5 +1,7 @@
 # CFSTeamProject
 
+[![Java CI with Gradle](https://github.com/Dai0526/CFSTeamProject/actions/workflows/gradle.yml/badge.svg)](https://github.com/Dai0526/CFSTeamProject/actions/workflows/gradle.yml)
+
 ## Distributed Environment setup
 1. Docker Container
   - CentOS
