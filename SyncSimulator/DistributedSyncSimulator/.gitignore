@@ -6,3 +6,5 @@ build
 
 # Ignore generated log file
 *.log
+
+!gradle/wrapper/gradle-wrapper.jar
