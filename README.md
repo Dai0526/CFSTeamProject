@@ -1,6 +1,10 @@
 # CFSTeamProject
 
-[![Java CI with Gradle](https://github.com/Dai0526/CFSTeamProject/actions/workflows/gradle.yml/badge.svg)](https://github.com/Dai0526/CFSTeamProject/actions/workflows/gradle.yml)
+[![Java 17 Ubuntu x64](https://github.com/Dai0526/CFSTeamProject/actions/workflows/Java17_Ubuntu_.yml/badge.svg)](https://github.com/Dai0526/CFSTeamProject/actions/workflows/Java17_Ubuntu_.yml)
+
+[![Java 17 MacOS x64](https://github.com/Dai0526/CFSTeamProject/actions/workflows/Java17_MacOS_x64.yml/badge.svg)](https://github.com/Dai0526/CFSTeamProject/actions/workflows/Java17_MacOS_x64.yml)
+
+[![Java 17 Windows x64](https://github.com/Dai0526/CFSTeamProject/actions/workflows/Java17_Win_x64_.yml/badge.svg)](https://github.com/Dai0526/CFSTeamProject/actions/workflows/Java17_Win_x64_.yml)
 
 ## Distributed Environment setup
 1. Docker Container
