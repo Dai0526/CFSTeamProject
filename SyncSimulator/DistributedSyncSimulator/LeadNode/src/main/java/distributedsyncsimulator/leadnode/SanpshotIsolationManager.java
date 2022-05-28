@@ -6,8 +6,8 @@ import distributedsyncsimulator.utilities.*;
 import distributedsyncsimulator.shared.*;
 import static distributedsyncsimulator.utilities.Constants.*;
 
-public class OptimisticControlManager extends SyncManagerBase {
-    public OptimisticControlManager(){
+public class SanpshotIsolationManager extends SyncManagerBase {
+    public SanpshotIsolationManager(){
         super();
     }
 

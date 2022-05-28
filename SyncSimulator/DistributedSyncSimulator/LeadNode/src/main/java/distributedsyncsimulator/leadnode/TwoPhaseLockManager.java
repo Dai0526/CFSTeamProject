@@ -221,17 +221,7 @@ public class TwoPhaseLockManager extends SyncManagerBase {
 
 
 
-    public boolean setLock(MyLock lock){
-        //System.out.println("DEBUG - Start set lock");
-        String target = lock.m_target;
 
-        if(!m_locks.containsKey(target)) {
-            //System.out.println("DEBUG - Not found, add a new one");
-            m_locks.put(target, new ArrayList<MyLock>());
-        }
-        //System.out.println("DEBUG - adding lock to map, lock = " + lock);
-	    return m_locks.get(target).add(lock);
-    }
 
 
 }

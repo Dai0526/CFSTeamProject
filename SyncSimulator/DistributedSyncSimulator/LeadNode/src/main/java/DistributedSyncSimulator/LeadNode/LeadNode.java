@@ -17,7 +17,7 @@ public class LeadNode implements LeaderIFC{
     public enum SyncManagerType{
         TWO_PHASE_LOCK(0),
         TIMESTAMP(1),
-        OPTIMISTIC(2);
+        SNAPSHOT_ISOLATION(2);
 
         private final int value;
 
@@ -80,8 +80,8 @@ public class LeadNode implements LeaderIFC{
             switch(type){
                 case TIMESTAMP:
                     m_syncManager = new TimeStampOrderingManager();
-                case OPTIMISTIC:
-                    m_syncManager = new OptimisticControlManager();
+                case SNAPSHOT_ISOLATION:
+                    m_syncManager = new SanpshotIsolationManager();
                 case TWO_PHASE_LOCK:
                 default:
                     m_syncManager = new TwoPhaseLockManager();
