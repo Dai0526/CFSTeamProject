@@ -41,8 +41,6 @@ public class LeadNode implements LeaderIFC{
         int syncMethod = Integer.parseInt(args[0]);
 
         try {
-            m_log = new MyLog();
-            m_log.init(LEAD_NODE_NAME);
 			LeadNode leader = new LeadNode(m_nPort, SyncManagerType.getValue(syncMethod));
 		}
 		catch (Exception e) {
@@ -64,6 +62,7 @@ public class LeadNode implements LeaderIFC{
     private int m_nDeadLock = 0;
     private SyncManagerBase m_syncManager;
     private static MyLog m_log;
+    private MyConfiguration m_config;
 
     private int m_nProcessed = 0;
     private long m_totalTime;
@@ -76,6 +75,11 @@ public class LeadNode implements LeaderIFC{
             Registry reg = LocateRegistry.createRegistry(m_nPort);
             LeaderIFC leadIfc = (LeaderIFC)UnicastRemoteObject.exportObject(this, 0);
             reg.bind(LEAD_NODE_NAME, leadIfc);
+
+            m_log = new MyLog();
+            m_log.init(LEAD_NODE_NAME);
+
+            m_config = new MyConfiguration();
 
             switch(type){
                 case TIMESTAMP:

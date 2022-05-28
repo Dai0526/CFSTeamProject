@@ -33,8 +33,4 @@ public class MyUtils{
     	return System.getProperty("user.dir");
   	}
 
-	public static HashMap<String, Integer> getNodeInfo(String configPath){
-		return new HashMap<String, Integer>();
-	}
-
 }

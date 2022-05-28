@@ -44,6 +44,8 @@ public class WorkNode implements WorkerIFC, Runnable {
     private int m_nAborted = 0;
     private static MyLog m_log;
 
+    private MyConfiguration m_config;
+
     public WorkNode(String ip, int port, String id, String trasFiles){
         try{
             m_host = ip;
@@ -51,6 +53,8 @@ public class WorkNode implements WorkerIFC, Runnable {
             m_id = id;
             m_name = String.format("%s%s", WORK_NODE_NAME, id);
             
+            m_config = new MyConfiguration();
+
             m_log = new MyLog();
             m_log.init(m_name);
 
@@ -77,6 +81,7 @@ public class WorkNode implements WorkerIFC, Runnable {
             int nTrans = m_transList.size();
 
             while(true){
+                Thread.Sleep(DETECTION_INTERVAL_MS);
                 synchronized(this){
                     
                     MyTransaction curr = getNextTransaction();
@@ -167,6 +172,7 @@ public class WorkNode implements WorkerIFC, Runnable {
         }
 
         tras.commit();
+        broadCastCommit(tras);
         m_leadInterface.ByeLead(m_name, tras.m_id);
         ++m_nCommited;
         m_leadInterface.releaseLock(tras);
@@ -240,7 +246,7 @@ public class WorkNode implements WorkerIFC, Runnable {
             m_isBlocked = true;
             m_log.log(m_name + " block and wait... " + NEWLINE);
             while(m_isBlocked){
-                Thread.sleep(DETECTION_INTERVAL_MS);
+                Thread.sleep(2 * DETECTION_INTERVAL_MS);
             }
         }catch(Exception e){
             System.out.println(m_name + ": throw exception: " + e.getMessage());
@@ -256,6 +262,45 @@ public class WorkNode implements WorkerIFC, Runnable {
             m_transList.add(mt);
         }
     }
+
+    private void broadCastCommit(MyTransaction tran) throws RemoteException{
+        HashMap<String, String> workers = m_config.getWorkers();
+
+        Iterator wkrItr = workers.entrySet().iterator();
+
+        while (wkrItr.hasNext()) {
+            Map.Entry curr = (Map.Entry)wkrItr.next();
+            String name = (String)curr.getKey();
+            if(name.compareTo(m_name) == 0){
+                continue;
+            }
+
+            m_log.log("Inform " + name + " to update" + NEWLINE);// 
+            WorkerIFC wifc = getRequestorFuncs(name);
+            wifc.SyncData(tran);
+        }
+
+    }
+
+    // get requestor's function call interface
+    private WorkerIFC getRequestorFuncs(String workerName) {
+		try {
+			
+			Registry registry = LocateRegistry.getRegistry(m_nPort);
+			//String workerName = WORK_NODE_NAME + id; // worker1, worker2, etc
+			WorkerIFC dataSiteStub = (WorkerIFC) registry.lookup(workerName);
+			return dataSiteStub;
+		}
+		catch(RemoteException e) {
+			System.out.println("Remote Exception: " + e.getMessage());
+		}
+		catch(Exception e) {
+			System.out.println("Exception in getRequestorFuncs: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 
     /*
         rmi function calls overrided
@@ -275,8 +320,12 @@ public class WorkNode implements WorkerIFC, Runnable {
     }
 
     @Override
-    public void HelloWorker(String name) throws RemoteException{
-        System.out.println("Work Node Says Hello " + name);
+    public void SyncData(MyTransaction tran) throws RemoteException{
+        Iterator cmtItr = tran.m_candidates.entrySet().iterator();
+        while(cmtItr.hasNext()){
+            Map.Entry element = (Map.Entry)cmtItr.next();
+            MyDatabase.instance().write((String)element.getKey(), (Integer)element.getValue());
+        }
     }
 
     @Override
