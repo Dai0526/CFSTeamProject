@@ -273,5 +273,9 @@ public class WorkNode implements WorkerIFC, Runnable {
         System.out.println("Work Node Says Hello " + name);
     }
 
+    @Override
+    public void RollbackTransction(MyTransaction mt)throws RemoteException{
+        rollbackTransaction(mt);
+    }
 
 }
