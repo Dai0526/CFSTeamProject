@@ -276,6 +276,7 @@ public class WorkNode implements WorkerIFC, Runnable {
     @Override
     public void RollbackTransction(MyTransaction mt)throws RemoteException{
         rollbackTransaction(mt);
+        m_isBlocked = false;
     }
 
 }
