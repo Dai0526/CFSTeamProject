@@ -35,7 +35,9 @@ public class WorkNode implements WorkerIFC, Runnable {
     public String m_id;
     private String m_host;
     private int m_nPort;
+
     private ArrayList<MyTransaction> m_transList;
+    private int m_nIdx = 0;
     private MyDatabase m_dbm;
 
     private int m_nProcessed = 0;
@@ -76,7 +78,7 @@ public class WorkNode implements WorkerIFC, Runnable {
         long startTime = System.currentTimeMillis();
         try{
             int nTrans = m_transList.size();
-            int idx = 0;
+
             while(true){
                 synchronized(this){
                     if(m_nProcessed >= nTrans){
@@ -88,7 +90,7 @@ public class WorkNode implements WorkerIFC, Runnable {
                         blockAndWait();
                     }
 
-                    MyTransaction curr = m_transList.get(idx);
+                    MyTransaction curr = m_transList.get(m_nIdx);
                     m_leadInterface.HelloLead(m_name, curr.m_id);
                     //System.out.println(m_name + ": Start processing Transaction from " + curr);
                     m_log.log(m_name + ": Start processing Transaction from " + curr);
@@ -159,6 +161,7 @@ public class WorkNode implements WorkerIFC, Runnable {
         m_log.log("Release Lock for Transaction " + tras.m_id + NEWLINE);
         MyDatabase.instance().readAll(m_name);
         ++m_nProcessed;
+        ++m_nIdx;
         return true;
     }
 

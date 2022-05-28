@@ -14,12 +14,36 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class LeadNode implements LeaderIFC{
 
+    public enum SyncManagerType{
+        TWO_PHASE_LOCK(0),
+        TIMESTAMP(1),
+        OPTIMISTIC(2);
+
+        private final int value;
+
+        SyncManagerType(int val){
+            value = val;
+        }
+
+        public static SyncManagerType getValue(int value) {
+            for(SyncManagerType e : SyncManagerType.values()) {
+                if(e.value == value) {
+                    return e;
+                }
+            }
+                return SyncManagerType.TWO_PHASE_LOCK;// not found
+        }
+    };
+
     // main method
     public static void main(String[] args){
+
+        int syncMethod = Integer.parseInt(args[0]);
+
         try {
             m_log = new MyLog();
             m_log.init(LEAD_NODE_NAME);
-			LeadNode leader = new LeadNode(m_nPort);
+			LeadNode leader = new LeadNode(m_nPort, SyncManagerType.getValue(syncMethod));
 		}
 		catch (Exception e) {
 			System.out.println("Exception: " + e.getMessage());
@@ -34,6 +58,8 @@ public class LeadNode implements LeaderIFC{
     private static int m_nDeteInterval = DETECTION_INTERVAL_MS;
     public static String m_name = LEAD_NODE_NAME;
 
+    public SyncManagerType m_syncType;
+
     private int m_transactionCount = 0;
     private int m_nDeadLock = 0;
     private SyncManagerBase m_syncManager;
@@ -43,15 +69,26 @@ public class LeadNode implements LeaderIFC{
     private long m_totalTime;
     private HashMap<UUID, Long> m_timeTable = new HashMap<UUID, Long>();
 
-    public LeadNode(int port){
+    public LeadNode(int port, SyncManagerType type){
         m_nPort = port;
-
+        m_syncType = type;
         try{
             Registry reg = LocateRegistry.createRegistry(m_nPort);
             LeaderIFC leadIfc = (LeaderIFC)UnicastRemoteObject.exportObject(this, 0);
             reg.bind(LEAD_NODE_NAME, leadIfc);
-            m_syncManager = new TwoPhaseLockManager();
-            m_log.log("LeadNode Ready!" + NEWLINE);
+
+            switch(type){
+                case TIMESTAMP:
+                    m_syncManager = new TimeStampOrderingManager();
+                case OPTIMISTIC:
+                    m_syncManager = new OptimisticControlManager();
+                case TWO_PHASE_LOCK:
+                default:
+                    m_syncManager = new TwoPhaseLockManager();
+                    break;
+            }
+
+            m_log.log("LeadNode Ready with " + m_syncType.name() + NEWLINE);
 
         }catch(RemoteException re){
             System.out.println("Remote Exception: " + re.getMessage());
