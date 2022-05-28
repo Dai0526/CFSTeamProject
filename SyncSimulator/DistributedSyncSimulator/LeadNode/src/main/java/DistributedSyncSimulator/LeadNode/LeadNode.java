@@ -132,7 +132,7 @@ public class LeadNode implements LeaderIFC{
         long start = m_timeTable.get(transId);
         m_timeTable.remove(transId);
 
-        m_totalTime += (start - end);
+        m_totalTime += (end - start);
         ++m_nProcessed;
         m_log.log("Commited Transaction " + transId + " by " + workerName + NEWLINE);
         m_log.log(getStats());
