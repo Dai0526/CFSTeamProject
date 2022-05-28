@@ -63,9 +63,7 @@ public class WorkNode implements WorkerIFC, Runnable {
             WorkerIFC workerInterface = (WorkerIFC) UnicastRemoteObject.exportObject(this, 0);
             reg.bind(m_name, workerInterface);
 
-            //System.out.println("WorkNode " + m_name + " is running");
             m_log.log("WorkNode " + m_name + " is running" + NEWLINE);
-
 
         }catch(Exception e){
             System.out.println("Exception: " + e.getMessage());
