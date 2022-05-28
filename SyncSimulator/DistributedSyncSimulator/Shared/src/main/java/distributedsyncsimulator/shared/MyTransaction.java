@@ -42,6 +42,10 @@ public class MyTransaction implements Serializable {
         }
     }
 
+    public void resetTimestamp(){
+        m_id = UUID.randomUUID();
+    }
+
     public void execSingleAct(MyAction act) throws Exception {
         MyLog.instance().log("Execute Act " + act.toString() + NEWLINE);
         String key = act.m_target;

@@ -8,4 +8,5 @@ public interface WorkerIFC extends Remote {
     public void abortTransaction() throws RemoteException;
     public void HelloWorker(String name) throws RemoteException;
     public void RollbackTransction(MyTransaction mt)throws RemoteException;
+    public void DelayTransction(MyTransaction mt)throws RemoteException;
 }

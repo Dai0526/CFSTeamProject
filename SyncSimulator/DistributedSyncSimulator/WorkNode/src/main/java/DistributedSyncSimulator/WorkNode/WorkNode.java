@@ -130,9 +130,7 @@ public class WorkNode implements WorkerIFC, Runnable {
 		return next;
     }
 
-    private void rollbackTransaction(MyTransaction mt){
-        m_transList.addFirst(mt);
-    }
+
 
     private boolean checkActionStatus(MyAction act) throws Exception {
         boolean canProcess = false;
@@ -250,6 +248,14 @@ public class WorkNode implements WorkerIFC, Runnable {
         }
     }
 
+    private void rollbackTransaction(MyTransaction mt, boolean toHead){
+        if(toHead){
+            m_transList.addFirst(mt);
+        }else{
+            mt.resetTimestamp();
+            m_transList.add(mt);
+        }
+    }
 
     /*
         rmi function calls overrided
@@ -275,8 +281,13 @@ public class WorkNode implements WorkerIFC, Runnable {
 
     @Override
     public void RollbackTransction(MyTransaction mt)throws RemoteException{
-        rollbackTransaction(mt);
+        rollbackTransaction(mt, false);
         m_isBlocked = false;
     }
 
+    @Override
+    public void DelayTransction(MyTransaction mt)throws RemoteException{
+        rollbackTransaction(mt, true);
+        m_isBlocked = false;
+    }
 }
