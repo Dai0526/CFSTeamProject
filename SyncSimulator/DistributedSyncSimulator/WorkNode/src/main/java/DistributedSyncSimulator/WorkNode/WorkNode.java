@@ -36,8 +36,7 @@ public class WorkNode implements WorkerIFC, Runnable {
     private String m_host;
     private int m_nPort;
 
-    private ArrayList<MyTransaction> m_transList;
-    private int m_nIdx = 0;
+    private Deque<MyTransaction> m_transList;
     private MyDatabase m_dbm;
 
     private int m_nProcessed = 0;
@@ -79,7 +78,10 @@ public class WorkNode implements WorkerIFC, Runnable {
 
             while(true){
                 synchronized(this){
-                    if(m_nProcessed >= nTrans){
+                    
+                    MyTransaction curr = getNextTransaction();
+
+                    if(curr == null){
                         long endTime = System.currentTimeMillis();
                         System.out.println(m_name + ": No new transactions. Blocked and wait... ");
                         System.out.println(m_name + ": Processed " + m_nProcessed + " transactions");
@@ -88,7 +90,6 @@ public class WorkNode implements WorkerIFC, Runnable {
                         blockAndWait();
                     }
 
-                    MyTransaction curr = m_transList.get(m_nIdx);
                     m_leadInterface.HelloLead(m_name, curr.m_id);
                     //System.out.println(m_name + ": Start processing Transaction from " + curr);
                     m_log.log(m_name + ": Start processing Transaction from " + curr);
@@ -116,6 +117,21 @@ public class WorkNode implements WorkerIFC, Runnable {
         System.out.println(m_name + ": Processed " + m_nProcessed + " transactions");
         System.out.println(m_name + ": Commited " + m_nProcessed + " transactions");
         System.out.println(m_name + ": spent " + (endTime - startTime) + " mSecs");
+    }
+
+
+    private MyTransaction getNextTransaction(){
+		if(m_transList.size() == 0) {
+            return null;
+		}
+		
+        MyTransaction next = m_transList.getFirst();
+        m_transList.removeFirst();
+		return next;
+    }
+
+    private void rollbackTransaction(MyTransaction mt){
+        m_transList.addFirst(mt);
     }
 
     private boolean checkActionStatus(MyAction act) throws Exception {
@@ -159,12 +175,11 @@ public class WorkNode implements WorkerIFC, Runnable {
         m_log.log("Release Lock for Transaction " + tras.m_id + NEWLINE);
         MyDatabase.instance().readAll(m_name);
         ++m_nProcessed;
-        ++m_nIdx;
         return true;
     }
 
     private void getTransactionSequence(String path) throws Exception {
-        m_transList = new ArrayList<MyTransaction>();
+        m_transList = new LinkedList<MyTransaction>();
 
         try(BufferedReader br = new BufferedReader(new FileReader(path))) {
             for(String line; (line = br.readLine()) != null; ) {
