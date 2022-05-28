@@ -79,7 +79,7 @@ public class WorkNode implements WorkerIFC, Runnable {
             int idx = 0;
             while(true){
                 synchronized(this){
-                    if(idx >= nTrans){
+                    if(m_nProcessed >= nTrans){
                         long endTime = System.currentTimeMillis();
                         System.out.println(m_name + ": No new transactions. Blocked and wait... ");
                         System.out.println(m_name + ": Processed " + m_nProcessed + " transactions");
@@ -103,8 +103,6 @@ public class WorkNode implements WorkerIFC, Runnable {
                     
                     checkTransactionStatus(curr);
                 }
-                ++m_nProcessed;
-                ++idx;
             }
         }catch(RemoteException re){
             System.out.println(m_name + ": RemoteException: " + re.getMessage());
@@ -158,7 +156,7 @@ public class WorkNode implements WorkerIFC, Runnable {
         m_leadInterface.releaseLock(tras);
         m_log.log("Release Lock for Transaction " + tras.m_id + NEWLINE);
         MyDatabase.instance().readAll(m_name);
-
+        ++m_nProcessed;
         return true;
     }
 
