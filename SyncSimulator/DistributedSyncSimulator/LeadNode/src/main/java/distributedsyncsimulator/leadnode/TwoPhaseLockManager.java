@@ -218,23 +218,7 @@ public class TwoPhaseLockManager extends SyncManagerBase {
         // Not Implemented
     }
 
-    public MyLock getLock(UUID transId, String target){
-        //System.out.println("DEBUG - getLock to looking for lock in records");
-        ArrayList<MyLock> lks = m_locks.get(target);
-        if(lks == null){
-            //System.out.println("DEBUG - not found, reutrn null");
-            return null;
-        }
 
-        for(MyLock lk : lks){
-            if(lk.m_tansId.compareTo(transId) == 0){
-                //System.out.println("DEBUG - found, return it " + lk);
-                return lk;
-            }
-        }
-        //System.out.println("DEBUG - not found, reutrn null");
-        return null;
-    }
 
 
     public boolean setLock(MyLock lock){
