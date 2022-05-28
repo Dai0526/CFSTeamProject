@@ -6,15 +6,14 @@ import distributedsyncsimulator.utilities.*;
 import distributedsyncsimulator.shared.*;
 import static distributedsyncsimulator.utilities.Constants.*;
 
-public class TwoPhaseLockManager{
+public class TwoPhaseLockManager extends SyncManagerBase {
 
-    private HashMap<String, ArrayList<MyLock>> m_locks;
-    private HashMap<String, ArrayList<MyAction>> m_acts;
+    // private HashMap<String, ArrayList<MyLock>> m_locks;
+    // private HashMap<String, ArrayList<MyAction>> m_acts;
 
 
     public TwoPhaseLockManager(){
-        m_locks = new HashMap<String, ArrayList<MyLock>>();
-        m_acts = new HashMap<String, ArrayList<MyAction>>();
+        super();
     }
 
 
@@ -96,6 +95,37 @@ public class TwoPhaseLockManager{
         return workers;
     }
 
+    public boolean acquireLocks(MyAction act){
+
+        MyLog.instance().log("Start Acqure Lock for act = " + act + NEWLINE);
+
+        boolean stats = false;
+        String target = act.m_target;
+
+        MyLock lk = act.getLock();
+        if(checkLock(lk)){
+            MyLock prev = getLock(act.m_tanscationId, target);
+            if(prev == null){
+                MyLog.instance().log("\tNo prev lock, set new lock" + NEWLINE);
+                setLock(lk);
+            }else{
+                MyLog.instance().log("\tfind prev lock, updated Lock" + NEWLINE);
+                prev.updateLock(lk.m_type);  
+            }
+            stats = true;
+
+        }else{
+            // add new act to queues
+            MyLog.instance().log("\tPut lock to waiting queue" + NEWLINE);
+            if(!m_acts.containsKey(target)){
+                m_acts.put(target, new ArrayList<MyAction>());
+            }
+            m_acts.get(target).add(act);
+            stats = false;
+        }
+        
+        return stats;
+    }
 
     private MyAction getHeadAction(String target){
         // System.out.println("DEBUG - Start getHeadAction " + target);
@@ -123,7 +153,6 @@ public class TwoPhaseLockManager{
         
         return act;
     }
-
 
     /*
         Check locks to be acquired
@@ -171,38 +200,6 @@ public class TwoPhaseLockManager{
         //System.out.println("DEBUG - Compare Lock return true");
         MyLog.instance().log("\tLock is acquirable" + NEWLINE);
         return true;
-    }
-
-    public boolean acquireLocks(MyAction act){
-
-        MyLog.instance().log("Start Acqure Lock for act = " + act + NEWLINE);
-
-        boolean stats = false;
-        String target = act.m_target;
-
-        MyLock lk = act.getLock();
-        if(checkLock(lk)){
-            MyLock prev = getLock(act.m_tanscationId, target);
-            if(prev == null){
-                MyLog.instance().log("\tNo prev lock, set new lock" + NEWLINE);
-                setLock(lk);
-            }else{
-                MyLog.instance().log("\tfind prev lock, updated Lock" + NEWLINE);
-                prev.updateLock(lk.m_type);  
-            }
-            stats = true;
-
-        }else{
-            // add new act to queues
-            MyLog.instance().log("\tPut lock to waiting queue" + NEWLINE);
-            if(!m_acts.containsKey(target)){
-                m_acts.put(target, new ArrayList<MyAction>());
-            }
-            m_acts.get(target).add(act);
-            stats = false;
-        }
-        
-        return stats;
     }
 
     public ArrayList<String> abort(MyTransaction trans){
