@@ -48,15 +48,20 @@ public class WorkNode implements WorkerIFC, Runnable {
 
     public WorkNode(String ip, int port, String id, String trasFiles){
         try{
-            m_host = ip;
-            m_nPort = port;
-            m_id = id;
+
             m_name = String.format("%s%s", WORK_NODE_NAME, id);
-            
-            m_config = new MyConfiguration();
 
             m_log = new MyLog();
             m_log.init(m_name);
+
+            m_dbm.instance();
+
+            m_host = ip;
+            m_nPort = port;
+            m_id = id;
+  
+            
+            m_config = new MyConfiguration();
 
             getTransactionSequence(trasFiles);
 
@@ -67,7 +72,7 @@ public class WorkNode implements WorkerIFC, Runnable {
             reg.bind(m_name, workerInterface);
 
             m_log.log("WorkNode " + m_name + " is running" + NEWLINE);
-
+            Thread.sleep(RUN_INTERVAL_MS);
         }catch(Exception e){
             System.out.println("Exception: " + e.getMessage());
         }
@@ -77,13 +82,12 @@ public class WorkNode implements WorkerIFC, Runnable {
     @Override
     public void run(){
         long startTime = System.currentTimeMillis();
+       
         try{
             int nTrans = m_transList.size();
-
             while(true){
-                Thread.Sleep(DETECTION_INTERVAL_MS);
+
                 synchronized(this){
-                    
                     MyTransaction curr = getNextTransaction();
 
                     if(curr == null){
@@ -246,7 +250,7 @@ public class WorkNode implements WorkerIFC, Runnable {
             m_isBlocked = true;
             m_log.log(m_name + " block and wait... " + NEWLINE);
             while(m_isBlocked){
-                Thread.sleep(2 * DETECTION_INTERVAL_MS);
+                Thread.sleep(DETECTION_INTERVAL_MS);
             }
         }catch(Exception e){
             System.out.println(m_name + ": throw exception: " + e.getMessage());
@@ -325,6 +329,7 @@ public class WorkNode implements WorkerIFC, Runnable {
         while(cmtItr.hasNext()){
             Map.Entry element = (Map.Entry)cmtItr.next();
             MyDatabase.instance().write((String)element.getKey(), (Integer)element.getValue());
+            MyDatabase.instance().readAll(m_name);
         }
     }
 
