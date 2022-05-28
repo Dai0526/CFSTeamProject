@@ -36,7 +36,7 @@ public class LeadNode implements LeaderIFC{
 
     private int m_transactionCount = 0;
     private int m_nDeadLock = 0;
-    private TwoPhaseLockManager m_2plMgr;
+    private SyncManagerBase m_syncManager;
     private static MyLog m_log;
 
     public LeadNode(int port){
@@ -46,7 +46,7 @@ public class LeadNode implements LeaderIFC{
             Registry reg = LocateRegistry.createRegistry(m_nPort);
             LeaderIFC leadIfc = (LeaderIFC)UnicastRemoteObject.exportObject(this, 0);
             reg.bind(LEAD_NODE_NAME, leadIfc);
-            m_2plMgr = new TwoPhaseLockManager();
+            m_syncManager = new TwoPhaseLockManager();
             m_log.log("LeadNode Ready!" + NEWLINE);
 
         }catch(RemoteException re){
@@ -84,7 +84,7 @@ public class LeadNode implements LeaderIFC{
         
         try{
             //System.out.println(m_name + ": acquire lock for act " + act);
-            status = m_2plMgr.acquireLocks(act);
+            status = m_syncManager.acquireLocks(act);
         }catch(Exception ex){
             System.out.println(m_name + ": acquire lock exception " + ex.getMessage());
             ex.printStackTrace();
@@ -98,7 +98,7 @@ public class LeadNode implements LeaderIFC{
         m_log.log("ReleaseLock for " + tran + NEWLINE);
         
         try{
-            List<String> workers = m_2plMgr.releaseLocks(tran);
+            List<String> workers = m_syncManager.releaseLocks(tran);
             for(String name : workers){
                 WorkerIFC wifc = getRequestorFuncs(name);
                 wifc.unblock();
