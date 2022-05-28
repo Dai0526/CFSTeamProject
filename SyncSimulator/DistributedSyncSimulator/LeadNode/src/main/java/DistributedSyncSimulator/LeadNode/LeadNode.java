@@ -6,7 +6,7 @@ import distributedsyncsimulator.shared.*;
 import static distributedsyncsimulator.utilities.Constants.*;
 
 import java.util.*;
-
+import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -39,6 +39,10 @@ public class LeadNode implements LeaderIFC{
     private SyncManagerBase m_syncManager;
     private static MyLog m_log;
 
+    private int m_nProcessed = 0;
+    private long m_totalTime;
+    private HashMap<UUID, Long> m_timeTable = new HashMap<UUID, Long>();
+
     public LeadNode(int port){
         m_nPort = port;
 
@@ -54,6 +58,8 @@ public class LeadNode implements LeaderIFC{
         }catch(Exception e){
             System.out.println("Exception: " + e.getMessage());
         }
+
+        m_log.log(getStats());
     }
 
 
@@ -79,6 +85,7 @@ public class LeadNode implements LeaderIFC{
 
 
     // rmi stub function calls
+    @Override
     public synchronized boolean acquireLock(MyAction act) throws RemoteException{
         boolean status = false;
         
@@ -94,6 +101,7 @@ public class LeadNode implements LeaderIFC{
         return status;
     }
 
+    @Override
     public synchronized void releaseLock(MyTransaction tran) throws RemoteException{
         m_log.log("ReleaseLock for " + tran + NEWLINE);
         
@@ -111,9 +119,32 @@ public class LeadNode implements LeaderIFC{
     }
 
     // test
-    public synchronized void HelloLead(String workerName) throws RemoteException{
-        System.out.println("Lead Node Says Hello " + workerName);
-        WorkerIFC wifc = getRequestorFuncs(workerName);
-        wifc.HelloWorker("LeadNode");
+    @Override
+    public synchronized void HelloLead(String workerName, UUID transId) throws RemoteException{
+        long start = System.currentTimeMillis();
+        m_timeTable.put(transId, start);
+        m_log.log("Get Transaction " + transId + " from " + workerName + NEWLINE);
+    }
+
+    @Override
+    public synchronized void ByeLead(String workerName, UUID transId) throws RemoteException{
+        long end = System.currentTimeMillis();
+        long start = m_timeTable.get(transId);
+        m_timeTable.remove(transId);
+
+        m_totalTime += (start - end);
+        ++m_nProcessed;
+        m_log.log("Commited Transaction " + transId + " by " + workerName + NEWLINE);
+        m_log.log(getStats());
+    }
+
+    private String getStats(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(NEWLINE + "======================Statistic======================" + NEWLINE);
+        sb.append("\t\tTotal Transaction Processed: " + m_nProcessed + NEWLINE);
+        sb.append("\t\tTotal time spent (mSecs): " + m_totalTime + NEWLINE);
+        sb.append("\t\tAverage Process Speed: " + (m_totalTime / (double)m_nProcessed) + NEWLINE);
+        sb.append(NEWLINE + "=====================================================" + NEWLINE);
+        return sb.toString();
     }
 }

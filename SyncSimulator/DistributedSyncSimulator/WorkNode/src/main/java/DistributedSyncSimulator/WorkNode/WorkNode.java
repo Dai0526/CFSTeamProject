@@ -89,6 +89,7 @@ public class WorkNode implements WorkerIFC, Runnable {
                     }
 
                     MyTransaction curr = m_transList.get(idx);
+                    m_leadInterface.HelloLead(m_name, curr.m_id);
                     //System.out.println(m_name + ": Start processing Transaction from " + curr);
                     m_log.log(m_name + ": Start processing Transaction from " + curr);
                     for(MyAction act : curr.m_actions){
@@ -152,6 +153,7 @@ public class WorkNode implements WorkerIFC, Runnable {
         }
 
         tras.commit();
+        m_leadInterface.ByeLead(m_name, tras.m_id);
         ++m_nCommited;
         m_leadInterface.releaseLock(tras);
         m_log.log("Release Lock for Transaction " + tras.m_id + NEWLINE);
