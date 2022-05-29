@@ -96,7 +96,7 @@ public class TimeStampOrderingManager extends SyncManagerBase {
 
     @Override
     public LockStatus acquireLocks(MyAction act){
-        MyLog.instance().log("Start Acqure Lock for act = " + act + NEWLINE);
+        MyLog.instance().log("Start Acquire Lock for act = " + act + NEWLINE);
 
 
         String target = act.m_target;
@@ -113,12 +113,6 @@ public class TimeStampOrderingManager extends SyncManagerBase {
                 MyLog.instance().log("\tfind prev lock, updated Lock" + NEWLINE);
                 prev.updateLock(lk.m_type);  
             }
-
-        }
-        else if(status.compareTo(LockStatus.IGNORE) == 0){
-
-        }
-        else if(status.compareTo(LockStatus.ROLLBACK) == 0){
 
         }
         else{
@@ -167,7 +161,7 @@ public class TimeStampOrderingManager extends SyncManagerBase {
                     }
 
                     // if there is a write lock on it, and write lock is older than read timestamp
-                    if(curr.m_type.compareTo(MyLock.LockType.WRITE) == 0 && (curr.m_timestamp < act.m_transTimestamp)){
+                    if(curr.m_type.compareTo(MyLock.LockType.WRITE) == 0 && (curr.m_timestamp > act.m_transTimestamp)){
                         // rollback
                         MyLog.instance().log("\tRollback (Dirty Read). There is a WRITE lock at the item which is older than current Transaction's timestamp" + NEWLINE);
                         return LockStatus.ROLLBACK;
@@ -182,14 +176,14 @@ public class TimeStampOrderingManager extends SyncManagerBase {
                     }
 
                     // if others aleady read it, you cannot change it as well
-                    if(curr.m_type.compareTo(MyLock.LockType.READ) == 0 && (curr.m_timestamp < act.m_transTimestamp)){
+                    if(curr.m_type.compareTo(MyLock.LockType.READ) == 0 && (curr.m_timestamp > act.m_transTimestamp)){
                         // rollback
                         MyLog.instance().log("\tRollback (Dirty Read). There is a WRITE lock at the item which is older than current Transaction's timestamp" + NEWLINE);
                         return LockStatus.ROLLBACK;
                     }
 
                     // Thomas Write Rule
-                    if(curr.m_type.compareTo(MyLock.LockType.WRITE) == 0 && (curr.m_timestamp < act.m_transTimestamp)){
+                    if(curr.m_type.compareTo(MyLock.LockType.WRITE) == 0 && (curr.m_timestamp > act.m_transTimestamp)){
                         // rollback
                         MyLog.instance().log("\tThomas Write Rule. Ignore and Continue" + NEWLINE);
                         return LockStatus.IGNORE;

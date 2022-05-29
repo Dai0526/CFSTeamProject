@@ -73,6 +73,7 @@ public class WorkNode implements WorkerIFC, Runnable {
 
             m_log.log("WorkNode " + m_name + " is running" + NEWLINE);
             Thread.sleep(RUN_INTERVAL_MS);
+
         }catch(Exception e){
             System.out.println("Exception: " + e.getMessage());
         }
@@ -92,10 +93,10 @@ public class WorkNode implements WorkerIFC, Runnable {
 
                     if(curr == null){
                         long endTime = System.currentTimeMillis();
-                        System.out.println(m_name + ": No new transactions. Blocked and wait... ");
-                        System.out.println(m_name + ": Processed " + m_nProcessed + " transactions");
-                        System.out.println(m_name + ": Commited " + m_nProcessed + " transactions");
-                        System.out.println(m_name + ": spent " + (endTime - startTime) + " mSecs");
+                        m_log.log(m_name + ": No new transactions. Blocked and wait... " + NEWLINE);
+                        m_log.log(m_name + ": Processed " + m_nProcessed + " transactions" + NEWLINE);
+                        m_log.log(m_name + ": Commited " + m_nProcessed + " transactions" + NEWLINE);
+                        m_log.log(m_name + ": spent " + (endTime - startTime) + " mSecs" + NEWLINE);
                         blockAndWait();
                     }
 
@@ -107,8 +108,22 @@ public class WorkNode implements WorkerIFC, Runnable {
                             break;
                         }
 
-                        if(checkActionStatus(act) == true){
-                            curr.execSingleAct(act);
+                        ActionStatus actStatus = checkActionStatus(act);
+
+                        switch(actStatus){
+                            case PERMITTED:
+                                curr.execSingleAct(act);
+                                break;
+                            case ROLLBACK:
+                                rollbackTransaction(curr, true);
+                                break;
+                            case ABORT:
+                                abortTransaction(curr);
+                                break;
+                            case IGNORE:
+                                continue;
+                            default:
+                                break;
                         }
                     }
                     
@@ -123,9 +138,9 @@ public class WorkNode implements WorkerIFC, Runnable {
             e.printStackTrace();
         }
         long endTime = System.currentTimeMillis();
-        System.out.println(m_name + ": Processed " + m_nProcessed + " transactions");
-        System.out.println(m_name + ": Commited " + m_nProcessed + " transactions");
-        System.out.println(m_name + ": spent " + (endTime - startTime) + " mSecs");
+        m_log.log(m_name + ": Processed " + m_nProcessed + " transactions" + NEWLINE);
+        m_log.log(m_name + ": Commited " + m_nProcessed + " transactions" + NEWLINE);
+        m_log.log(m_name + ": spent " + (endTime - startTime) + " mSecs" + NEWLINE);
     }
 
 
@@ -141,30 +156,39 @@ public class WorkNode implements WorkerIFC, Runnable {
 
 
 
-    private boolean checkActionStatus(MyAction act) throws Exception {
-        boolean canProcess = false;
+    private ActionStatus checkActionStatus(MyAction act) throws Exception {
+        
+        ActionStatus actStatus = ActionStatus.REJECT;
         switch(act.m_actType){
             case READ:
             case WRITE:
                 LockStatus status = m_leadInterface.acquireLock(act);
+                 m_log.log("Action " + act + "'s lock status = " + status + NEWLINE);
                 if(status.compareTo(LockStatus.REJECT) == 0){
                     blockAndWait();
-                }
 
-                if(m_requestAbort){
-                    break;
+                    if(m_requestAbort){
+                        return ActionStatus.REJECT; // resume due to abort
+                    }
+
+                }else if(status.compareTo(LockStatus.ROLLBACK) == 0){
+                    actStatus = ActionStatus.ROLLBACK;
+                }else if(status.compareTo(LockStatus.ABORT) == 0){
+                    actStatus = ActionStatus.ABORT;
+                }else{
+                    actStatus = ActionStatus.PERMITTED;
                 }
-                canProcess = true;
+                
                 break;
             case MINUS:
             case ADD:
-                canProcess = true;
+                actStatus = ActionStatus.PERMITTED;
                 break;
             default:
                 break;
         }
 
-        return canProcess;
+        return actStatus;
     }
 
     private boolean checkTransactionStatus(MyTransaction tras) throws RemoteException {
@@ -259,14 +283,23 @@ public class WorkNode implements WorkerIFC, Runnable {
         }
     }
 
-    private void rollbackTransaction(MyTransaction mt, boolean toHead){
+    private synchronized void rollbackTransaction(MyTransaction mt, boolean toHead) throws RemoteException {
         if(toHead){
             m_transList.addFirst(mt);
         }else{
             mt.resetTimestamp();
             m_transList.add(mt);
         }
+
+        m_leadInterface.RollbackTransction(mt);
+
     }
+    public synchronized void abortTransaction(MyTransaction mt) throws RemoteException {
+		m_requestAbort = true;
+        m_log.log(m_name + " transaction aborted " + NEWLINE);
+        m_leadInterface.AbortTransaction(mt);
+        unblock();
+	}
 
     private void broadCastCommit(MyTransaction tran) throws RemoteException{
         HashMap<String, String> workers = m_config.getWorkers();
@@ -312,13 +345,6 @@ public class WorkNode implements WorkerIFC, Runnable {
     */
 
     @Override
-	public void abortTransaction() throws RemoteException {
-		m_requestAbort = true;
-        m_log.log(m_name + " transaction aborted " + NEWLINE);
-        unblock();
-	}
-
-    @Override
     public void unblock(){
         m_isBlocked = false;
         m_log.log(m_name + " unblocked" + NEWLINE);
@@ -334,15 +360,5 @@ public class WorkNode implements WorkerIFC, Runnable {
         }
     }
 
-    @Override
-    public void RollbackTransction(MyTransaction mt)throws RemoteException{
-        rollbackTransaction(mt, false);
-        m_isBlocked = false;
-    }
 
-    @Override
-    public void DelayTransction(MyTransaction mt)throws RemoteException{
-        rollbackTransaction(mt, true);
-        m_isBlocked = false;
-    }
 }

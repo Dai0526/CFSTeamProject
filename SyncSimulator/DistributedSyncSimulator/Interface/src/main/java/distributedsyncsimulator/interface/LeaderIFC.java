@@ -15,4 +15,8 @@ public interface LeaderIFC extends Remote{
     public void HelloLead(String workerName, UUID transId) throws RemoteException;
 
     public void ByeLead(String workerName, UUID transId) throws RemoteException;
+
+    public void RollbackTransction(MyTransaction mt) throws RemoteException;
+    
+    public void AbortTransaction(MyTransaction mt) throws RemoteException;
 }

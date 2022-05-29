@@ -31,7 +31,7 @@ public class LeadNode implements LeaderIFC{
                     return e;
                 }
             }
-                return SyncManagerType.TWO_PHASE_LOCK;// not found
+            return null;// not found
         }
     };
 
@@ -39,7 +39,7 @@ public class LeadNode implements LeaderIFC{
     public static void main(String[] args){
 
         int syncMethod = Integer.parseInt(args[0]);
-
+        System.out.println("Read SyncMethod From Argument: " + SyncManagerType.getValue(syncMethod));
         try {
 			LeadNode leader = new LeadNode(m_nPort, SyncManagerType.getValue(syncMethod));
 		}
@@ -65,6 +65,8 @@ public class LeadNode implements LeaderIFC{
     private MyConfiguration m_config;
 
     private int m_nProcessed = 0;
+    private int m_nRollbacked = 0;
+    private int m_nAborted = 0;
     private long m_totalTime;
     private HashMap<UUID, Long> m_timeTable = new HashMap<UUID, Long>();
 
@@ -72,20 +74,22 @@ public class LeadNode implements LeaderIFC{
         m_nPort = port;
         m_syncType = type;
         try{
+            
+            m_log = new MyLog();
+            m_log.init(LEAD_NODE_NAME);
+            m_config = new MyConfiguration();
+
             Registry reg = LocateRegistry.createRegistry(m_nPort);
             LeaderIFC leadIfc = (LeaderIFC)UnicastRemoteObject.exportObject(this, 0);
             reg.bind(LEAD_NODE_NAME, leadIfc);
 
-            m_log = new MyLog();
-            m_log.init(LEAD_NODE_NAME);
-
-            m_config = new MyConfiguration();
-
-            switch(type){
+            switch(m_syncType){
                 case TIMESTAMP:
                     m_syncManager = new TimeStampOrderingManager();
+                    break;
                 case SNAPSHOT_ISOLATION:
                     m_syncManager = new SanpshotIsolationManager();
+                    break;
                 case TWO_PHASE_LOCK:
                 default:
                     m_syncManager = new TwoPhaseLockManager();
@@ -129,7 +133,6 @@ public class LeadNode implements LeaderIFC{
     @Override
     public synchronized LockStatus acquireLock(MyAction act) throws RemoteException{
         LockStatus status = LockStatus.REJECT;
-        
         try{
             //System.out.println(m_name + ": acquire lock for act " + act);
             status = m_syncManager.acquireLocks(act);
@@ -151,7 +154,7 @@ public class LeadNode implements LeaderIFC{
             for(String name : workers){
                 WorkerIFC wifc = getRequestorFuncs(name);
                 wifc.unblock();
-                m_log.log(name + " 's log released" + NEWLINE);
+                m_log.log(name + " 's lock released" + NEWLINE);
             }
         }catch(Exception ex){
             System.out.println(m_name + ": release lock exception " + ex.getMessage());
@@ -179,11 +182,39 @@ public class LeadNode implements LeaderIFC{
         m_log.log(getStats());
     }
 
+    @Override
+    public synchronized void RollbackTransction(MyTransaction mt) throws RemoteException{
+        releaseLock(mt);
+        long end = System.currentTimeMillis();
+        long start = m_timeTable.get(mt.m_id);
+
+        m_totalTime += (end - start);
+        
+        ++m_nRollbacked;
+        m_log.log("Rollback Transaction " + mt.m_id + " by " + mt.m_workName + NEWLINE);
+        m_log.log(getStats());
+    }
+
+    @Override
+    public synchronized void AbortTransaction(MyTransaction mt) throws RemoteException{
+        releaseLock(mt);
+        long end = System.currentTimeMillis();
+        long start = m_timeTable.get(mt.m_id);
+        m_timeTable.remove(mt.m_id);
+        m_totalTime += (end - start);
+        ++m_nAborted;
+        ++m_nProcessed;
+        m_log.log("Abort Transaction " + mt.m_id + " by " + mt.m_workName + NEWLINE);
+        m_log.log(getStats());
+    }
+
     private String getStats(){
         StringBuilder sb = new StringBuilder();
         sb.append(NEWLINE + "======================Statistic======================" + NEWLINE);
         sb.append("\t\tTotal Transaction Processed: " + m_nProcessed + NEWLINE);
         sb.append("\t\tTotal time spent (mSecs): " + m_totalTime + NEWLINE);
+        sb.append("\t\tTotal Aborted: " + m_nAborted + NEWLINE);
+        sb.append("\t\tTotal Rollbacked: " + m_nRollbacked + NEWLINE);
         sb.append("\t\tAverage Process Speed: " + (m_totalTime / (double)m_nProcessed) + NEWLINE);
         sb.append(NEWLINE + "=====================================================" + NEWLINE);
         return sb.toString();
