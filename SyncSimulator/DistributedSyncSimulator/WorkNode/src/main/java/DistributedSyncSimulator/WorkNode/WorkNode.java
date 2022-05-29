@@ -146,8 +146,8 @@ public class WorkNode implements WorkerIFC, Runnable {
         switch(act.m_actType){
             case READ:
             case WRITE:
-                boolean status = m_leadInterface.acquireLock(act);
-                if(status == false){
+                LockStatus status = m_leadInterface.acquireLock(act);
+                if(status.compareTo(LockStatus.REJECT) == 0){
                     blockAndWait();
                 }
 
@@ -207,6 +207,7 @@ public class WorkNode implements WorkerIFC, Runnable {
 
                 for(String s : segs){
                     MyAction act = new MyAction(mt.m_id, mt.m_workName);
+                    act.setTransTimestamp(mt.m_timeCreated);
                     char type = s.charAt(0);
                     String[] items = s.split("-");
                     switch(type){

@@ -1,5 +1,5 @@
 package distributedsyncsimulator.shared;
-
+import distributedsyncsimulator.utilities.*;
 import java.util.*;
 
 public class MyLock{
@@ -14,16 +14,24 @@ public class MyLock{
     public String m_target;
     public LockType m_type = LockType.UNKNOWN;
     public UUID m_tansId;
+    public long m_timestamp;
 
     public MyLock(UUID tid, String target){
         this.m_target = target;
         this.m_tansId = tid;
+
+        m_timestamp = MyUtils.getTimestamp();
+		
     }
 
     public MyLock(LockType t, UUID tid, String target){
         this.m_type = t;
         this.m_target = target;
         this.m_tansId = tid;
+    }
+
+    public void setTimestamp(long time){
+        m_timestamp = time;
     }
 
     public void setLock(LockType type){

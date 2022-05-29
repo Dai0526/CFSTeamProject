@@ -127,8 +127,8 @@ public class LeadNode implements LeaderIFC{
 
     // rmi stub function calls
     @Override
-    public synchronized boolean acquireLock(MyAction act) throws RemoteException{
-        boolean status = false;
+    public synchronized LockStatus acquireLock(MyAction act) throws RemoteException{
+        LockStatus status = LockStatus.REJECT;
         
         try{
             //System.out.println(m_name + ": acquire lock for act " + act);
@@ -138,7 +138,7 @@ public class LeadNode implements LeaderIFC{
             ex.printStackTrace();
         }
         //System.out.println(m_name + ": acquire lock status " + status);
-        m_log.log("Acquire lock for act " + act + ", Satus = " + status + NEWLINE);
+        m_log.log("Acquire lock for act " + act + ", Satus = " + status.name() + NEWLINE);
         return status;
     }
 

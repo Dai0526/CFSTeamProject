@@ -95,11 +95,11 @@ public class TwoPhaseLockManager extends SyncManagerBase {
         return workers;
     }
 
-    public boolean acquireLocks(MyAction act){
+    public LockStatus acquireLocks(MyAction act){
 
         MyLog.instance().log("Start Acqure Lock for act = " + act + NEWLINE);
 
-        boolean stats = false;
+        LockStatus stats = LockStatus.REJECT;
         String target = act.m_target;
 
         MyLock lk = act.getLock();
@@ -112,7 +112,7 @@ public class TwoPhaseLockManager extends SyncManagerBase {
                 MyLog.instance().log("\tfind prev lock, updated Lock" + NEWLINE);
                 prev.updateLock(lk.m_type);  
             }
-            stats = true;
+            stats = LockStatus.PERMITTED;
 
         }else{
             // add new act to queues
@@ -121,7 +121,7 @@ public class TwoPhaseLockManager extends SyncManagerBase {
                 m_acts.put(target, new ArrayList<MyAction>());
             }
             m_acts.get(target).add(act);
-            stats = false;
+            stats = LockStatus.REJECT;
         }
         
         return stats;
@@ -218,10 +218,36 @@ public class TwoPhaseLockManager extends SyncManagerBase {
         // Not Implemented
     }
 
+    public MyLock getLock(UUID transId, String target){
+        //System.out.println("DEBUG - getLock to looking for lock in records");
+        ArrayList<MyLock> lks = m_locks.get(target);
+        if(lks == null){
+            //System.out.println("DEBUG - not found, reutrn null");
+            return null;
+        }
+
+        for(MyLock lk : lks){
+            if(lk.m_tansId.compareTo(transId) == 0){
+                //System.out.println("DEBUG - found, return it " + lk);
+                return lk;
+            }
+        }
+        //System.out.println("DEBUG - not found, reutrn null");
+        return null;
+    }
 
 
+    public boolean setLock(MyLock lock){
+        //System.out.println("DEBUG - Start set lock");
+        String target = lock.m_target;
 
-
+        if(!m_locks.containsKey(target)) {
+            //System.out.println("DEBUG - Not found, add a new one");
+            m_locks.put(target, new ArrayList<MyLock>());
+        }
+        //System.out.println("DEBUG - adding lock to map, lock = " + lock);
+	    return m_locks.get(target).add(lock);
+    }
 
 
 }

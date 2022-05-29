@@ -9,6 +9,7 @@ import static distributedsyncsimulator.utilities.Constants.*;
 import java.util.*;
 public abstract class SyncManagerBase {
 
+    
     protected HashMap<String, ArrayList<MyLock>> m_locks;
 	protected HashMap<String, ArrayList<MyAction>> m_acts;
 
@@ -53,7 +54,7 @@ public abstract class SyncManagerBase {
     }
 
     // need Impl
-    public boolean acquireLocks(MyAction act) throws Exception{
+    public LockStatus acquireLocks(MyAction act) throws Exception{
         throw new Exception("release Locks not implementated");
     }
 }

@@ -1,6 +1,7 @@
 package distributedsyncsimulator.shared;
 
 import static distributedsyncsimulator.utilities.Constants.*;
+import distributedsyncsimulator.utilities.*;
 
 import java.util.*;
 import java.io.Serializable;
@@ -20,16 +21,20 @@ public class MyAction implements Serializable {
     public ActionType m_actType = ActionType.UNKNOWN;
     public int m_value;
     public String m_workerName;
+    public long m_timestamp;
+    public long m_transTimestamp;
 
     public MyAction(UUID id, String workerName){
         m_tanscationId = id;
         m_workerName = workerName;
+        m_timestamp = MyUtils.getTimestamp();
     }
 
     public MyAction(UUID id, String target, ActionType type){
         m_actType = type;
         m_tanscationId = id;
         m_target = target;
+        m_timestamp = MyUtils.getTimestamp();
     }
 
     public MyAction(UUID id, String target, ActionType type, int value){
@@ -37,6 +42,11 @@ public class MyAction implements Serializable {
         m_tanscationId = id;
         m_target = target;
         m_value = value;
+        m_timestamp = MyUtils.getTimestamp();
+    }
+
+    public void setTransTimestamp(long ts){
+        m_timestamp = ts;
     }
 
     public void setTarget(String t){

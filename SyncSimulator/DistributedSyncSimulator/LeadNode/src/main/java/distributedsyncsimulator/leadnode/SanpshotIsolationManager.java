@@ -7,8 +7,10 @@ import distributedsyncsimulator.shared.*;
 import static distributedsyncsimulator.utilities.Constants.*;
 
 public class SanpshotIsolationManager extends SyncManagerBase {
-    public SanpshotIsolationManager(){
+    public SanpshotIsolationManager() throws Exception {
         super();
+        // prevent calling
+        throw new Exception("Sanpshot Isolation Not Impelentation Error");
     }
 
 
@@ -19,9 +21,9 @@ public class SanpshotIsolationManager extends SyncManagerBase {
         return new ArrayList<String>();
     }
 
-    public boolean acquireLocks(MyAction act){
+    public LockStatus acquireLocks(MyAction act){
 
-        boolean stats = false;
+        LockStatus stats = LockStatus.REJECT;
         String target = act.m_target;
 
         MyLock lk = act.getLock();
@@ -34,7 +36,7 @@ public class SanpshotIsolationManager extends SyncManagerBase {
                 MyLog.instance().log("\tfind prev lock, updated Lock" + NEWLINE);
                 prev.updateLock(lk.m_type);  
             }
-            stats = true;
+            stats = LockStatus.PERMITTED;
 
         }else{
             // add new act to queues
@@ -43,25 +45,13 @@ public class SanpshotIsolationManager extends SyncManagerBase {
                 m_acts.put(target, new ArrayList<MyAction>());
             }
             m_acts.get(target).add(act);
-            stats = false;
+            stats = LockStatus.REJECT;
         }
         
         return stats;
     }
 
-    /*
-        A transaction 
-            try to READ X:
-               If WT(X) > TS(T) then ROLLBACK
-                Else If C(X) = false, then WAIT
-                Else READ and update RT(X) to larger of TS(T) or RT(X)   
-            try to WRITE X:
-                If RT(X) > TS(T) then ROLLBACK
-                Else if WT(X) > TS(T)
-                    If C(X) = false then WAIT
-                    ELSE IGNORE write (Thomas Write Rule)
-                Otherwise, WRITE, and update WT(X)=TS(T), C(X)=false               
-    */
+
     private boolean checkLock(MyLock lk){
         MyLog.instance().log("Start Compare Lock " + lk + NEWLINE);
 

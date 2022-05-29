@@ -1,5 +1,6 @@
 package distributedsyncsimulator.ifc;
-
+import static distributedsyncsimulator.utilities.Constants.*;
+import distributedsyncsimulator.utilities.*;
 import distributedsyncsimulator.shared.MyAction;
 import distributedsyncsimulator.shared.MyTransaction;
 import java.util.*;
@@ -7,7 +8,7 @@ import java.rmi.*;
 
 public interface LeaderIFC extends Remote{
 
-    public boolean acquireLock(MyAction act) throws RemoteException;
+    public LockStatus acquireLock(MyAction act) throws RemoteException;
 
     public void releaseLock(MyTransaction tran) throws RemoteException;
 
