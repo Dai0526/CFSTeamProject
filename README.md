@@ -6,8 +6,16 @@
 
 ## **Modules**
 
-TODO
-****
+|- Shared  
+|- Interface  
+|- Utilities  
+|- LeadNode  
+|- WorkNode  
+
+
+|- Transactions
+|- log
+|- 
 
 ## **Design**
 

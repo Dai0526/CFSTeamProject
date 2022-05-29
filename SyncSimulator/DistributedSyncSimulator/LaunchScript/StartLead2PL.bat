@@ -1,0 +1,1 @@
+java -classpath ..\bin -Djava.rmi.server.hostname=localhost distributedsyncsimulator.leadnode.LeadNode 0

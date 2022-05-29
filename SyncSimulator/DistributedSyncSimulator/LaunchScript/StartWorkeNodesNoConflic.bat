@@ -1,0 +1,2 @@
+start cmd.exe /k java -classpath ..\bin distributedsyncsimulator.worknode.WorkNode 001 ..\Transactions\trans1.txt
+start cmd.exe /k java -classpath ..\bin distributedsyncsimulator.worknode.WorkNode 002 ..\Transactions\trans2.txt

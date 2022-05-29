@@ -1,1 +1,0 @@
-start cmd.exe /k java -classpath bin distributedsyncsimulator.worknode.WorkNode 001 Transactions\test.txt

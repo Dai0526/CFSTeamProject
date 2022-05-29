@@ -1,0 +1,2738 @@
+[20220528_22-21-30266]  DB instance Created
+[20220528_22-21-30334]  # of Transaction Read = 24
+[20220528_22-21-30427]  WorkNode WorkerNode001 is running
+[20220528_22-21-31431]  WorkerNode001: Start processing Transaction from MyTransaction [f748ad96-782b-4470-84a9-af30a73ab7b8, WorkerNode001, 
+	MyAction [READ, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+	MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+	MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+	MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+	MyAction [WRITE, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+	MyAction [READ, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+	MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+	MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+	MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+	MyAction [WRITE, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]][20220528_22-21-31437]  Action MyAction [READ, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]'s lock status = PERMITTED
+[20220528_22-21-31437]  Execute Act MyAction [READ, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31437]  Done Exec MyAction [READ, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31437]  Execute Act MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31437]  Done Exec MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31438]  Execute Act MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31438]  Done Exec MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31439]  Execute Act MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31441]  Done Exec MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31444]  Action MyAction [WRITE, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]'s lock status = ROLLBACK
+[20220528_22-21-31465]  Action MyAction [READ, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]'s lock status = PERMITTED
+[20220528_22-21-31465]  Execute Act MyAction [READ, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31466]  Done Exec MyAction [READ, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31467]  Execute Act MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31468]  Done Exec MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31468]  Execute Act MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31469]  Done Exec MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31470]  Execute Act MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31471]  Done Exec MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31474]  Action MyAction [WRITE, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]'s lock status = ROLLBACK
+[20220528_22-21-31479]  WorkerNode001 unblocked
+[20220528_22-21-31480]  WorkerNode001 unblocked
+[20220528_22-21-31483]  DB write [Apple, 0]
+[20220528_22-21-31484]  DB write [Orange, 0]
+[20220528_22-21-31485]  DB write [Apple, 0]
+[20220528_22-21-31486]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 0
+	 Key = Orange, val = 0
+
+[20220528_22-21-31486]  DB write [Orange, 0]
+[20220528_22-21-31487]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 0
+	 Key = Orange, val = 0
+
+[20220528_22-21-31487]  Commit Transaction f748ad96-782b-4470-84a9-af30a73ab7b8
+[20220528_22-21-31487]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 0
+	 Key = Orange, val = 0
+
+[20220528_22-21-31488]  Inform WorkerNode002 to update
+[20220528_22-21-31502]  Release Lock for Transaction f748ad96-782b-4470-84a9-af30a73ab7b8
+[20220528_22-21-31502]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 0
+	 Key = Orange, val = 0
+
+[20220528_22-21-31503]  WorkerNode001: Start processing Transaction from MyTransaction [f748ad96-782b-4470-84a9-af30a73ab7b8, WorkerNode001, 
+	MyAction [READ, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+	MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+	MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+	MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+	MyAction [WRITE, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+	MyAction [READ, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+	MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+	MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+	MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+	MyAction [WRITE, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]][20220528_22-21-31505]  Action MyAction [READ, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]'s lock status = PERMITTED
+[20220528_22-21-31507]  Execute Act MyAction [READ, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31508]  Done Exec MyAction [READ, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31509]  Execute Act MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31509]  Done Exec MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31511]  Execute Act MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31511]  Done Exec MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31512]  Execute Act MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31513]  Done Exec MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31514]  Action MyAction [WRITE, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]'s lock status = PERMITTED
+[20220528_22-21-31515]  Execute Act MyAction [WRITE, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31516]  Done Exec MyAction [WRITE, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31518]  Action MyAction [READ, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]'s lock status = PERMITTED
+[20220528_22-21-31518]  Execute Act MyAction [READ, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31519]  Done Exec MyAction [READ, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31519]  Execute Act MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31520]  DB write [Apple, 1]
+[20220528_22-21-31520]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 1
+	 Key = Orange, val = 0
+
+[20220528_22-21-31521]  DB write [Orange, 2]
+[20220528_22-21-31521]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 1
+	 Key = Orange, val = 2
+
+[20220528_22-21-31521]  Done Exec MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31522]  Execute Act MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31522]  Done Exec MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31522]  Execute Act MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31523]  Done Exec MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31525]  Action MyAction [WRITE, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]'s lock status = PERMITTED
+[20220528_22-21-31525]  Execute Act MyAction [WRITE, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31526]  Done Exec MyAction [WRITE, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31527]  DB write [Apple, 1]
+[20220528_22-21-31527]  DB write [Orange, 4]
+[20220528_22-21-31528]  Commit Transaction f748ad96-782b-4470-84a9-af30a73ab7b8
+[20220528_22-21-31530]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 1
+	 Key = Orange, val = 4
+
+[20220528_22-21-31531]  Inform WorkerNode002 to update
+[20220528_22-21-31538]  Release Lock for Transaction f748ad96-782b-4470-84a9-af30a73ab7b8
+[20220528_22-21-31538]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 1
+	 Key = Orange, val = 4
+
+[20220528_22-21-31539]  WorkerNode001: Start processing Transaction from MyTransaction [f748ad96-782b-4470-84a9-af30a73ab7b8, WorkerNode001, 
+	MyAction [READ, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+	MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+	MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+	MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+	MyAction [WRITE, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+	MyAction [READ, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+	MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+	MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+	MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+	MyAction [WRITE, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]][20220528_22-21-31541]  Action MyAction [READ, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]'s lock status = PERMITTED
+[20220528_22-21-31541]  Execute Act MyAction [READ, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31542]  Done Exec MyAction [READ, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31542]  Execute Act MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31543]  Done Exec MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31544]  Execute Act MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31545]  Done Exec MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31546]  Execute Act MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31547]  Done Exec MyAction [ADD, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 1]
+[20220528_22-21-31548]  Action MyAction [WRITE, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]'s lock status = PERMITTED
+[20220528_22-21-31550]  Execute Act MyAction [WRITE, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31551]  Done Exec MyAction [WRITE, Apple, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31552]  Action MyAction [READ, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]'s lock status = PERMITTED
+[20220528_22-21-31553]  Execute Act MyAction [READ, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31554]  Done Exec MyAction [READ, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31555]  Execute Act MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31556]  Done Exec MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31556]  DB write [Apple, 2]
+[20220528_22-21-31556]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 2
+	 Key = Orange, val = 4
+
+[20220528_22-21-31557]  DB write [Orange, 6]
+[20220528_22-21-31557]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 2
+	 Key = Orange, val = 6
+
+[20220528_22-21-31557]  Execute Act MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31558]  Done Exec MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31559]  Execute Act MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31559]  Done Exec MyAction [ADD, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 2]
+[20220528_22-21-31562]  Action MyAction [WRITE, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]'s lock status = PERMITTED
+[20220528_22-21-31562]  Execute Act MyAction [WRITE, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31563]  Done Exec MyAction [WRITE, Orange, f748ad96-782b-4470-84a9-af30a73ab7b8, 0]
+[20220528_22-21-31565]  DB write [Apple, 2]
+[20220528_22-21-31566]  DB write [Orange, 8]
+[20220528_22-21-31567]  Commit Transaction f748ad96-782b-4470-84a9-af30a73ab7b8
+[20220528_22-21-31567]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 2
+	 Key = Orange, val = 8
+
+[20220528_22-21-31569]  Inform WorkerNode002 to update
+[20220528_22-21-31582]  Release Lock for Transaction f748ad96-782b-4470-84a9-af30a73ab7b8
+[20220528_22-21-31582]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 2
+	 Key = Orange, val = 8
+
+[20220528_22-21-31583]  WorkerNode001: Start processing Transaction from MyTransaction [504f480f-1e29-4930-94d8-8e21e9d925f2, WorkerNode001, 
+	MyAction [READ, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]
+	MyAction [MINUS, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 1]
+	MyAction [MINUS, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 1]
+	MyAction [MINUS, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 1]
+	MyAction [WRITE, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]
+	MyAction [READ, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]
+	MyAction [MINUS, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 2]
+	MyAction [MINUS, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 2]
+	MyAction [MINUS, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 2]
+	MyAction [WRITE, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]][20220528_22-21-31583]  DB write [Apple, 1]
+[20220528_22-21-31583]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 1
+	 Key = Orange, val = 8
+
+[20220528_22-21-31584]  Action MyAction [READ, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]'s lock status = PERMITTED
+[20220528_22-21-31584]  Execute Act MyAction [READ, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]
+[20220528_22-21-31585]  Done Exec MyAction [READ, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]
+[20220528_22-21-31585]  Execute Act MyAction [MINUS, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 1]
+[20220528_22-21-31586]  Done Exec MyAction [MINUS, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 1]
+[20220528_22-21-31586]  Execute Act MyAction [MINUS, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 1]
+[20220528_22-21-31586]  Done Exec MyAction [MINUS, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 1]
+[20220528_22-21-31586]  Execute Act MyAction [MINUS, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 1]
+[20220528_22-21-31587]  Done Exec MyAction [MINUS, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 1]
+[20220528_22-21-31587]  DB write [Orange, 6]
+[20220528_22-21-31588]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 1
+	 Key = Orange, val = 6
+
+[20220528_22-21-31589]  Action MyAction [WRITE, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]'s lock status = PERMITTED
+[20220528_22-21-31589]  Execute Act MyAction [WRITE, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]
+[20220528_22-21-31590]  Done Exec MyAction [WRITE, Apple, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]
+[20220528_22-21-31592]  Action MyAction [READ, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]'s lock status = PERMITTED
+[20220528_22-21-31592]  Execute Act MyAction [READ, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]
+[20220528_22-21-31593]  Done Exec MyAction [READ, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]
+[20220528_22-21-31594]  Execute Act MyAction [MINUS, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 2]
+[20220528_22-21-31596]  Done Exec MyAction [MINUS, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 2]
+[20220528_22-21-31597]  Execute Act MyAction [MINUS, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 2]
+[20220528_22-21-31598]  Done Exec MyAction [MINUS, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 2]
+[20220528_22-21-31599]  Execute Act MyAction [MINUS, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 2]
+[20220528_22-21-31600]  Done Exec MyAction [MINUS, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 2]
+[20220528_22-21-31602]  Action MyAction [WRITE, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]'s lock status = PERMITTED
+[20220528_22-21-31602]  Execute Act MyAction [WRITE, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]
+[20220528_22-21-31603]  Done Exec MyAction [WRITE, Orange, 504f480f-1e29-4930-94d8-8e21e9d925f2, 0]
+[20220528_22-21-31604]  DB write [Apple, 0]
+[20220528_22-21-31605]  DB write [Orange, 4]
+[20220528_22-21-31606]  Commit Transaction 504f480f-1e29-4930-94d8-8e21e9d925f2
+[20220528_22-21-31607]  WorkerNode001's DB info are as follow: 
+	 DB size = 2
+	 Key = Apple, val = 0
+	 Key = Orange, val = 4
+
+[20220528_22-21-31608]  Inform WorkerNode002 to update
+[20220528_22-21-31616]  DB write [Grape, 2]
+[20220528_22-21-31616]  WorkerNode001's DB info are as follow: 
+	 DB size = 3
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+
+[20220528_22-21-31616]  DB write [Melo, 1]
+[20220528_22-21-31617]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31618]  Release Lock for Transaction 504f480f-1e29-4930-94d8-8e21e9d925f2
+[20220528_22-21-31619]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31622]  WorkerNode001: Start processing Transaction from MyTransaction [0aa73574-92ca-4bfb-99e3-f423312ed555, WorkerNode001, 
+	MyAction [READ, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+	MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+	MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+	MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+	MyAction [WRITE, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+	MyAction [READ, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+	MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+	MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+	MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+	MyAction [WRITE, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]][20220528_22-21-31623]  Action MyAction [READ, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]'s lock status = PERMITTED
+[20220528_22-21-31623]  Execute Act MyAction [READ, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31624]  Done Exec MyAction [READ, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31625]  Execute Act MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31626]  Done Exec MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31627]  Execute Act MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31628]  Done Exec MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31630]  Execute Act MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31631]  Done Exec MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31632]  Action MyAction [WRITE, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]'s lock status = ROLLBACK
+[20220528_22-21-31635]  WorkerNode001 unblocked
+[20220528_22-21-31636]  Action MyAction [READ, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]'s lock status = PERMITTED
+[20220528_22-21-31636]  Execute Act MyAction [READ, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31637]  Done Exec MyAction [READ, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31638]  Execute Act MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31639]  Done Exec MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31640]  Execute Act MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31641]  Done Exec MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31642]  Execute Act MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31643]  Done Exec MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31644]  Action MyAction [WRITE, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]'s lock status = ROLLBACK
+[20220528_22-21-31651]  DB write [Grape, 2]
+[20220528_22-21-31651]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31652]  WorkerNode001 unblocked
+[20220528_22-21-31652]  DB write [Grape, 2]
+[20220528_22-21-31653]  DB write [Melo, 1]
+[20220528_22-21-31653]  Commit Transaction 0aa73574-92ca-4bfb-99e3-f423312ed555
+[20220528_22-21-31653]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31653]  Inform WorkerNode002 to update
+[20220528_22-21-31654]  DB write [Melo, 1]
+[20220528_22-21-31654]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31661]  Release Lock for Transaction 0aa73574-92ca-4bfb-99e3-f423312ed555
+[20220528_22-21-31661]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31662]  WorkerNode001: Start processing Transaction from MyTransaction [0aa73574-92ca-4bfb-99e3-f423312ed555, WorkerNode001, 
+	MyAction [READ, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+	MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+	MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+	MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+	MyAction [WRITE, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+	MyAction [READ, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+	MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+	MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+	MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+	MyAction [WRITE, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]][20220528_22-21-31663]  Action MyAction [READ, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]'s lock status = PERMITTED
+[20220528_22-21-31663]  Execute Act MyAction [READ, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31664]  Done Exec MyAction [READ, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31665]  Execute Act MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31666]  Done Exec MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31667]  Execute Act MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31668]  Done Exec MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31670]  Execute Act MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31671]  Done Exec MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31673]  Action MyAction [WRITE, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]'s lock status = PERMITTED
+[20220528_22-21-31673]  Execute Act MyAction [WRITE, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31673]  Done Exec MyAction [WRITE, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31674]  Action MyAction [READ, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]'s lock status = PERMITTED
+[20220528_22-21-31675]  Execute Act MyAction [READ, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31676]  Done Exec MyAction [READ, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31677]  Execute Act MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31677]  Done Exec MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31678]  Execute Act MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31680]  Done Exec MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31680]  Execute Act MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31681]  Done Exec MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31682]  Action MyAction [WRITE, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]'s lock status = PERMITTED
+[20220528_22-21-31683]  Execute Act MyAction [WRITE, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31683]  Done Exec MyAction [WRITE, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31684]  DB write [Grape, 4]
+[20220528_22-21-31685]  DB write [Melo, 2]
+[20220528_22-21-31686]  DB write [Grape, 2]
+[20220528_22-21-31686]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 2
+
+[20220528_22-21-31687]  DB write [Melo, 1]
+[20220528_22-21-31687]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31688]  Commit Transaction 0aa73574-92ca-4bfb-99e3-f423312ed555
+[20220528_22-21-31690]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31690]  Inform WorkerNode002 to update
+[20220528_22-21-31697]  WorkerNode001 unblocked
+[20220528_22-21-31697]  WorkerNode001 unblocked
+[20220528_22-21-31697]  Release Lock for Transaction 0aa73574-92ca-4bfb-99e3-f423312ed555
+[20220528_22-21-31698]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31700]  WorkerNode001: Start processing Transaction from MyTransaction [0aa73574-92ca-4bfb-99e3-f423312ed555, WorkerNode001, 
+	MyAction [READ, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+	MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+	MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+	MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+	MyAction [WRITE, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+	MyAction [READ, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+	MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+	MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+	MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+	MyAction [WRITE, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]][20220528_22-21-31702]  Action MyAction [READ, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]'s lock status = PERMITTED
+[20220528_22-21-31702]  Execute Act MyAction [READ, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31703]  Done Exec MyAction [READ, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31703]  Execute Act MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31704]  Done Exec MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31705]  Execute Act MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31706]  Done Exec MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31707]  Execute Act MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31708]  Done Exec MyAction [ADD, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 1]
+[20220528_22-21-31710]  Action MyAction [WRITE, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]'s lock status = PERMITTED
+[20220528_22-21-31711]  Execute Act MyAction [WRITE, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31711]  Done Exec MyAction [WRITE, Melo, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31712]  Action MyAction [READ, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]'s lock status = PERMITTED
+[20220528_22-21-31712]  Execute Act MyAction [READ, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31713]  Done Exec MyAction [READ, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31714]  Execute Act MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31715]  Done Exec MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31715]  Execute Act MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31716]  Done Exec MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31717]  Execute Act MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31717]  Done Exec MyAction [ADD, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 2]
+[20220528_22-21-31717]  DB write [Grape, 2]
+[20220528_22-21-31718]  Action MyAction [WRITE, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]'s lock status = PERMITTED
+[20220528_22-21-31718]  Execute Act MyAction [WRITE, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31718]  Done Exec MyAction [WRITE, Grape, 0aa73574-92ca-4bfb-99e3-f423312ed555, 0]
+[20220528_22-21-31719]  DB write [Grape, 4]
+[20220528_22-21-31719]  DB write [Melo, 2]
+[20220528_22-21-31719]  Commit Transaction 0aa73574-92ca-4bfb-99e3-f423312ed555
+[20220528_22-21-31719]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 4
+	 Key = Orange, val = 4
+	 Key = Melo, val = 2
+
+[20220528_22-21-31720]  Inform WorkerNode002 to update
+[20220528_22-21-31722]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31723]  DB write [Melo, 1]
+[20220528_22-21-31725]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 4
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31726]  Release Lock for Transaction 0aa73574-92ca-4bfb-99e3-f423312ed555
+[20220528_22-21-31727]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 4
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31727]  WorkerNode001: Start processing Transaction from MyTransaction [c886d6e3-6320-42ae-802e-a31b3ea4fc44, WorkerNode001, 
+	MyAction [READ, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+	MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+	MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+	MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+	MyAction [WRITE, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+	MyAction [READ, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+	MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+	MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+	MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+	MyAction [WRITE, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]][20220528_22-21-31729]  Action MyAction [READ, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]'s lock status = PERMITTED
+[20220528_22-21-31729]  Execute Act MyAction [READ, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31730]  Done Exec MyAction [READ, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31732]  Execute Act MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31733]  Done Exec MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31735]  Execute Act MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31735]  Done Exec MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31736]  Execute Act MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31737]  Done Exec MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31738]  Action MyAction [WRITE, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]'s lock status = ROLLBACK
+[20220528_22-21-31741]  Action MyAction [READ, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]'s lock status = PERMITTED
+[20220528_22-21-31741]  Execute Act MyAction [READ, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31742]  Done Exec MyAction [READ, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31743]  Execute Act MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31744]  Done Exec MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31745]  Execute Act MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31746]  Done Exec MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31747]  Execute Act MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31748]  Done Exec MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31749]  Action MyAction [WRITE, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]'s lock status = ROLLBACK
+[20220528_22-21-31752]  DB write [Grape, 4]
+[20220528_22-21-31752]  DB write [Melo, 1]
+[20220528_22-21-31753]  Commit Transaction c886d6e3-6320-42ae-802e-a31b3ea4fc44
+[20220528_22-21-31754]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 4
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31754]  Inform WorkerNode002 to update
+[20220528_22-21-31760]  DB write [Grape, 2]
+[20220528_22-21-31760]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31761]  DB write [Melo, 1]
+[20220528_22-21-31761]  Release Lock for Transaction c886d6e3-6320-42ae-802e-a31b3ea4fc44
+[20220528_22-21-31761]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31762]  WorkerNode001: Start processing Transaction from MyTransaction [c886d6e3-6320-42ae-802e-a31b3ea4fc44, WorkerNode001, 
+	MyAction [READ, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+	MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+	MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+	MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+	MyAction [WRITE, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+	MyAction [READ, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+	MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+	MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+	MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+	MyAction [WRITE, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]][20220528_22-21-31763]  Action MyAction [READ, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]'s lock status = PERMITTED
+[20220528_22-21-31764]  Execute Act MyAction [READ, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31764]  Done Exec MyAction [READ, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31764]  Execute Act MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31765]  Done Exec MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31765]  Execute Act MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31765]  Done Exec MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31766]  Execute Act MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31766]  Done Exec MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31766]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31767]  Action MyAction [WRITE, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]'s lock status = PERMITTED
+[20220528_22-21-31767]  Execute Act MyAction [WRITE, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31768]  Done Exec MyAction [WRITE, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31771]  Action MyAction [READ, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]'s lock status = PERMITTED
+[20220528_22-21-31771]  Execute Act MyAction [READ, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31772]  Done Exec MyAction [READ, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31774]  Execute Act MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31774]  Done Exec MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31775]  Execute Act MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31776]  Done Exec MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31777]  Execute Act MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31778]  Done Exec MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31779]  Action MyAction [WRITE, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]'s lock status = PERMITTED
+[20220528_22-21-31780]  Execute Act MyAction [WRITE, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31781]  Done Exec MyAction [WRITE, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31782]  DB write [Grape, 0]
+[20220528_22-21-31784]  DB write [Melo, 0]
+[20220528_22-21-31784]  Commit Transaction c886d6e3-6320-42ae-802e-a31b3ea4fc44
+[20220528_22-21-31785]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 0
+	 Key = Orange, val = 4
+	 Key = Melo, val = 0
+
+[20220528_22-21-31786]  Inform WorkerNode002 to update
+[20220528_22-21-31792]  Release Lock for Transaction c886d6e3-6320-42ae-802e-a31b3ea4fc44
+[20220528_22-21-31793]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 0
+	 Key = Orange, val = 4
+	 Key = Melo, val = 0
+
+[20220528_22-21-31793]  WorkerNode001: Start processing Transaction from MyTransaction [c886d6e3-6320-42ae-802e-a31b3ea4fc44, WorkerNode001, 
+	MyAction [READ, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+	MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+	MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+	MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+	MyAction [WRITE, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+	MyAction [READ, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+	MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+	MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+	MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+	MyAction [WRITE, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]][20220528_22-21-31794]  Action MyAction [READ, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]'s lock status = PERMITTED
+[20220528_22-21-31795]  Execute Act MyAction [READ, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31796]  Done Exec MyAction [READ, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31796]  Execute Act MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31797]  Done Exec MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31798]  Execute Act MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31799]  Done Exec MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31799]  Execute Act MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31801]  Done Exec MyAction [MINUS, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 1]
+[20220528_22-21-31802]  Action MyAction [WRITE, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]'s lock status = PERMITTED
+[20220528_22-21-31804]  Execute Act MyAction [WRITE, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31804]  Done Exec MyAction [WRITE, Melo, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31804]  DB write [Grape, -2]
+[20220528_22-21-31805]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 0
+
+[20220528_22-21-31805]  Action MyAction [READ, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]'s lock status = PERMITTED
+[20220528_22-21-31806]  Execute Act MyAction [READ, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31806]  Done Exec MyAction [READ, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31807]  Execute Act MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31807]  Done Exec MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31807]  Execute Act MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31808]  Done Exec MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31808]  Execute Act MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31808]  Done Exec MyAction [MINUS, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 2]
+[20220528_22-21-31808]  DB write [Melo, 0]
+[20220528_22-21-31809]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 0
+
+[20220528_22-21-31809]  Action MyAction [WRITE, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]'s lock status = PERMITTED
+[20220528_22-21-31810]  Execute Act MyAction [WRITE, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31810]  Done Exec MyAction [WRITE, Grape, c886d6e3-6320-42ae-802e-a31b3ea4fc44, 0]
+[20220528_22-21-31811]  DB write [Grape, -4]
+[20220528_22-21-31811]  DB write [Melo, -1]
+[20220528_22-21-31812]  Commit Transaction c886d6e3-6320-42ae-802e-a31b3ea4fc44
+[20220528_22-21-31813]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 4
+	 Key = Melo, val = -1
+
+[20220528_22-21-31814]  Inform WorkerNode002 to update
+[20220528_22-21-31819]  Release Lock for Transaction c886d6e3-6320-42ae-802e-a31b3ea4fc44
+[20220528_22-21-31819]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 4
+	 Key = Melo, val = -1
+
+[20220528_22-21-31820]  WorkerNode001: Start processing Transaction from MyTransaction [436f0db7-6eb2-4853-933d-f7ce6ea518a4, WorkerNode001, 
+	MyAction [READ, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]
+	MyAction [ADD, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 1]
+	MyAction [ADD, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 1]
+	MyAction [ADD, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 1]
+	MyAction [WRITE, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]
+	MyAction [READ, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]
+	MyAction [ADD, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 2]
+	MyAction [ADD, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 2]
+	MyAction [ADD, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 2]
+	MyAction [WRITE, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]][20220528_22-21-31822]  Action MyAction [READ, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]'s lock status = PERMITTED
+[20220528_22-21-31823]  Execute Act MyAction [READ, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]
+[20220528_22-21-31824]  Done Exec MyAction [READ, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]
+[20220528_22-21-31825]  Execute Act MyAction [ADD, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 1]
+[20220528_22-21-31826]  Done Exec MyAction [ADD, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 1]
+[20220528_22-21-31827]  Execute Act MyAction [ADD, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 1]
+[20220528_22-21-31829]  Done Exec MyAction [ADD, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 1]
+[20220528_22-21-31830]  Execute Act MyAction [ADD, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 1]
+[20220528_22-21-31831]  Done Exec MyAction [ADD, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 1]
+[20220528_22-21-31832]  Action MyAction [WRITE, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]'s lock status = PERMITTED
+[20220528_22-21-31833]  Execute Act MyAction [WRITE, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]
+[20220528_22-21-31833]  Done Exec MyAction [WRITE, Apple, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]
+[20220528_22-21-31834]  Action MyAction [READ, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]'s lock status = PERMITTED
+[20220528_22-21-31835]  Execute Act MyAction [READ, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]
+[20220528_22-21-31836]  Done Exec MyAction [READ, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]
+[20220528_22-21-31837]  Execute Act MyAction [ADD, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 2]
+[20220528_22-21-31838]  Done Exec MyAction [ADD, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 2]
+[20220528_22-21-31839]  Execute Act MyAction [ADD, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 2]
+[20220528_22-21-31840]  Done Exec MyAction [ADD, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 2]
+[20220528_22-21-31841]  Execute Act MyAction [ADD, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 2]
+[20220528_22-21-31842]  DB write [Apple, 1]
+[20220528_22-21-31843]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 4
+	 Key = Melo, val = -1
+
+[20220528_22-21-31844]  DB write [Orange, 4]
+[20220528_22-21-31844]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 4
+	 Key = Melo, val = -1
+
+[20220528_22-21-31844]  Done Exec MyAction [ADD, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 2]
+[20220528_22-21-31845]  Action MyAction [WRITE, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]'s lock status = PERMITTED
+[20220528_22-21-31845]  Execute Act MyAction [WRITE, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]
+[20220528_22-21-31846]  Done Exec MyAction [WRITE, Orange, 436f0db7-6eb2-4853-933d-f7ce6ea518a4, 0]
+[20220528_22-21-31847]  DB write [Apple, 1]
+[20220528_22-21-31848]  DB write [Orange, 6]
+[20220528_22-21-31849]  Commit Transaction 436f0db7-6eb2-4853-933d-f7ce6ea518a4
+[20220528_22-21-31850]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = -1
+
+[20220528_22-21-31852]  Inform WorkerNode002 to update
+[20220528_22-21-31859]  WorkerNode001 unblocked
+[20220528_22-21-31859]  Release Lock for Transaction 436f0db7-6eb2-4853-933d-f7ce6ea518a4
+[20220528_22-21-31859]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = -1
+
+[20220528_22-21-31860]  WorkerNode001: Start processing Transaction from MyTransaction [64f4316b-9147-4cc9-bfbf-e737e1a192fb, WorkerNode001, 
+	MyAction [READ, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]
+	MyAction [MINUS, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 1]
+	MyAction [MINUS, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 1]
+	MyAction [MINUS, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 1]
+	MyAction [WRITE, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]
+	MyAction [READ, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]
+	MyAction [MINUS, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 2]
+	MyAction [MINUS, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 2]
+	MyAction [MINUS, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 2]
+	MyAction [WRITE, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]][20220528_22-21-31861]  Action MyAction [READ, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]'s lock status = PERMITTED
+[20220528_22-21-31861]  Execute Act MyAction [READ, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]
+[20220528_22-21-31862]  Done Exec MyAction [READ, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]
+[20220528_22-21-31863]  Execute Act MyAction [MINUS, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 1]
+[20220528_22-21-31864]  Done Exec MyAction [MINUS, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 1]
+[20220528_22-21-31866]  Execute Act MyAction [MINUS, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 1]
+[20220528_22-21-31867]  Done Exec MyAction [MINUS, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 1]
+[20220528_22-21-31868]  Execute Act MyAction [MINUS, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 1]
+[20220528_22-21-31869]  Done Exec MyAction [MINUS, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 1]
+[20220528_22-21-31871]  Action MyAction [WRITE, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]'s lock status = PERMITTED
+[20220528_22-21-31871]  Execute Act MyAction [WRITE, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]
+[20220528_22-21-31873]  Done Exec MyAction [WRITE, Apple, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]
+[20220528_22-21-31874]  Action MyAction [READ, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]'s lock status = PERMITTED
+[20220528_22-21-31875]  Execute Act MyAction [READ, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]
+[20220528_22-21-31876]  Done Exec MyAction [READ, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]
+[20220528_22-21-31877]  Execute Act MyAction [MINUS, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 2]
+[20220528_22-21-31877]  Done Exec MyAction [MINUS, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 2]
+[20220528_22-21-31878]  Execute Act MyAction [MINUS, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 2]
+[20220528_22-21-31879]  Done Exec MyAction [MINUS, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 2]
+[20220528_22-21-31880]  DB write [Apple, 2]
+[20220528_22-21-31881]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = -1
+
+[20220528_22-21-31881]  DB write [Orange, 8]
+[20220528_22-21-31881]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 8
+	 Key = Melo, val = -1
+
+[20220528_22-21-31881]  Execute Act MyAction [MINUS, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 2]
+[20220528_22-21-31882]  Done Exec MyAction [MINUS, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 2]
+[20220528_22-21-31884]  Action MyAction [WRITE, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]'s lock status = PERMITTED
+[20220528_22-21-31885]  Execute Act MyAction [WRITE, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]
+[20220528_22-21-31885]  Done Exec MyAction [WRITE, Orange, 64f4316b-9147-4cc9-bfbf-e737e1a192fb, 0]
+[20220528_22-21-31886]  DB write [Apple, 0]
+[20220528_22-21-31887]  DB write [Orange, 6]
+[20220528_22-21-31888]  Commit Transaction 64f4316b-9147-4cc9-bfbf-e737e1a192fb
+[20220528_22-21-31889]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = -1
+
+[20220528_22-21-31891]  Inform WorkerNode002 to update
+[20220528_22-21-31895]  Release Lock for Transaction 64f4316b-9147-4cc9-bfbf-e737e1a192fb
+[20220528_22-21-31896]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = -1
+
+[20220528_22-21-31896]  WorkerNode001: Start processing Transaction from MyTransaction [68d06654-781d-4f88-8ce4-2d18413534fc, WorkerNode001, 
+	MyAction [READ, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]
+	MyAction [ADD, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 1]
+	MyAction [ADD, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 1]
+	MyAction [ADD, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 1]
+	MyAction [WRITE, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]
+	MyAction [READ, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]
+	MyAction [ADD, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 2]
+	MyAction [ADD, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 2]
+	MyAction [ADD, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 2]
+	MyAction [WRITE, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]][20220528_22-21-31897]  Action MyAction [READ, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]'s lock status = PERMITTED
+[20220528_22-21-31898]  Execute Act MyAction [READ, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]
+[20220528_22-21-31899]  Done Exec MyAction [READ, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]
+[20220528_22-21-31900]  Execute Act MyAction [ADD, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 1]
+[20220528_22-21-31900]  Done Exec MyAction [ADD, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 1]
+[20220528_22-21-31901]  Execute Act MyAction [ADD, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 1]
+[20220528_22-21-31901]  Done Exec MyAction [ADD, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 1]
+[20220528_22-21-31902]  Execute Act MyAction [ADD, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 1]
+[20220528_22-21-31903]  Done Exec MyAction [ADD, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 1]
+[20220528_22-21-31905]  Action MyAction [WRITE, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]'s lock status = PERMITTED
+[20220528_22-21-31906]  Execute Act MyAction [WRITE, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]
+[20220528_22-21-31907]  Done Exec MyAction [WRITE, Melo, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]
+[20220528_22-21-31908]  Action MyAction [READ, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]'s lock status = PERMITTED
+[20220528_22-21-31909]  Execute Act MyAction [READ, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]
+[20220528_22-21-31910]  Done Exec MyAction [READ, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]
+[20220528_22-21-31911]  Execute Act MyAction [ADD, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 2]
+[20220528_22-21-31911]  Done Exec MyAction [ADD, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 2]
+[20220528_22-21-31912]  Execute Act MyAction [ADD, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 2]
+[20220528_22-21-31913]  Done Exec MyAction [ADD, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 2]
+[20220528_22-21-31914]  Execute Act MyAction [ADD, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 2]
+[20220528_22-21-31915]  Done Exec MyAction [ADD, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 2]
+[20220528_22-21-31916]  Action MyAction [WRITE, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]'s lock status = PERMITTED
+[20220528_22-21-31917]  Execute Act MyAction [WRITE, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]
+[20220528_22-21-31918]  Done Exec MyAction [WRITE, Grape, 68d06654-781d-4f88-8ce4-2d18413534fc, 0]
+[20220528_22-21-31918]  DB write [Grape, -2]
+[20220528_22-21-31918]  DB write [Melo, 0]
+[20220528_22-21-31918]  Commit Transaction 68d06654-781d-4f88-8ce4-2d18413534fc
+[20220528_22-21-31919]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 6
+	 Key = Melo, val = 0
+
+[20220528_22-21-31919]  Inform WorkerNode002 to update
+[20220528_22-21-31919]  DB write [Apple, -1]
+[20220528_22-21-31920]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 6
+	 Key = Melo, val = 0
+
+[20220528_22-21-31920]  DB write [Orange, 4]
+[20220528_22-21-31921]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 0
+
+[20220528_22-21-31925]  Release Lock for Transaction 68d06654-781d-4f88-8ce4-2d18413534fc
+[20220528_22-21-31925]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 0
+
+[20220528_22-21-31926]  WorkerNode001: Start processing Transaction from MyTransaction [cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, WorkerNode001, 
+	MyAction [READ, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+	MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+	MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+	MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+	MyAction [WRITE, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+	MyAction [READ, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+	MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+	MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+	MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+	MyAction [WRITE, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]][20220528_22-21-31927]  Action MyAction [READ, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]'s lock status = PERMITTED
+[20220528_22-21-31928]  Execute Act MyAction [READ, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31929]  Done Exec MyAction [READ, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31930]  Execute Act MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+[20220528_22-21-31931]  Done Exec MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+[20220528_22-21-31931]  Execute Act MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+[20220528_22-21-31932]  Done Exec MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+[20220528_22-21-31933]  Execute Act MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+[20220528_22-21-31934]  Done Exec MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+[20220528_22-21-31936]  Action MyAction [WRITE, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]'s lock status = ROLLBACK
+[20220528_22-21-31939]  WorkerNode001 unblocked
+[20220528_22-21-31941]  Action MyAction [READ, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]'s lock status = PERMITTED
+[20220528_22-21-31941]  Execute Act MyAction [READ, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31942]  Done Exec MyAction [READ, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31943]  Execute Act MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+[20220528_22-21-31944]  Done Exec MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+[20220528_22-21-31945]  Execute Act MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+[20220528_22-21-31945]  Done Exec MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+[20220528_22-21-31947]  Execute Act MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+[20220528_22-21-31947]  Done Exec MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+[20220528_22-21-31948]  Action MyAction [WRITE, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]'s lock status = PERMITTED
+[20220528_22-21-31949]  Execute Act MyAction [WRITE, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31950]  Done Exec MyAction [WRITE, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31951]  DB write [Grape, -2]
+[20220528_22-21-31952]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 0
+
+[20220528_22-21-31952]  DB write [Melo, 0]
+[20220528_22-21-31952]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 0
+
+[20220528_22-21-31953]  DB write [Grape, -4]
+[20220528_22-21-31953]  DB write [Melo, 0]
+[20220528_22-21-31954]  Commit Transaction cc0eeba2-4d8a-4244-99c7-0b02c7d8af85
+[20220528_22-21-31955]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 0
+
+[20220528_22-21-31956]  Inform WorkerNode002 to update
+[20220528_22-21-31963]  WorkerNode001 unblocked
+[20220528_22-21-31964]  WorkerNode001 unblocked
+[20220528_22-21-31965]  Release Lock for Transaction cc0eeba2-4d8a-4244-99c7-0b02c7d8af85
+[20220528_22-21-31966]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 0
+
+[20220528_22-21-31967]  WorkerNode001: Start processing Transaction from MyTransaction [cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, WorkerNode001, 
+	MyAction [READ, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+	MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+	MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+	MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+	MyAction [WRITE, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+	MyAction [READ, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+	MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+	MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+	MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+	MyAction [WRITE, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]][20220528_22-21-31968]  Action MyAction [READ, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]'s lock status = PERMITTED
+[20220528_22-21-31969]  Execute Act MyAction [READ, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31970]  Done Exec MyAction [READ, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31970]  Execute Act MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+[20220528_22-21-31971]  Done Exec MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+[20220528_22-21-31972]  Execute Act MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+[20220528_22-21-31973]  Done Exec MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+[20220528_22-21-31974]  Execute Act MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+[20220528_22-21-31975]  Done Exec MyAction [MINUS, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 1]
+[20220528_22-21-31976]  Action MyAction [WRITE, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]'s lock status = PERMITTED
+[20220528_22-21-31977]  Execute Act MyAction [WRITE, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31978]  Done Exec MyAction [WRITE, Melo, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31979]  Action MyAction [READ, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]'s lock status = PERMITTED
+[20220528_22-21-31980]  Execute Act MyAction [READ, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31981]  Done Exec MyAction [READ, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31982]  Execute Act MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+[20220528_22-21-31983]  DB write [Grape, -2]
+[20220528_22-21-31983]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 0
+
+[20220528_22-21-31984]  DB write [Melo, 1]
+[20220528_22-21-31985]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 1
+
+[20220528_22-21-31985]  Done Exec MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+[20220528_22-21-31986]  Execute Act MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+[20220528_22-21-31987]  Done Exec MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+[20220528_22-21-31987]  Execute Act MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+[20220528_22-21-31988]  Done Exec MyAction [MINUS, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 2]
+[20220528_22-21-31988]  Action MyAction [WRITE, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]'s lock status = PERMITTED
+[20220528_22-21-31989]  Execute Act MyAction [WRITE, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31990]  Done Exec MyAction [WRITE, Grape, cc0eeba2-4d8a-4244-99c7-0b02c7d8af85, 0]
+[20220528_22-21-31991]  DB write [Grape, -4]
+[20220528_22-21-31992]  DB write [Melo, -1]
+[20220528_22-21-31993]  Commit Transaction cc0eeba2-4d8a-4244-99c7-0b02c7d8af85
+[20220528_22-21-31994]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 4
+	 Key = Melo, val = -1
+
+[20220528_22-21-31996]  Inform WorkerNode002 to update
+[20220528_22-21-322]  Release Lock for Transaction cc0eeba2-4d8a-4244-99c7-0b02c7d8af85
+[20220528_22-21-322]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 4
+	 Key = Melo, val = -1
+
+[20220528_22-21-323]  WorkerNode001: Start processing Transaction from MyTransaction [d873a1c7-f3e7-4f89-a42c-fea8d32b0691, WorkerNode001, 
+	MyAction [READ, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]
+	MyAction [ADD, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 1]
+	MyAction [ADD, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 1]
+	MyAction [ADD, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 1]
+	MyAction [WRITE, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]
+	MyAction [READ, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]
+	MyAction [ADD, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 2]
+	MyAction [ADD, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 2]
+	MyAction [ADD, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 2]
+	MyAction [WRITE, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]][20220528_22-21-324]  Action MyAction [READ, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]'s lock status = PERMITTED
+[20220528_22-21-325]  Execute Act MyAction [READ, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]
+[20220528_22-21-327]  Done Exec MyAction [READ, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]
+[20220528_22-21-328]  Execute Act MyAction [ADD, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 1]
+[20220528_22-21-328]  Done Exec MyAction [ADD, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 1]
+[20220528_22-21-329]  Execute Act MyAction [ADD, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 1]
+[20220528_22-21-3210]  Done Exec MyAction [ADD, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 1]
+[20220528_22-21-3211]  Execute Act MyAction [ADD, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 1]
+[20220528_22-21-3212]  Done Exec MyAction [ADD, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 1]
+[20220528_22-21-3213]  Action MyAction [WRITE, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]'s lock status = PERMITTED
+[20220528_22-21-3214]  Execute Act MyAction [WRITE, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]
+[20220528_22-21-3216]  Done Exec MyAction [WRITE, Apple, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]
+[20220528_22-21-3217]  Action MyAction [READ, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]'s lock status = PERMITTED
+[20220528_22-21-3217]  Execute Act MyAction [READ, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]
+[20220528_22-21-3218]  Done Exec MyAction [READ, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]
+[20220528_22-21-3219]  Execute Act MyAction [ADD, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 2]
+[20220528_22-21-3220]  Done Exec MyAction [ADD, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 2]
+[20220528_22-21-3220]  DB write [Grape, -2]
+[20220528_22-21-3221]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = -1
+
+[20220528_22-21-3221]  DB write [Melo, 2]
+[20220528_22-21-3221]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 2
+
+[20220528_22-21-3222]  Execute Act MyAction [ADD, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 2]
+[20220528_22-21-3222]  Done Exec MyAction [ADD, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 2]
+[20220528_22-21-3223]  Execute Act MyAction [ADD, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 2]
+[20220528_22-21-3224]  Done Exec MyAction [ADD, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 2]
+[20220528_22-21-3225]  Action MyAction [WRITE, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]'s lock status = PERMITTED
+[20220528_22-21-3227]  Execute Act MyAction [WRITE, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]
+[20220528_22-21-3227]  Done Exec MyAction [WRITE, Orange, d873a1c7-f3e7-4f89-a42c-fea8d32b0691, 0]
+[20220528_22-21-3227]  DB write [Apple, 0]
+[20220528_22-21-3228]  DB write [Orange, 6]
+[20220528_22-21-3229]  Commit Transaction d873a1c7-f3e7-4f89-a42c-fea8d32b0691
+[20220528_22-21-3230]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-3231]  Inform WorkerNode002 to update
+[20220528_22-21-3236]  Release Lock for Transaction d873a1c7-f3e7-4f89-a42c-fea8d32b0691
+[20220528_22-21-3236]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-3237]  WorkerNode001: Start processing Transaction from MyTransaction [f5e10e66-7e8d-4c63-906a-dbfb3db100e6, WorkerNode001, 
+	MyAction [READ, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]
+	MyAction [MINUS, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 1]
+	MyAction [MINUS, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 1]
+	MyAction [MINUS, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 1]
+	MyAction [WRITE, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]
+	MyAction [READ, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]
+	MyAction [MINUS, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 2]
+	MyAction [MINUS, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 2]
+	MyAction [MINUS, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 2]
+	MyAction [WRITE, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]][20220528_22-21-3238]  Action MyAction [READ, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]'s lock status = PERMITTED
+[20220528_22-21-3238]  Execute Act MyAction [READ, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]
+[20220528_22-21-3239]  Done Exec MyAction [READ, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]
+[20220528_22-21-3240]  Execute Act MyAction [MINUS, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 1]
+[20220528_22-21-3241]  Done Exec MyAction [MINUS, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 1]
+[20220528_22-21-3242]  Execute Act MyAction [MINUS, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 1]
+[20220528_22-21-3242]  Done Exec MyAction [MINUS, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 1]
+[20220528_22-21-3243]  Execute Act MyAction [MINUS, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 1]
+[20220528_22-21-3244]  Done Exec MyAction [MINUS, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 1]
+[20220528_22-21-3247]  Action MyAction [WRITE, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]'s lock status = PERMITTED
+[20220528_22-21-3247]  Execute Act MyAction [WRITE, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]
+[20220528_22-21-3248]  Done Exec MyAction [WRITE, Apple, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]
+[20220528_22-21-3249]  Action MyAction [READ, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]'s lock status = PERMITTED
+[20220528_22-21-3250]  Execute Act MyAction [READ, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]
+[20220528_22-21-3251]  Done Exec MyAction [READ, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]
+[20220528_22-21-3252]  Execute Act MyAction [MINUS, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 2]
+[20220528_22-21-3253]  Done Exec MyAction [MINUS, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 2]
+[20220528_22-21-3253]  Execute Act MyAction [MINUS, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 2]
+[20220528_22-21-3254]  DB write [Grape, 0]
+[20220528_22-21-3255]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 0
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-3255]  DB write [Melo, 3]
+[20220528_22-21-3255]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 0
+	 Key = Orange, val = 6
+	 Key = Melo, val = 3
+
+[20220528_22-21-3255]  Done Exec MyAction [MINUS, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 2]
+[20220528_22-21-3255]  Execute Act MyAction [MINUS, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 2]
+[20220528_22-21-3256]  Done Exec MyAction [MINUS, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 2]
+[20220528_22-21-3258]  Action MyAction [WRITE, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]'s lock status = PERMITTED
+[20220528_22-21-3258]  Execute Act MyAction [WRITE, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]
+[20220528_22-21-3258]  Done Exec MyAction [WRITE, Orange, f5e10e66-7e8d-4c63-906a-dbfb3db100e6, 0]
+[20220528_22-21-3259]  DB write [Apple, -1]
+[20220528_22-21-3259]  DB write [Orange, 4]
+[20220528_22-21-3259]  Commit Transaction f5e10e66-7e8d-4c63-906a-dbfb3db100e6
+[20220528_22-21-3259]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = 0
+	 Key = Orange, val = 4
+	 Key = Melo, val = 3
+
+[20220528_22-21-3260]  Inform WorkerNode002 to update
+[20220528_22-21-3264]  Release Lock for Transaction f5e10e66-7e8d-4c63-906a-dbfb3db100e6
+[20220528_22-21-3264]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = 0
+	 Key = Orange, val = 4
+	 Key = Melo, val = 3
+
+[20220528_22-21-3266]  WorkerNode001: Start processing Transaction from MyTransaction [0e7bd874-7131-4f54-9677-6807e0301ee0, WorkerNode001, 
+	MyAction [READ, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]
+	MyAction [ADD, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 1]
+	MyAction [ADD, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 1]
+	MyAction [ADD, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 1]
+	MyAction [WRITE, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]
+	MyAction [READ, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]
+	MyAction [ADD, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 2]
+	MyAction [ADD, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 2]
+	MyAction [ADD, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 2]
+	MyAction [WRITE, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]][20220528_22-21-3268]  Action MyAction [READ, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]'s lock status = PERMITTED
+[20220528_22-21-3269]  Execute Act MyAction [READ, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]
+[20220528_22-21-3270]  Done Exec MyAction [READ, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]
+[20220528_22-21-3271]  Execute Act MyAction [ADD, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 1]
+[20220528_22-21-3271]  Done Exec MyAction [ADD, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 1]
+[20220528_22-21-3271]  Execute Act MyAction [ADD, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 1]
+[20220528_22-21-3272]  Done Exec MyAction [ADD, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 1]
+[20220528_22-21-3273]  Execute Act MyAction [ADD, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 1]
+[20220528_22-21-3274]  Done Exec MyAction [ADD, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 1]
+[20220528_22-21-3275]  Action MyAction [WRITE, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]'s lock status = PERMITTED
+[20220528_22-21-3276]  Execute Act MyAction [WRITE, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]
+[20220528_22-21-3278]  Done Exec MyAction [WRITE, Melo, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]
+[20220528_22-21-3279]  Action MyAction [READ, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]'s lock status = PERMITTED
+[20220528_22-21-3280]  Execute Act MyAction [READ, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]
+[20220528_22-21-3281]  Done Exec MyAction [READ, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]
+[20220528_22-21-3282]  Execute Act MyAction [ADD, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 2]
+[20220528_22-21-3282]  Done Exec MyAction [ADD, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 2]
+[20220528_22-21-3283]  Execute Act MyAction [ADD, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 2]
+[20220528_22-21-3283]  Done Exec MyAction [ADD, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 2]
+[20220528_22-21-3284]  Execute Act MyAction [ADD, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 2]
+[20220528_22-21-3285]  Done Exec MyAction [ADD, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 2]
+[20220528_22-21-3286]  Action MyAction [WRITE, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]'s lock status = PERMITTED
+[20220528_22-21-3288]  DB write [Grape, 0]
+[20220528_22-21-3289]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = 0
+	 Key = Orange, val = 4
+	 Key = Melo, val = 3
+
+[20220528_22-21-3289]  DB write [Melo, 3]
+[20220528_22-21-3289]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = 0
+	 Key = Orange, val = 4
+	 Key = Melo, val = 3
+
+[20220528_22-21-3290]  Execute Act MyAction [WRITE, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]
+[20220528_22-21-3290]  Done Exec MyAction [WRITE, Grape, 0e7bd874-7131-4f54-9677-6807e0301ee0, 0]
+[20220528_22-21-3291]  DB write [Grape, 2]
+[20220528_22-21-3292]  DB write [Melo, 4]
+[20220528_22-21-3292]  Commit Transaction 0e7bd874-7131-4f54-9677-6807e0301ee0
+[20220528_22-21-3293]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 4
+
+[20220528_22-21-3294]  Inform WorkerNode002 to update
+[20220528_22-21-32104]  WorkerNode001 unblocked
+[20220528_22-21-32105]  WorkerNode001 unblocked
+[20220528_22-21-32106]  Release Lock for Transaction 0e7bd874-7131-4f54-9677-6807e0301ee0
+[20220528_22-21-32107]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = 2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 4
+
+[20220528_22-21-32107]  WorkerNode001: Start processing Transaction from MyTransaction [7ddb2429-d87b-4727-998c-e1a8ba980108, WorkerNode001, 
+	MyAction [READ, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]
+	MyAction [MINUS, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 1]
+	MyAction [MINUS, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 1]
+	MyAction [MINUS, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 1]
+	MyAction [WRITE, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]
+	MyAction [READ, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]
+	MyAction [MINUS, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 2]
+	MyAction [MINUS, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 2]
+	MyAction [MINUS, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 2]
+	MyAction [WRITE, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]][20220528_22-21-32108]  Action MyAction [READ, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]'s lock status = PERMITTED
+[20220528_22-21-32109]  Execute Act MyAction [READ, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]
+[20220528_22-21-32110]  Done Exec MyAction [READ, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]
+[20220528_22-21-32111]  Execute Act MyAction [MINUS, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 1]
+[20220528_22-21-32112]  Done Exec MyAction [MINUS, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 1]
+[20220528_22-21-32113]  Execute Act MyAction [MINUS, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 1]
+[20220528_22-21-32114]  Done Exec MyAction [MINUS, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 1]
+[20220528_22-21-32114]  Execute Act MyAction [MINUS, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 1]
+[20220528_22-21-32115]  Done Exec MyAction [MINUS, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 1]
+[20220528_22-21-32117]  Action MyAction [WRITE, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]'s lock status = PERMITTED
+[20220528_22-21-32118]  Execute Act MyAction [WRITE, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]
+[20220528_22-21-32118]  Done Exec MyAction [WRITE, Melo, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]
+[20220528_22-21-32118]  DB write [Grape, 0]
+[20220528_22-21-32119]  Action MyAction [READ, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]'s lock status = PERMITTED
+[20220528_22-21-32119]  Execute Act MyAction [READ, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]
+[20220528_22-21-32119]  Done Exec MyAction [READ, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]
+[20220528_22-21-32120]  Execute Act MyAction [MINUS, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 2]
+[20220528_22-21-32120]  Done Exec MyAction [MINUS, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 2]
+[20220528_22-21-32120]  Execute Act MyAction [MINUS, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 2]
+[20220528_22-21-32121]  Done Exec MyAction [MINUS, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 2]
+[20220528_22-21-32121]  Execute Act MyAction [MINUS, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 2]
+[20220528_22-21-32121]  Done Exec MyAction [MINUS, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 2]
+[20220528_22-21-32122]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = 0
+	 Key = Orange, val = 4
+	 Key = Melo, val = 4
+
+[20220528_22-21-32122]  Action MyAction [WRITE, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]'s lock status = PERMITTED
+[20220528_22-21-32122]  Execute Act MyAction [WRITE, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]
+[20220528_22-21-32123]  Done Exec MyAction [WRITE, Grape, 7ddb2429-d87b-4727-998c-e1a8ba980108, 0]
+[20220528_22-21-32123]  DB write [Grape, -2]
+[20220528_22-21-32123]  DB write [Melo, 3]
+[20220528_22-21-32124]  Commit Transaction 7ddb2429-d87b-4727-998c-e1a8ba980108
+[20220528_22-21-32124]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 3
+
+[20220528_22-21-32124]  Inform WorkerNode002 to update
+[20220528_22-21-32125]  DB write [Melo, 2]
+[20220528_22-21-32125]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 3
+
+[20220528_22-21-32129]  Release Lock for Transaction 7ddb2429-d87b-4727-998c-e1a8ba980108
+[20220528_22-21-32130]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 3
+
+[20220528_22-21-32131]  WorkerNode001: Start processing Transaction from MyTransaction [77ccc680-fe3f-4870-8df8-4830ee5128f1, WorkerNode001, 
+	MyAction [READ, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]
+	MyAction [ADD, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 1]
+	MyAction [ADD, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 1]
+	MyAction [ADD, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 1]
+	MyAction [WRITE, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]
+	MyAction [READ, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]
+	MyAction [ADD, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 2]
+	MyAction [ADD, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 2]
+	MyAction [ADD, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 2]
+	MyAction [WRITE, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]][20220528_22-21-32132]  Action MyAction [READ, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]'s lock status = PERMITTED
+[20220528_22-21-32132]  Execute Act MyAction [READ, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]
+[20220528_22-21-32133]  Done Exec MyAction [READ, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]
+[20220528_22-21-32134]  Execute Act MyAction [ADD, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 1]
+[20220528_22-21-32135]  Done Exec MyAction [ADD, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 1]
+[20220528_22-21-32135]  Execute Act MyAction [ADD, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 1]
+[20220528_22-21-32137]  Done Exec MyAction [ADD, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 1]
+[20220528_22-21-32137]  Execute Act MyAction [ADD, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 1]
+[20220528_22-21-32138]  Done Exec MyAction [ADD, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 1]
+[20220528_22-21-32139]  Action MyAction [WRITE, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]'s lock status = PERMITTED
+[20220528_22-21-32141]  Execute Act MyAction [WRITE, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]
+[20220528_22-21-32141]  Done Exec MyAction [WRITE, Apple, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]
+[20220528_22-21-32142]  Action MyAction [READ, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]'s lock status = PERMITTED
+[20220528_22-21-32142]  Execute Act MyAction [READ, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]
+[20220528_22-21-32143]  Done Exec MyAction [READ, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]
+[20220528_22-21-32144]  Execute Act MyAction [ADD, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 2]
+[20220528_22-21-32145]  Done Exec MyAction [ADD, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 2]
+[20220528_22-21-32146]  Execute Act MyAction [ADD, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 2]
+[20220528_22-21-32147]  Done Exec MyAction [ADD, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 2]
+[20220528_22-21-32147]  Execute Act MyAction [ADD, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 2]
+[20220528_22-21-32148]  Done Exec MyAction [ADD, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 2]
+[20220528_22-21-32150]  Action MyAction [WRITE, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]'s lock status = PERMITTED
+[20220528_22-21-32151]  Execute Act MyAction [WRITE, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]
+[20220528_22-21-32152]  Done Exec MyAction [WRITE, Orange, 77ccc680-fe3f-4870-8df8-4830ee5128f1, 0]
+[20220528_22-21-32153]  DB write [Apple, 0]
+[20220528_22-21-32154]  DB write [Orange, 6]
+[20220528_22-21-32154]  Commit Transaction 77ccc680-fe3f-4870-8df8-4830ee5128f1
+[20220528_22-21-32155]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 6
+	 Key = Melo, val = 3
+
+[20220528_22-21-32156]  Inform WorkerNode002 to update
+[20220528_22-21-32157]  DB write [Grape, -4]
+[20220528_22-21-32157]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 3
+
+[20220528_22-21-32159]  DB write [Melo, 2]
+[20220528_22-21-32160]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-32162]  Release Lock for Transaction 77ccc680-fe3f-4870-8df8-4830ee5128f1
+[20220528_22-21-32163]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-32164]  WorkerNode001: Start processing Transaction from MyTransaction [9a9a8311-2fe9-4902-a320-12a88917d3f2, WorkerNode001, 
+	MyAction [READ, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+	MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+	MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+	MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+	MyAction [WRITE, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+	MyAction [READ, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+	MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+	MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+	MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+	MyAction [WRITE, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]][20220528_22-21-32164]  Action MyAction [READ, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]'s lock status = PERMITTED
+[20220528_22-21-32165]  Execute Act MyAction [READ, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32166]  Done Exec MyAction [READ, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32167]  Execute Act MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32168]  Done Exec MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32169]  Execute Act MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32170]  Done Exec MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32173]  Execute Act MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32174]  Done Exec MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32174]  Action MyAction [WRITE, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]'s lock status = ROLLBACK
+[20220528_22-21-32179]  Action MyAction [READ, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]'s lock status = PERMITTED
+[20220528_22-21-32179]  Execute Act MyAction [READ, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32179]  Done Exec MyAction [READ, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32181]  Execute Act MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32181]  Done Exec MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32183]  Execute Act MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32184]  Done Exec MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32185]  Execute Act MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32187]  Done Exec MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32188]  Action MyAction [WRITE, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]'s lock status = ROLLBACK
+[20220528_22-21-32192]  WorkerNode001 unblocked
+[20220528_22-21-32192]  DB write [Apple, 0]
+[20220528_22-21-32193]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-32193]  WorkerNode001 unblocked
+[20220528_22-21-32194]  DB write [Apple, 0]
+[20220528_22-21-32195]  DB write [Orange, 6]
+[20220528_22-21-32195]  Commit Transaction 9a9a8311-2fe9-4902-a320-12a88917d3f2
+[20220528_22-21-32196]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-32196]  Inform WorkerNode002 to update
+[20220528_22-21-32196]  DB write [Orange, 6]
+[20220528_22-21-32196]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-32200]  Release Lock for Transaction 9a9a8311-2fe9-4902-a320-12a88917d3f2
+[20220528_22-21-32201]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-32201]  WorkerNode001: Start processing Transaction from MyTransaction [9a9a8311-2fe9-4902-a320-12a88917d3f2, WorkerNode001, 
+	MyAction [READ, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+	MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+	MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+	MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+	MyAction [WRITE, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+	MyAction [READ, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+	MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+	MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+	MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+	MyAction [WRITE, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]][20220528_22-21-32204]  Action MyAction [READ, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]'s lock status = PERMITTED
+[20220528_22-21-32206]  Execute Act MyAction [READ, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32207]  Done Exec MyAction [READ, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32207]  Execute Act MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32208]  Done Exec MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32209]  Execute Act MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32210]  Done Exec MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32210]  Execute Act MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32211]  Done Exec MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32214]  Action MyAction [WRITE, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]'s lock status = PERMITTED
+[20220528_22-21-32215]  Execute Act MyAction [WRITE, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32215]  Done Exec MyAction [WRITE, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32216]  Action MyAction [READ, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]'s lock status = PERMITTED
+[20220528_22-21-32217]  Execute Act MyAction [READ, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32218]  Done Exec MyAction [READ, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32219]  Execute Act MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32220]  Done Exec MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32220]  Execute Act MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32221]  Done Exec MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32222]  Execute Act MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32223]  Done Exec MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32224]  Action MyAction [WRITE, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]'s lock status = PERMITTED
+[20220528_22-21-32226]  Execute Act MyAction [WRITE, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32227]  Done Exec MyAction [WRITE, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32227]  DB write [Apple, -1]
+[20220528_22-21-32228]  DB write [Orange, 4]
+[20220528_22-21-32229]  Commit Transaction 9a9a8311-2fe9-4902-a320-12a88917d3f2
+[20220528_22-21-32230]  DB write [Apple, 0]
+[20220528_22-21-32230]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 4
+	 Key = Melo, val = 2
+
+[20220528_22-21-32231]  DB write [Orange, 6]
+[20220528_22-21-32231]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-32232]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 4
+	 Key = Melo, val = 2
+
+[20220528_22-21-32232]  Inform WorkerNode002 to update
+[20220528_22-21-32238]  WorkerNode001 unblocked
+[20220528_22-21-32239]  WorkerNode001 unblocked
+[20220528_22-21-32239]  Release Lock for Transaction 9a9a8311-2fe9-4902-a320-12a88917d3f2
+[20220528_22-21-32240]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-32241]  WorkerNode001: Start processing Transaction from MyTransaction [9a9a8311-2fe9-4902-a320-12a88917d3f2, WorkerNode001, 
+	MyAction [READ, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+	MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+	MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+	MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+	MyAction [WRITE, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+	MyAction [READ, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+	MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+	MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+	MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+	MyAction [WRITE, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]][20220528_22-21-32242]  Action MyAction [READ, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]'s lock status = PERMITTED
+[20220528_22-21-32242]  Execute Act MyAction [READ, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32243]  Done Exec MyAction [READ, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32244]  Execute Act MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32246]  Done Exec MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32248]  Execute Act MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32249]  Done Exec MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32250]  Execute Act MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32251]  Done Exec MyAction [MINUS, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 1]
+[20220528_22-21-32253]  Action MyAction [WRITE, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]'s lock status = PERMITTED
+[20220528_22-21-32254]  Execute Act MyAction [WRITE, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32254]  Done Exec MyAction [WRITE, Apple, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32255]  Action MyAction [READ, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]'s lock status = PERMITTED
+[20220528_22-21-32256]  Execute Act MyAction [READ, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32257]  Done Exec MyAction [READ, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32259]  Execute Act MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32260]  Done Exec MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32261]  Execute Act MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32262]  Done Exec MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32263]  DB write [Apple, -1]
+[20220528_22-21-32263]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-32264]  DB write [Orange, 4]
+[20220528_22-21-32264]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 4
+	 Key = Melo, val = 2
+
+[20220528_22-21-32265]  Execute Act MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32265]  Done Exec MyAction [MINUS, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 2]
+[20220528_22-21-32267]  Action MyAction [WRITE, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]'s lock status = PERMITTED
+[20220528_22-21-32267]  Execute Act MyAction [WRITE, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32268]  Done Exec MyAction [WRITE, Orange, 9a9a8311-2fe9-4902-a320-12a88917d3f2, 0]
+[20220528_22-21-32269]  DB write [Apple, -1]
+[20220528_22-21-32271]  DB write [Orange, 2]
+[20220528_22-21-32271]  Commit Transaction 9a9a8311-2fe9-4902-a320-12a88917d3f2
+[20220528_22-21-32272]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 2
+	 Key = Melo, val = 2
+
+[20220528_22-21-32274]  Inform WorkerNode002 to update
+[20220528_22-21-32280]  WorkerNode001 unblocked
+[20220528_22-21-32281]  WorkerNode001 unblocked
+[20220528_22-21-32281]  Release Lock for Transaction 9a9a8311-2fe9-4902-a320-12a88917d3f2
+[20220528_22-21-32281]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 2
+	 Key = Melo, val = 2
+
+[20220528_22-21-32282]  WorkerNode001: Start processing Transaction from MyTransaction [12f31f46-7a2f-4137-84d0-94e5c5442229, WorkerNode001, 
+	MyAction [READ, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]
+	MyAction [ADD, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 1]
+	MyAction [ADD, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 1]
+	MyAction [ADD, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 1]
+	MyAction [WRITE, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]
+	MyAction [READ, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]
+	MyAction [ADD, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 2]
+	MyAction [ADD, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 2]
+	MyAction [ADD, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 2]
+	MyAction [WRITE, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]][20220528_22-21-32284]  Action MyAction [READ, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]'s lock status = PERMITTED
+[20220528_22-21-32284]  Execute Act MyAction [READ, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]
+[20220528_22-21-32285]  Done Exec MyAction [READ, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]
+[20220528_22-21-32286]  Execute Act MyAction [ADD, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 1]
+[20220528_22-21-32287]  Done Exec MyAction [ADD, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 1]
+[20220528_22-21-32288]  Execute Act MyAction [ADD, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 1]
+[20220528_22-21-32289]  Done Exec MyAction [ADD, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 1]
+[20220528_22-21-32291]  Execute Act MyAction [ADD, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 1]
+[20220528_22-21-32293]  Done Exec MyAction [ADD, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 1]
+[20220528_22-21-32294]  Action MyAction [WRITE, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]'s lock status = PERMITTED
+[20220528_22-21-32295]  Execute Act MyAction [WRITE, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]
+[20220528_22-21-32296]  Done Exec MyAction [WRITE, Melo, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]
+[20220528_22-21-32297]  Action MyAction [READ, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]'s lock status = PERMITTED
+[20220528_22-21-32298]  Execute Act MyAction [READ, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]
+[20220528_22-21-32299]  Done Exec MyAction [READ, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]
+[20220528_22-21-32300]  DB write [Apple, 0]
+[20220528_22-21-32301]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 2
+	 Key = Melo, val = 2
+
+[20220528_22-21-32302]  DB write [Orange, 4]
+[20220528_22-21-32302]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 4
+	 Key = Melo, val = 2
+
+[20220528_22-21-32303]  Execute Act MyAction [ADD, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 2]
+[20220528_22-21-32304]  Done Exec MyAction [ADD, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 2]
+[20220528_22-21-32304]  Execute Act MyAction [ADD, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 2]
+[20220528_22-21-32304]  Done Exec MyAction [ADD, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 2]
+[20220528_22-21-32304]  Execute Act MyAction [ADD, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 2]
+[20220528_22-21-32305]  Done Exec MyAction [ADD, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 2]
+[20220528_22-21-32306]  Action MyAction [WRITE, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]'s lock status = PERMITTED
+[20220528_22-21-32307]  Execute Act MyAction [WRITE, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]
+[20220528_22-21-32307]  Done Exec MyAction [WRITE, Grape, 12f31f46-7a2f-4137-84d0-94e5c5442229, 0]
+[20220528_22-21-32308]  DB write [Grape, -2]
+[20220528_22-21-32309]  DB write [Melo, 3]
+[20220528_22-21-32311]  Commit Transaction 12f31f46-7a2f-4137-84d0-94e5c5442229
+[20220528_22-21-32312]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 3
+
+[20220528_22-21-32313]  Inform WorkerNode002 to update
+[20220528_22-21-32318]  Release Lock for Transaction 12f31f46-7a2f-4137-84d0-94e5c5442229
+[20220528_22-21-32318]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 3
+
+[20220528_22-21-32318]  WorkerNode001: Start processing Transaction from MyTransaction [31ae8f13-172f-472e-83e8-addd4590d296, WorkerNode001, 
+	MyAction [READ, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 0]
+	MyAction [MINUS, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 1]
+	MyAction [MINUS, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 1]
+	MyAction [MINUS, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 1]
+	MyAction [WRITE, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 0]
+	MyAction [READ, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 0]
+	MyAction [MINUS, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 2]
+	MyAction [MINUS, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 2]
+	MyAction [MINUS, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 2]
+	MyAction [WRITE, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 0]][20220528_22-21-32319]  Action MyAction [READ, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 0]'s lock status = PERMITTED
+[20220528_22-21-32320]  Execute Act MyAction [READ, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 0]
+[20220528_22-21-32320]  Done Exec MyAction [READ, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 0]
+[20220528_22-21-32321]  Execute Act MyAction [MINUS, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 1]
+[20220528_22-21-32323]  Done Exec MyAction [MINUS, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 1]
+[20220528_22-21-32324]  Execute Act MyAction [MINUS, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 1]
+[20220528_22-21-32325]  Done Exec MyAction [MINUS, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 1]
+[20220528_22-21-32326]  Execute Act MyAction [MINUS, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 1]
+[20220528_22-21-32327]  Done Exec MyAction [MINUS, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 1]
+[20220528_22-21-32329]  Action MyAction [WRITE, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 0]'s lock status = PERMITTED
+[20220528_22-21-32329]  Execute Act MyAction [WRITE, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 0]
+[20220528_22-21-32330]  Done Exec MyAction [WRITE, Melo, 31ae8f13-172f-472e-83e8-addd4590d296, 0]
+[20220528_22-21-32331]  Action MyAction [READ, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 0]'s lock status = PERMITTED
+[20220528_22-21-32332]  Execute Act MyAction [READ, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 0]
+[20220528_22-21-32333]  Done Exec MyAction [READ, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 0]
+[20220528_22-21-32334]  Execute Act MyAction [MINUS, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 2]
+[20220528_22-21-32335]  Done Exec MyAction [MINUS, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 2]
+[20220528_22-21-32336]  Execute Act MyAction [MINUS, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 2]
+[20220528_22-21-32337]  Done Exec MyAction [MINUS, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 2]
+[20220528_22-21-32338]  DB write [Apple, 1]
+[20220528_22-21-32338]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 4
+	 Key = Melo, val = 3
+
+[20220528_22-21-32338]  DB write [Orange, 6]
+[20220528_22-21-32339]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -2
+	 Key = Orange, val = 6
+	 Key = Melo, val = 3
+
+[20220528_22-21-32339]  Execute Act MyAction [MINUS, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 2]
+[20220528_22-21-32340]  Done Exec MyAction [MINUS, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 2]
+[20220528_22-21-32341]  Action MyAction [WRITE, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 0]'s lock status = PERMITTED
+[20220528_22-21-32342]  Execute Act MyAction [WRITE, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 0]
+[20220528_22-21-32342]  Done Exec MyAction [WRITE, Grape, 31ae8f13-172f-472e-83e8-addd4590d296, 0]
+[20220528_22-21-32343]  DB write [Grape, -4]
+[20220528_22-21-32344]  DB write [Melo, 2]
+[20220528_22-21-32345]  Commit Transaction 31ae8f13-172f-472e-83e8-addd4590d296
+[20220528_22-21-32346]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-32348]  Inform WorkerNode002 to update
+[20220528_22-21-32355]  Release Lock for Transaction 31ae8f13-172f-472e-83e8-addd4590d296
+[20220528_22-21-32355]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-32356]  WorkerNode001: Start processing Transaction from MyTransaction [8e03bda8-2827-4c0d-83c8-b3d660e30b1e, WorkerNode001, 
+	MyAction [READ, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]
+	MyAction [ADD, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 1]
+	MyAction [ADD, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 1]
+	MyAction [ADD, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 1]
+	MyAction [WRITE, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]
+	MyAction [READ, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]
+	MyAction [ADD, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 2]
+	MyAction [ADD, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 2]
+	MyAction [ADD, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 2]
+	MyAction [WRITE, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]][20220528_22-21-32357]  Action MyAction [READ, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]'s lock status = PERMITTED
+[20220528_22-21-32357]  Execute Act MyAction [READ, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]
+[20220528_22-21-32358]  Done Exec MyAction [READ, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]
+[20220528_22-21-32359]  Execute Act MyAction [ADD, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 1]
+[20220528_22-21-32359]  Done Exec MyAction [ADD, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 1]
+[20220528_22-21-32360]  Execute Act MyAction [ADD, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 1]
+[20220528_22-21-32360]  Done Exec MyAction [ADD, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 1]
+[20220528_22-21-32361]  Execute Act MyAction [ADD, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 1]
+[20220528_22-21-32363]  Done Exec MyAction [ADD, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 1]
+[20220528_22-21-32364]  Action MyAction [WRITE, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]'s lock status = PERMITTED
+[20220528_22-21-32365]  Execute Act MyAction [WRITE, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]
+[20220528_22-21-32366]  Done Exec MyAction [WRITE, Apple, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]
+[20220528_22-21-32368]  Action MyAction [READ, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]'s lock status = PERMITTED
+[20220528_22-21-32369]  Execute Act MyAction [READ, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]
+[20220528_22-21-32369]  Done Exec MyAction [READ, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]
+[20220528_22-21-32370]  Execute Act MyAction [ADD, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 2]
+[20220528_22-21-32370]  Done Exec MyAction [ADD, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 2]
+[20220528_22-21-32371]  Execute Act MyAction [ADD, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 2]
+[20220528_22-21-32373]  Done Exec MyAction [ADD, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 2]
+[20220528_22-21-32374]  DB write [Apple, 2]
+[20220528_22-21-32374]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-32375]  DB write [Orange, 8]
+[20220528_22-21-32375]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 8
+	 Key = Melo, val = 2
+
+[20220528_22-21-32375]  Execute Act MyAction [ADD, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 2]
+[20220528_22-21-32376]  Done Exec MyAction [ADD, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 2]
+[20220528_22-21-32378]  Action MyAction [WRITE, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]'s lock status = PERMITTED
+[20220528_22-21-32378]  Execute Act MyAction [WRITE, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]
+[20220528_22-21-32379]  Done Exec MyAction [WRITE, Orange, 8e03bda8-2827-4c0d-83c8-b3d660e30b1e, 0]
+[20220528_22-21-32380]  DB write [Apple, 2]
+[20220528_22-21-32381]  DB write [Orange, 10]
+[20220528_22-21-32382]  Commit Transaction 8e03bda8-2827-4c0d-83c8-b3d660e30b1e
+[20220528_22-21-32383]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 2
+
+[20220528_22-21-32384]  Inform WorkerNode002 to update
+[20220528_22-21-32389]  Release Lock for Transaction 8e03bda8-2827-4c0d-83c8-b3d660e30b1e
+[20220528_22-21-32390]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 2
+
+[20220528_22-21-32390]  WorkerNode001: Start processing Transaction from MyTransaction [cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, WorkerNode001, 
+	MyAction [READ, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]
+	MyAction [MINUS, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 1]
+	MyAction [MINUS, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 1]
+	MyAction [MINUS, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 1]
+	MyAction [WRITE, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]
+	MyAction [READ, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]
+	MyAction [MINUS, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 2]
+	MyAction [MINUS, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 2]
+	MyAction [MINUS, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 2]
+	MyAction [WRITE, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]][20220528_22-21-32391]  Action MyAction [READ, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]'s lock status = PERMITTED
+[20220528_22-21-32393]  Execute Act MyAction [READ, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]
+[20220528_22-21-32394]  Done Exec MyAction [READ, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]
+[20220528_22-21-32395]  Execute Act MyAction [MINUS, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 1]
+[20220528_22-21-32396]  Done Exec MyAction [MINUS, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 1]
+[20220528_22-21-32397]  Execute Act MyAction [MINUS, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 1]
+[20220528_22-21-32398]  Done Exec MyAction [MINUS, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 1]
+[20220528_22-21-32398]  Execute Act MyAction [MINUS, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 1]
+[20220528_22-21-32399]  Done Exec MyAction [MINUS, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 1]
+[20220528_22-21-32400]  Action MyAction [WRITE, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]'s lock status = PERMITTED
+[20220528_22-21-32402]  Execute Act MyAction [WRITE, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]
+[20220528_22-21-32404]  Done Exec MyAction [WRITE, Apple, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]
+[20220528_22-21-32405]  Action MyAction [READ, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]'s lock status = PERMITTED
+[20220528_22-21-32406]  Execute Act MyAction [READ, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]
+[20220528_22-21-32407]  Done Exec MyAction [READ, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]
+[20220528_22-21-32408]  Execute Act MyAction [MINUS, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 2]
+[20220528_22-21-32409]  Done Exec MyAction [MINUS, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 2]
+[20220528_22-21-32410]  Execute Act MyAction [MINUS, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 2]
+[20220528_22-21-32411]  Done Exec MyAction [MINUS, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 2]
+[20220528_22-21-32412]  DB write [Apple, 3]
+[20220528_22-21-32412]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 3
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 2
+
+[20220528_22-21-32413]  DB write [Orange, 12]
+[20220528_22-21-32415]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 3
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 2
+
+[20220528_22-21-32415]  Execute Act MyAction [MINUS, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 2]
+[20220528_22-21-32416]  Done Exec MyAction [MINUS, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 2]
+[20220528_22-21-32417]  Action MyAction [WRITE, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]'s lock status = PERMITTED
+[20220528_22-21-32417]  Execute Act MyAction [WRITE, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]
+[20220528_22-21-32418]  Done Exec MyAction [WRITE, Orange, cea857e2-7fb3-4ff3-9d8d-d8679c25dec1, 0]
+[20220528_22-21-32419]  DB write [Apple, 1]
+[20220528_22-21-32420]  DB write [Orange, 10]
+[20220528_22-21-32421]  Commit Transaction cea857e2-7fb3-4ff3-9d8d-d8679c25dec1
+[20220528_22-21-32421]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 2
+
+[20220528_22-21-32423]  Inform WorkerNode002 to update
+[20220528_22-21-32430]  Release Lock for Transaction cea857e2-7fb3-4ff3-9d8d-d8679c25dec1
+[20220528_22-21-32430]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 2
+
+[20220528_22-21-32432]  WorkerNode001: Start processing Transaction from MyTransaction [42ed801d-a58a-4b1f-9f79-4eb401dbb777, WorkerNode001, 
+	MyAction [READ, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]
+	MyAction [ADD, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 1]
+	MyAction [ADD, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 1]
+	MyAction [ADD, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 1]
+	MyAction [WRITE, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]
+	MyAction [READ, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]
+	MyAction [ADD, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 2]
+	MyAction [ADD, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 2]
+	MyAction [ADD, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 2]
+	MyAction [WRITE, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]][20220528_22-21-32433]  Action MyAction [READ, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]'s lock status = PERMITTED
+[20220528_22-21-32434]  Execute Act MyAction [READ, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]
+[20220528_22-21-32435]  Done Exec MyAction [READ, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]
+[20220528_22-21-32435]  Execute Act MyAction [ADD, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 1]
+[20220528_22-21-32436]  Done Exec MyAction [ADD, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 1]
+[20220528_22-21-32436]  Execute Act MyAction [ADD, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 1]
+[20220528_22-21-32437]  Done Exec MyAction [ADD, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 1]
+[20220528_22-21-32437]  Execute Act MyAction [ADD, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 1]
+[20220528_22-21-32438]  Done Exec MyAction [ADD, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 1]
+[20220528_22-21-32439]  Action MyAction [WRITE, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]'s lock status = PERMITTED
+[20220528_22-21-32440]  Execute Act MyAction [WRITE, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]
+[20220528_22-21-32441]  Done Exec MyAction [WRITE, Melo, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]
+[20220528_22-21-32442]  Action MyAction [READ, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]'s lock status = PERMITTED
+[20220528_22-21-32443]  Execute Act MyAction [READ, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]
+[20220528_22-21-32445]  Done Exec MyAction [READ, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]
+[20220528_22-21-32446]  DB write [Apple, 0]
+[20220528_22-21-32446]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 2
+
+[20220528_22-21-32447]  DB write [Orange, 8]
+[20220528_22-21-32447]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 8
+	 Key = Melo, val = 2
+
+[20220528_22-21-32447]  Execute Act MyAction [ADD, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 2]
+[20220528_22-21-32448]  Done Exec MyAction [ADD, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 2]
+[20220528_22-21-32448]  Execute Act MyAction [ADD, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 2]
+[20220528_22-21-32449]  Done Exec MyAction [ADD, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 2]
+[20220528_22-21-32449]  Execute Act MyAction [ADD, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 2]
+[20220528_22-21-32450]  Done Exec MyAction [ADD, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 2]
+[20220528_22-21-32452]  Action MyAction [WRITE, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]'s lock status = PERMITTED
+[20220528_22-21-32452]  Execute Act MyAction [WRITE, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]
+[20220528_22-21-32454]  Done Exec MyAction [WRITE, Grape, 42ed801d-a58a-4b1f-9f79-4eb401dbb777, 0]
+[20220528_22-21-32455]  DB write [Grape, -2]
+[20220528_22-21-32457]  DB write [Melo, 3]
+[20220528_22-21-32457]  Commit Transaction 42ed801d-a58a-4b1f-9f79-4eb401dbb777
+[20220528_22-21-32457]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 8
+	 Key = Melo, val = 3
+
+[20220528_22-21-32458]  Inform WorkerNode002 to update
+[20220528_22-21-32463]  Release Lock for Transaction 42ed801d-a58a-4b1f-9f79-4eb401dbb777
+[20220528_22-21-32463]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 8
+	 Key = Melo, val = 3
+
+[20220528_22-21-32463]  WorkerNode001: Start processing Transaction from MyTransaction [0f1ed516-90bd-40d5-817b-e66f2a905340, WorkerNode001, 
+	MyAction [READ, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]
+	MyAction [MINUS, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 1]
+	MyAction [MINUS, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 1]
+	MyAction [MINUS, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 1]
+	MyAction [WRITE, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]
+	MyAction [READ, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]
+	MyAction [MINUS, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 2]
+	MyAction [MINUS, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 2]
+	MyAction [MINUS, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 2]
+	MyAction [WRITE, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]][20220528_22-21-32465]  Action MyAction [READ, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]'s lock status = PERMITTED
+[20220528_22-21-32466]  Execute Act MyAction [READ, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]
+[20220528_22-21-32466]  Done Exec MyAction [READ, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]
+[20220528_22-21-32467]  Execute Act MyAction [MINUS, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 1]
+[20220528_22-21-32469]  Done Exec MyAction [MINUS, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 1]
+[20220528_22-21-32470]  Execute Act MyAction [MINUS, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 1]
+[20220528_22-21-32471]  Done Exec MyAction [MINUS, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 1]
+[20220528_22-21-32472]  Execute Act MyAction [MINUS, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 1]
+[20220528_22-21-32473]  Done Exec MyAction [MINUS, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 1]
+[20220528_22-21-32474]  Action MyAction [WRITE, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]'s lock status = PERMITTED
+[20220528_22-21-32475]  Execute Act MyAction [WRITE, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]
+[20220528_22-21-32476]  Done Exec MyAction [WRITE, Melo, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]
+[20220528_22-21-32477]  Action MyAction [READ, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]'s lock status = PERMITTED
+[20220528_22-21-32478]  Execute Act MyAction [READ, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]
+[20220528_22-21-32479]  Done Exec MyAction [READ, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]
+[20220528_22-21-32480]  DB write [Grape, 0]
+[20220528_22-21-32481]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 0
+	 Key = Orange, val = 8
+	 Key = Melo, val = 3
+
+[20220528_22-21-32482]  DB write [Melo, 3]
+[20220528_22-21-32483]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = 0
+	 Key = Orange, val = 8
+	 Key = Melo, val = 3
+
+[20220528_22-21-32483]  Execute Act MyAction [MINUS, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 2]
+[20220528_22-21-32484]  Done Exec MyAction [MINUS, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 2]
+[20220528_22-21-32484]  Execute Act MyAction [MINUS, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 2]
+[20220528_22-21-32485]  Done Exec MyAction [MINUS, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 2]
+[20220528_22-21-32485]  Execute Act MyAction [MINUS, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 2]
+[20220528_22-21-32486]  Done Exec MyAction [MINUS, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 2]
+[20220528_22-21-32487]  Action MyAction [WRITE, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]'s lock status = PERMITTED
+[20220528_22-21-32487]  Execute Act MyAction [WRITE, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]
+[20220528_22-21-32488]  Done Exec MyAction [WRITE, Grape, 0f1ed516-90bd-40d5-817b-e66f2a905340, 0]
+[20220528_22-21-32489]  DB write [Grape, -2]
+[20220528_22-21-32491]  DB write [Melo, 2]
+[20220528_22-21-32492]  Commit Transaction 0f1ed516-90bd-40d5-817b-e66f2a905340
+[20220528_22-21-32492]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 8
+	 Key = Melo, val = 2
+
+[20220528_22-21-32493]  Inform WorkerNode002 to update
+[20220528_22-21-32499]  Release Lock for Transaction 0f1ed516-90bd-40d5-817b-e66f2a905340
+[20220528_22-21-32499]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 8
+	 Key = Melo, val = 2
+
+[20220528_22-21-32500]  WorkerNode001: Start processing Transaction from MyTransaction [7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, WorkerNode001, 
+	MyAction [READ, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]
+	MyAction [ADD, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 1]
+	MyAction [ADD, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 1]
+	MyAction [ADD, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 1]
+	MyAction [WRITE, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]
+	MyAction [READ, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]
+	MyAction [ADD, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 2]
+	MyAction [ADD, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 2]
+	MyAction [ADD, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 2]
+	MyAction [WRITE, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]][20220528_22-21-32500]  Action MyAction [READ, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]'s lock status = PERMITTED
+[20220528_22-21-32501]  Execute Act MyAction [READ, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]
+[20220528_22-21-32502]  Done Exec MyAction [READ, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]
+[20220528_22-21-32503]  Execute Act MyAction [ADD, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 1]
+[20220528_22-21-32503]  Done Exec MyAction [ADD, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 1]
+[20220528_22-21-32504]  Execute Act MyAction [ADD, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 1]
+[20220528_22-21-32505]  Done Exec MyAction [ADD, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 1]
+[20220528_22-21-32506]  Execute Act MyAction [ADD, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 1]
+[20220528_22-21-32507]  Done Exec MyAction [ADD, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 1]
+[20220528_22-21-32508]  Action MyAction [WRITE, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]'s lock status = PERMITTED
+[20220528_22-21-32509]  Execute Act MyAction [WRITE, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]
+[20220528_22-21-32512]  Done Exec MyAction [WRITE, Apple, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]
+[20220528_22-21-32513]  Action MyAction [READ, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]'s lock status = PERMITTED
+[20220528_22-21-32513]  Execute Act MyAction [READ, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]
+[20220528_22-21-32514]  Done Exec MyAction [READ, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]
+[20220528_22-21-32515]  Execute Act MyAction [ADD, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 2]
+[20220528_22-21-32516]  Done Exec MyAction [ADD, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 2]
+[20220528_22-21-32517]  Execute Act MyAction [ADD, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 2]
+[20220528_22-21-32518]  Done Exec MyAction [ADD, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 2]
+[20220528_22-21-32519]  Execute Act MyAction [ADD, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 2]
+[20220528_22-21-32521]  DB write [Grape, -4]
+[20220528_22-21-32522]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 8
+	 Key = Melo, val = 2
+
+[20220528_22-21-32522]  DB write [Melo, 1]
+[20220528_22-21-32522]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 8
+	 Key = Melo, val = 1
+
+[20220528_22-21-32523]  Done Exec MyAction [ADD, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 2]
+[20220528_22-21-32523]  Action MyAction [WRITE, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]'s lock status = PERMITTED
+[20220528_22-21-32523]  Execute Act MyAction [WRITE, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]
+[20220528_22-21-32524]  Done Exec MyAction [WRITE, Orange, 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88, 0]
+[20220528_22-21-32524]  DB write [Apple, 1]
+[20220528_22-21-32525]  DB write [Orange, 10]
+[20220528_22-21-32526]  Commit Transaction 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88
+[20220528_22-21-32526]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32526]  Inform WorkerNode002 to update
+[20220528_22-21-32530]  Release Lock for Transaction 7c509e2a-6d05-4f8e-a25c-0f5ddcb85e88
+[20220528_22-21-32530]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32531]  WorkerNode001: Start processing Transaction from MyTransaction [78d6884f-cafa-435e-ac25-921499af9515, WorkerNode001, 
+	MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]][20220528_22-21-32531]  Action MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32531]  Execute Act MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32532]  Done Exec MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32533]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32534]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32535]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32536]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32536]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32537]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32538]  Action MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = ROLLBACK
+[20220528_22-21-32543]  WorkerNode001 unblocked
+[20220528_22-21-32544]  Action MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32544]  Execute Act MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32545]  Done Exec MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32545]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32546]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32547]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32548]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32548]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32549]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32550]  Action MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = ROLLBACK
+[20220528_22-21-32554]  WorkerNode001 unblocked
+[20220528_22-21-32554]  DB write [Apple, 1]
+[20220528_22-21-32555]  DB write [Orange, 10]
+[20220528_22-21-32556]  Commit Transaction 78d6884f-cafa-435e-ac25-921499af9515
+[20220528_22-21-32557]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32558]  DB write [Apple, 1]
+[20220528_22-21-32558]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32558]  DB write [Orange, 10]
+[20220528_22-21-32559]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32559]  Inform WorkerNode002 to update
+[20220528_22-21-32563]  Release Lock for Transaction 78d6884f-cafa-435e-ac25-921499af9515
+[20220528_22-21-32564]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32565]  WorkerNode001: Start processing Transaction from MyTransaction [78d6884f-cafa-435e-ac25-921499af9515, WorkerNode001, 
+	MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]][20220528_22-21-32566]  Action MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32567]  Execute Act MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32568]  Done Exec MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32569]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32570]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32571]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32571]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32572]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32573]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32574]  Action MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = ROLLBACK
+[20220528_22-21-32579]  Action MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32579]  Execute Act MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32580]  Done Exec MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32580]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32581]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32582]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32583]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32585]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32586]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32587]  Action MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = ROLLBACK
+[20220528_22-21-32590]  WorkerNode001 unblocked
+[20220528_22-21-32590]  DB write [Apple, 1]
+[20220528_22-21-32591]  DB write [Orange, 10]
+[20220528_22-21-32591]  Commit Transaction 78d6884f-cafa-435e-ac25-921499af9515
+[20220528_22-21-32591]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32592]  Inform WorkerNode002 to update
+[20220528_22-21-32596]  DB write [Apple, 1]
+[20220528_22-21-32596]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32597]  DB write [Orange, 10]
+[20220528_22-21-32598]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32601]  WorkerNode001 unblocked
+[20220528_22-21-32601]  Release Lock for Transaction 78d6884f-cafa-435e-ac25-921499af9515
+[20220528_22-21-32602]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32603]  WorkerNode001: Start processing Transaction from MyTransaction [78d6884f-cafa-435e-ac25-921499af9515, WorkerNode001, 
+	MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]][20220528_22-21-32606]  Action MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32607]  Execute Act MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32608]  Done Exec MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32609]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32610]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32611]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32612]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32613]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32614]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32614]  Action MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32615]  Execute Act MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32615]  Done Exec MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32616]  Action MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32617]  Execute Act MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32617]  Done Exec MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32618]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32619]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32620]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32621]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32621]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32622]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32624]  Action MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32626]  Execute Act MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32626]  Done Exec MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32627]  DB write [Apple, 0]
+[20220528_22-21-32627]  DB write [Orange, 8]
+[20220528_22-21-32628]  Commit Transaction 78d6884f-cafa-435e-ac25-921499af9515
+[20220528_22-21-32628]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 8
+	 Key = Melo, val = 1
+
+[20220528_22-21-32629]  Inform WorkerNode002 to update
+[20220528_22-21-32629]  DB write [Apple, 1]
+[20220528_22-21-32630]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 8
+	 Key = Melo, val = 1
+
+[20220528_22-21-32630]  DB write [Orange, 10]
+[20220528_22-21-32631]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32638]  WorkerNode001 unblocked
+[20220528_22-21-32638]  WorkerNode001 unblocked
+[20220528_22-21-32638]  Release Lock for Transaction 78d6884f-cafa-435e-ac25-921499af9515
+[20220528_22-21-32639]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32640]  WorkerNode001: Start processing Transaction from MyTransaction [78d6884f-cafa-435e-ac25-921499af9515, WorkerNode001, 
+	MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]][20220528_22-21-32641]  Action MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32642]  Execute Act MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32643]  Done Exec MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32643]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32644]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32646]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32646]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32647]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32649]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32651]  Action MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32652]  Execute Act MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32653]  Done Exec MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32654]  Action MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32655]  Execute Act MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32656]  Done Exec MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32657]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32658]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32659]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32661]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32663]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32664]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32665]  Action MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32666]  Execute Act MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32667]  Done Exec MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32668]  DB write [Apple, 0]
+[20220528_22-21-32669]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32670]  DB write [Orange, 8]
+[20220528_22-21-32670]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 8
+	 Key = Melo, val = 1
+
+[20220528_22-21-32671]  DB write [Apple, -1]
+[20220528_22-21-32671]  DB write [Orange, 8]
+[20220528_22-21-32672]  Commit Transaction 78d6884f-cafa-435e-ac25-921499af9515
+[20220528_22-21-32673]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 8
+	 Key = Melo, val = 1
+
+[20220528_22-21-32674]  Inform WorkerNode002 to update
+[20220528_22-21-32681]  WorkerNode001 unblocked
+[20220528_22-21-32682]  WorkerNode001 unblocked
+[20220528_22-21-32682]  Release Lock for Transaction 78d6884f-cafa-435e-ac25-921499af9515
+[20220528_22-21-32683]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 8
+	 Key = Melo, val = 1
+
+[20220528_22-21-32684]  WorkerNode001: Start processing Transaction from MyTransaction [78d6884f-cafa-435e-ac25-921499af9515, WorkerNode001, 
+	MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+	MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+	MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]][20220528_22-21-32686]  Action MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32687]  Execute Act MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32688]  Done Exec MyAction [READ, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32688]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32689]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32691]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32692]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32693]  Execute Act MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32694]  Done Exec MyAction [MINUS, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 1]
+[20220528_22-21-32695]  Action MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32695]  Execute Act MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32696]  Done Exec MyAction [WRITE, Apple, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32698]  Action MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32698]  Execute Act MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32699]  Done Exec MyAction [READ, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32700]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32700]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32700]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32701]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32703]  Execute Act MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32703]  DB write [Apple, 0]
+[20220528_22-21-32703]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 8
+	 Key = Melo, val = 1
+
+[20220528_22-21-32704]  DB write [Orange, 10]
+[20220528_22-21-32704]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32705]  Done Exec MyAction [MINUS, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 2]
+[20220528_22-21-32707]  Action MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]'s lock status = PERMITTED
+[20220528_22-21-32707]  Execute Act MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32708]  Done Exec MyAction [WRITE, Orange, 78d6884f-cafa-435e-ac25-921499af9515, 0]
+[20220528_22-21-32708]  DB write [Apple, -1]
+[20220528_22-21-32709]  DB write [Orange, 6]
+[20220528_22-21-32709]  Commit Transaction 78d6884f-cafa-435e-ac25-921499af9515
+[20220528_22-21-32710]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 1
+
+[20220528_22-21-32710]  Inform WorkerNode002 to update
+[20220528_22-21-32714]  Release Lock for Transaction 78d6884f-cafa-435e-ac25-921499af9515
+[20220528_22-21-32714]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = -1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 1
+
+[20220528_22-21-32715]  WorkerNode001: Start processing Transaction from MyTransaction [495821a7-ef59-49a3-b950-a741d4ebce0a, WorkerNode001, 
+	MyAction [READ, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]
+	MyAction [ADD, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 1]
+	MyAction [ADD, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 1]
+	MyAction [ADD, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 1]
+	MyAction [WRITE, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]
+	MyAction [READ, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]
+	MyAction [ADD, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 2]
+	MyAction [ADD, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 2]
+	MyAction [ADD, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 2]
+	MyAction [WRITE, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]][20220528_22-21-32717]  Action MyAction [READ, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]'s lock status = PERMITTED
+[20220528_22-21-32717]  Execute Act MyAction [READ, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]
+[20220528_22-21-32718]  Done Exec MyAction [READ, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]
+[20220528_22-21-32719]  Execute Act MyAction [ADD, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 1]
+[20220528_22-21-32719]  Done Exec MyAction [ADD, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 1]
+[20220528_22-21-32720]  Execute Act MyAction [ADD, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 1]
+[20220528_22-21-32720]  Done Exec MyAction [ADD, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 1]
+[20220528_22-21-32721]  Execute Act MyAction [ADD, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 1]
+[20220528_22-21-32722]  Done Exec MyAction [ADD, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 1]
+[20220528_22-21-32724]  Action MyAction [WRITE, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]'s lock status = PERMITTED
+[20220528_22-21-32725]  Execute Act MyAction [WRITE, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]
+[20220528_22-21-32726]  Done Exec MyAction [WRITE, Melo, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]
+[20220528_22-21-32728]  Action MyAction [READ, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]'s lock status = PERMITTED
+[20220528_22-21-32728]  Execute Act MyAction [READ, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]
+[20220528_22-21-32729]  Done Exec MyAction [READ, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]
+[20220528_22-21-32730]  Execute Act MyAction [ADD, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 2]
+[20220528_22-21-32730]  Done Exec MyAction [ADD, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 2]
+[20220528_22-21-32730]  Execute Act MyAction [ADD, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 2]
+[20220528_22-21-32731]  Done Exec MyAction [ADD, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 2]
+[20220528_22-21-32733]  Execute Act MyAction [ADD, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 2]
+[20220528_22-21-32734]  Done Exec MyAction [ADD, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 2]
+[20220528_22-21-32735]  DB write [Apple, 0]
+[20220528_22-21-32735]  Action MyAction [WRITE, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]'s lock status = PERMITTED
+[20220528_22-21-32736]  Execute Act MyAction [WRITE, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]
+[20220528_22-21-32736]  Done Exec MyAction [WRITE, Grape, 495821a7-ef59-49a3-b950-a741d4ebce0a, 0]
+[20220528_22-21-32736]  DB write [Grape, -2]
+[20220528_22-21-32736]  DB write [Melo, 2]
+[20220528_22-21-32737]  Commit Transaction 495821a7-ef59-49a3-b950-a741d4ebce0a
+[20220528_22-21-32737]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 6
+	 Key = Melo, val = 2
+
+[20220528_22-21-32738]  Inform WorkerNode002 to update
+[20220528_22-21-32738]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -4
+	 Key = Orange, val = 6
+	 Key = Melo, val = 1
+
+[20220528_22-21-32738]  DB write [Orange, 8]
+[20220528_22-21-32739]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 8
+	 Key = Melo, val = 2
+
+[20220528_22-21-32744]  Release Lock for Transaction 495821a7-ef59-49a3-b950-a741d4ebce0a
+[20220528_22-21-32744]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 0
+	 Key = Grape, val = -2
+	 Key = Orange, val = 8
+	 Key = Melo, val = 2
+
+[20220528_22-21-32745]  WorkerNode001: Start processing Transaction from MyTransaction [cb5c0acd-871c-4ce6-9223-101f20591c9f, WorkerNode001, 
+	MyAction [READ, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]
+	MyAction [MINUS, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 1]
+	MyAction [MINUS, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 1]
+	MyAction [MINUS, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 1]
+	MyAction [WRITE, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]
+	MyAction [READ, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]
+	MyAction [MINUS, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 2]
+	MyAction [MINUS, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 2]
+	MyAction [MINUS, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 2]
+	MyAction [WRITE, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]][20220528_22-21-32746]  Action MyAction [READ, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]'s lock status = PERMITTED
+[20220528_22-21-32747]  Execute Act MyAction [READ, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]
+[20220528_22-21-32748]  Done Exec MyAction [READ, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]
+[20220528_22-21-32749]  Execute Act MyAction [MINUS, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 1]
+[20220528_22-21-32750]  Done Exec MyAction [MINUS, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 1]
+[20220528_22-21-32752]  Execute Act MyAction [MINUS, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 1]
+[20220528_22-21-32754]  Done Exec MyAction [MINUS, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 1]
+[20220528_22-21-32755]  Execute Act MyAction [MINUS, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 1]
+[20220528_22-21-32756]  Done Exec MyAction [MINUS, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 1]
+[20220528_22-21-32757]  Action MyAction [WRITE, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]'s lock status = PERMITTED
+[20220528_22-21-32758]  Execute Act MyAction [WRITE, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]
+[20220528_22-21-32759]  Done Exec MyAction [WRITE, Melo, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]
+[20220528_22-21-32761]  Action MyAction [READ, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]'s lock status = PERMITTED
+[20220528_22-21-32763]  Execute Act MyAction [READ, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]
+[20220528_22-21-32764]  Done Exec MyAction [READ, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]
+[20220528_22-21-32765]  Execute Act MyAction [MINUS, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 2]
+[20220528_22-21-32766]  Done Exec MyAction [MINUS, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 2]
+[20220528_22-21-32767]  Execute Act MyAction [MINUS, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 2]
+[20220528_22-21-32768]  Done Exec MyAction [MINUS, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 2]
+[20220528_22-21-32769]  Execute Act MyAction [MINUS, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 2]
+[20220528_22-21-32770]  Done Exec MyAction [MINUS, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 2]
+[20220528_22-21-32771]  Action MyAction [WRITE, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]'s lock status = PERMITTED
+[20220528_22-21-32773]  Execute Act MyAction [WRITE, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]
+[20220528_22-21-32773]  Done Exec MyAction [WRITE, Grape, cb5c0acd-871c-4ce6-9223-101f20591c9f, 0]
+[20220528_22-21-32774]  DB write [Apple, 1]
+[20220528_22-21-32775]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 8
+	 Key = Melo, val = 2
+
+[20220528_22-21-32775]  DB write [Orange, 10]
+[20220528_22-21-32776]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 2
+
+[20220528_22-21-32776]  DB write [Grape, -4]
+[20220528_22-21-32777]  DB write [Melo, 1]
+[20220528_22-21-32777]  Commit Transaction cb5c0acd-871c-4ce6-9223-101f20591c9f
+[20220528_22-21-32778]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32778]  Inform WorkerNode002 to update
+[20220528_22-21-32789]  Release Lock for Transaction cb5c0acd-871c-4ce6-9223-101f20591c9f
+[20220528_22-21-32789]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 1
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32790]  WorkerNode001: No new transactions. Blocked and wait... 
+[20220528_22-21-32791]  WorkerNode001: Processed 37 transactions
+[20220528_22-21-32793]  WorkerNode001: Commited 37 transactions
+[20220528_22-21-32796]  WorkerNode001: spent 1361 mSecs
+[20220528_22-21-32796]  WorkerNode001 block and wait... 
+[20220528_22-21-32798]  DB write [Apple, 2]
+[20220528_22-21-32798]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 10
+	 Key = Melo, val = 1
+
+[20220528_22-21-32798]  DB write [Orange, 12]
+[20220528_22-21-32799]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 1
+
+[20220528_22-21-32814]  DB write [Apple, 3]
+[20220528_22-21-32814]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 3
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 1
+
+[20220528_22-21-32815]  DB write [Orange, 14]
+[20220528_22-21-32815]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 3
+	 Key = Grape, val = -4
+	 Key = Orange, val = 14
+	 Key = Melo, val = 1
+
+[20220528_22-21-32832]  DB write [Apple, 2]
+[20220528_22-21-32832]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 14
+	 Key = Melo, val = 1
+
+[20220528_22-21-32832]  DB write [Orange, 12]
+[20220528_22-21-32833]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 1
+
+[20220528_22-21-32848]  DB write [Grape, -2]
+[20220528_22-21-32848]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -2
+	 Key = Orange, val = 12
+	 Key = Melo, val = 1
+
+[20220528_22-21-32849]  DB write [Melo, 2]
+[20220528_22-21-32849]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -2
+	 Key = Orange, val = 12
+	 Key = Melo, val = 2
+
+[20220528_22-21-32865]  DB write [Grape, -4]
+[20220528_22-21-32865]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 2
+
+[20220528_22-21-32866]  DB write [Melo, 1]
+[20220528_22-21-32866]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 1
+
+[20220528_22-21-32881]  DB write [Apple, 3]
+[20220528_22-21-32881]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 3
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 1
+
+[20220528_22-21-32882]  DB write [Orange, 14]
+[20220528_22-21-32882]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 3
+	 Key = Grape, val = -4
+	 Key = Orange, val = 14
+	 Key = Melo, val = 1
+
+[20220528_22-21-32896]  DB write [Apple, 2]
+[20220528_22-21-32896]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 14
+	 Key = Melo, val = 1
+
+[20220528_22-21-32897]  DB write [Orange, 12]
+[20220528_22-21-32897]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 1
+
+[20220528_22-21-32912]  DB write [Grape, -2]
+[20220528_22-21-32912]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -2
+	 Key = Orange, val = 12
+	 Key = Melo, val = 1
+
+[20220528_22-21-32913]  DB write [Melo, 2]
+[20220528_22-21-32913]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -2
+	 Key = Orange, val = 12
+	 Key = Melo, val = 2
+
+[20220528_22-21-32928]  DB write [Grape, -4]
+[20220528_22-21-32928]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 2
+
+[20220528_22-21-32929]  DB write [Melo, 1]
+[20220528_22-21-32929]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 1
+
+[20220528_22-21-32943]  DB write [Apple, 3]
+[20220528_22-21-32943]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 3
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 1
+
+[20220528_22-21-32944]  DB write [Orange, 14]
+[20220528_22-21-32944]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 3
+	 Key = Grape, val = -4
+	 Key = Orange, val = 14
+	 Key = Melo, val = 1
+
+[20220528_22-21-32961]  DB write [Apple, 2]
+[20220528_22-21-32961]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 14
+	 Key = Melo, val = 1
+
+[20220528_22-21-32962]  DB write [Orange, 12]
+[20220528_22-21-32962]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 1
+
+[20220528_22-21-32977]  DB write [Grape, -2]
+[20220528_22-21-32977]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -2
+	 Key = Orange, val = 12
+	 Key = Melo, val = 1
+
+[20220528_22-21-32977]  DB write [Melo, 2]
+[20220528_22-21-32978]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -2
+	 Key = Orange, val = 12
+	 Key = Melo, val = 2
+
+[20220528_22-21-32992]  DB write [Grape, -4]
+[20220528_22-21-32992]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 2
+
+[20220528_22-21-32993]  DB write [Melo, 1]
+[20220528_22-21-32993]  WorkerNode001's DB info are as follow: 
+	 DB size = 4
+	 Key = Apple, val = 2
+	 Key = Grape, val = -4
+	 Key = Orange, val = 12
+	 Key = Melo, val = 1
+
