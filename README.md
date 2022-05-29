@@ -6,21 +6,84 @@
 
 ## **Modules**
 
-|- Shared  
-|- Interface  
-|- Utilities  
-|- LeadNode  
-|- WorkNode  
+```
+/DistributedSyncSimulator/
+│
+├─bin
+│  └─distributedsyncsimulator
+│      ├─ifc
+│      ├─leadnode
+│      ├─shared
+│      ├─utilities
+│      └─worknode
+├─Interface
+│  └─src
+│      ├─main/java/distributedsyncsimulator/interface
+│                                             |-LeaderIFC.java
+│                                             |-WorkerIFC.java      
+├─LaunchScript
+│  │ -StartLead2PL.bat
+│  │ -StartLeadTS.bat
+│  │ -StartRMI.bat
+│  │ -StartWorkeNodes.bat
+│  │ -StartWorkeNodesNoConflic.bat
+│  │
+│  └─log
+│
+├─LeadNode
+│  └─src
+│      ├─main/java/distributedsyncsimulator/leadnode
+│                                            |-LeadNode.java
+│                                            |-SanpshotIsolationManager.java
+│                                            |-SyncManagerBase.java
+│                                            |-TimeStampOrderingManager.java
+│                                            |-TwoPhaseLockManager.java
+├─SampleLog
+│  ├─2 Phase Lock
+│  │      |-LeadNode_20220528_22-20-0575.log
+│  │      |-WorkerNode001_20220528_22-20-19269.log
+│  │      |-WorkerNode002_20220528_22-20-19269.log
+│  │
+│  └─Timestamp Ordering
+│          |-LeadNode_20220528_22-21-25462.log
+│          |-WorkerNode001_20220528_22-21-30256.log
+│          |-WorkerNode002_20220528_22-21-30255.log
+│
+├─Shared
+│  └─src
+│      ├─main/java/distributedsyncsimulator/shared
+│                                           |-MyAction.java  
+│                                           |-MyConfiguration.java  
+│                                           |-MyDatabase.java
+│                                           |-MyLock.java
+│                                           |-MyLog.java
+│                                           |-MyTransaction.java
+│ 
+├─Transactions
+│      |-test.txt
+│      |-trans1.txt
+│      |-trans2.txt
+│
+├─Utilities
+│  └─src
+│      ├─main/java/distributedsyncsimulator/utilities
+│                                             |-Constants.java
+│                                             |-MyUtils.java
+└─WorkNode
+    └─src
+        ├─main/java/distributedsyncsimulator/worknode
+                                              |-WorkNode.java
+        
+```
 
 
-|- Transactions
-|- log
-|- 
+
+## Input and output 
+
 
 ## **Design**
 
-TODO
-****
+
 
 ### **Distributed Environment setup**
 Java Remote Method Invocation (**RMI**)
