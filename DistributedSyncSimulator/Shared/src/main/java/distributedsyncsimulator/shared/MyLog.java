@@ -76,10 +76,8 @@ public class MyLog{
 
 
 
-    static class LogHandler extends Thread {
-
-        public LogHandler() { }
-        
+    class LogHandler extends Thread {
+        public LogHandler() { }    
         public void run(){
             try {
                 while (!m_isExit || !m_syncQueue.isEmpty()) {

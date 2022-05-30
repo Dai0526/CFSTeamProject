@@ -154,8 +154,6 @@ public class WorkNode implements WorkerIFC, Runnable {
 		return next;
     }
 
-
-
     private ActionStatus checkActionStatus(MyAction act) throws Exception {
         
         ActionStatus actStatus = ActionStatus.REJECT;

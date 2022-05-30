@@ -8,10 +8,6 @@ import static distributedsyncsimulator.utilities.Constants.*;
 
 public class TwoPhaseLockManager extends SyncManagerBase {
 
-    // private HashMap<String, ArrayList<MyLock>> m_locks;
-    // private HashMap<String, ArrayList<MyAction>> m_acts;
-
-
     public TwoPhaseLockManager(){
         super();
     }

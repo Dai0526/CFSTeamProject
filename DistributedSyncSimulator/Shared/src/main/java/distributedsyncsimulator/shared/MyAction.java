@@ -17,11 +17,12 @@ public class MyAction implements Serializable {
     };
 
     public String m_target;
-    public UUID m_tanscationId;
     public ActionType m_actType = ActionType.UNKNOWN;
     public int m_value;
     public String m_workerName;
     public long m_timestamp;
+    
+    public UUID m_tanscationId;
     public long m_transTimestamp;
 
     public MyAction(UUID id, String workerName){

@@ -7,8 +7,8 @@ import distributedsyncsimulator.shared.*;
 import static distributedsyncsimulator.utilities.Constants.*;
 
 import java.util.*;
-public abstract class SyncManagerBase {
 
+public abstract class SyncManagerBase {
     
     protected HashMap<String, ArrayList<MyLock>> m_locks;
 	protected HashMap<String, ArrayList<MyAction>> m_acts;
@@ -17,6 +17,18 @@ public abstract class SyncManagerBase {
         m_locks = new HashMap<String, ArrayList<MyLock>>();
         m_acts = new HashMap<String, ArrayList<MyAction>>();
     }
+
+    // need Impl
+    public ArrayList<String> releaseLocks(MyTransaction trans) throws Exception{
+        throw new Exception("release Locks not implementated");
+    }
+
+    // need Impl
+    public LockStatus acquireLocks(MyAction act) throws Exception{
+        throw new Exception("release Locks not implementated");
+    }
+
+
 
     public MyLock getLock(UUID transId, String target){
         //System.out.println("DEBUG - getLock to looking for lock in records");
@@ -48,13 +60,5 @@ public abstract class SyncManagerBase {
 	    return m_locks.get(target).add(lock);
     }
 
-    // need Impl
-    public ArrayList<String> releaseLocks(MyTransaction trans) throws Exception{
-        throw new Exception("release Locks not implementated");
-    }
 
-    // need Impl
-    public LockStatus acquireLocks(MyAction act) throws Exception{
-        throw new Exception("release Locks not implementated");
-    }
 }
