@@ -25,7 +25,7 @@ public abstract class SyncManagerBase {
 
     // need Impl
     public LockStatus acquireLocks(MyAction act) throws Exception{
-        throw new Exception("release Locks not implementated");
+        throw new Exception("acquire Locks not implementated");
     }
 
 
