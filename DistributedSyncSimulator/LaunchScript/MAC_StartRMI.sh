@@ -1,0 +1,1 @@
+rmiregistry -J-Djava.rmi.server.codebase=file:bin/

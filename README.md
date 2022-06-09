@@ -92,7 +92,6 @@ Java Remote Method Invocation (**RMI**)
 ### **Virtualized In-Memory Database**
 Though the distributed environment is designed based on the distributed database system, the focus is on the Synchronization Algorithm simulation. Thus, it is not necessary to implement a middleware to communicate with real database. Instead, we can abstact the concpet of database by simulated it with a key-value in memory DB.
 
-[MyDatabaseManager.java](SyncSimulator\DistributedSyncSimulator\Shared\src\main\java\distributedsyncsimulator\shared\MyDatabase.java)
 * Designed as a singleton, such that one worker node can only monitor/operate one databse
 * Use a hashmap to simulate the key-value db
   * key - String
